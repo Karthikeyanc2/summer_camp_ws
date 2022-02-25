@@ -1,0 +1,18 @@
+<launch>
+    <arg name="lat_origin" default="48.78461825" />
+    <arg name="lon_origin" default="11.47318240" />
+    <arg name="height_origin" default="374.565" />
+
+    <param name="/lat_origin" value="$(arg lat_origin)" />
+    <param name="/lon_origin" value="$(arg lon_origin)" />
+    <param name="/package_root" value="$(find ttc_based_critical_situation_identifier)"/>
+
+    <include file="$(find ttc_based_critical_situation_identifier)/launch/adma_data.launch">
+        <arg name="vehicle_name" value="marie" />
+        <arg name="with_velodyne" value="True" />
+        <arg name="vehicle_number" value="1" />
+    </include>
+
+    <node pkg="ttc_based_critical_situation_identifier" name="outdoor_track_marker" type="outdoor_marker_node.py" output="screen"/>
+    <node pkg="rviz" type="rviz" name="my_rviz" args="-d $(find ttc_based_critical_situation_identifier)/rviz/rviz.rviz" output="screen" />
+</launch>
