@@ -9,7 +9,7 @@
         <group if="$(eval arg('vehicle_name') == 'issaak')">
             <param name="vehicle_name" value="$(arg vehicle_name)" />
             <param name="vehn" value="$(arg vehicle_number)"/>
-            <param name="port_adma" value="1212" />
+            <param name="port_adma" value="1210" />
             <param name="color" value="red" />
             <param name="length" value="2.83" />
             <param name="width" value="1.752" />

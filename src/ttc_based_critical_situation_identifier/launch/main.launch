@@ -13,6 +13,12 @@
         <arg name="vehicle_number" value="1" />
     </include>
 
+    <include file="$(find ttc_based_critical_situation_identifier)/launch/adma_data.launch">
+        <arg name="vehicle_name" value="issaak" />
+        <arg name="with_velodyne" value="False" />
+        <arg name="vehicle_number" value="2" />
+    </include>
+
     <node pkg="ttc_based_critical_situation_identifier" name="outdoor_track_marker" type="outdoor_marker_node.py" output="screen"/>
     <node pkg="rviz" type="rviz" name="my_rviz" args="-d $(find ttc_based_critical_situation_identifier)/rviz/rviz.rviz" output="screen" />
 </launch>

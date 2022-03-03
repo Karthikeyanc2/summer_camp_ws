@@ -110,7 +110,7 @@ while not rospy.is_shutdown():
     time_adma = time_ms * 0.001 + time_week * 7 * 24 * 60 * 60 + jan1_12am_1980
 
     # get pose
-    orientation = (unpack('H', data[508:510])[0] * 0.01 + 90.0) * np.pi / 180
+    orientation = (unpack('H', data[508:510])[0] * 0.01 + 90.0) * np.pi / 180 + 0.032472  # angle correction from genesys to utm
     # INS absolute
     lat = unpack('i', data[592:596])[0] * 1e-7
     lon = unpack('i', data[596:600])[0] * 1e-7
