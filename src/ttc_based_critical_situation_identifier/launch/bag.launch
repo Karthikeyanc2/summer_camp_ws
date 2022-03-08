@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="rosbag" type="play" name="rosbag_play" args="/home/schenker2/summer_camp_3.bag" output="screen" />
+    <node pkg="rviz" type="rviz" name="my_rviz" args="-d $(find ttc_based_critical_situation_identifier)/rviz/rviz.rviz" output="screen" />
+</launch>

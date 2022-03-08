@@ -23,7 +23,7 @@
                 <include file="$(find velodyne_pointcloud)/launch/32e_points.launch" >
                     <arg name="device_ip" value="192.168.1.62" />
                     <arg name="port" value="2368" />
-                    <arg name="gps_time" value="true" />
+                    <arg name="gps_time" value="false" />
                 </include>
             </group>
         </group>
@@ -39,13 +39,13 @@
                 <param name="dx_adma_rear_axle" value="0.109"/>
                 <param name="dy_adma_rear_axle" value="-0.112"/>
                 <param name="dz_adma_rear_axle" value="-0.720"/>
-                <param name="rear_axle_to_gc" value="1.09445"/>
+                <param name="rear_axle_to_gc" value="1.29445"/>
                 <node pkg="ttc_based_critical_situation_identifier" type="adma_data.py" name="adma_data" output="screen"/>
                 <group if="$(eval arg('with_velodyne'))">
                     <include file="$(find velodyne_pointcloud)/launch/32e_points.launch" >
                         <arg name="device_ip" value="192.168.1.62" />
                         <arg name="port" value="2368" />
-                        <arg name="gps_time" value="true" />
+                        <arg name="gps_time" value="false" />
                     </include>
                 </group>
         </group>

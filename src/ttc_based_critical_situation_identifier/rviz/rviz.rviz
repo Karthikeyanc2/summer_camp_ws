@@ -147,20 +147,20 @@ Visualization Manager:
     Current:
       Class: jsk_rviz_plugin/TabletViewController
       Control Mode: Orbit
-      Distance: 13.354068756103516
+      Distance: 147.90399169921875
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Eye:
-        X: 43.682621002197266
-        Y: -66.1533432006836
-        Z: 9.673446655273438
+        X: 5.982574462890625
+        Y: -4.403731346130371
+        Z: 149.104736328125
       Focus:
-        X: 46.95674133300781
-        Y: -71.07197570800781
-        Z: -2.3022947311401367
+        X: 6.019388198852539
+        Y: -1.3798198699951172
+        Z: 1.2316665649414062
       Invert Z Axis: false
       Maintain Vertical Axis: true
       Mouse Enabled: true

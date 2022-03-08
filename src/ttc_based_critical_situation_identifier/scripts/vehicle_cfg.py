@@ -1,7 +1,7 @@
 import numpy as np
 
 issaak = dict(
-    port=1212,
+    port=1210,
     color="red",
     length=2.83,
     width=1.752,
@@ -31,7 +31,7 @@ marie = dict(
     rear_axle_to_gc=1.09445,
     velodyne_port=2368,
     vehiclecg_T_velodyne=np.array([
-        [0, 1, 0, 0.5],
+        [0, 1, 0, 0.1],
         [-1, 0, 0, 0],
         [0, 0, 1, 0.8],
         [0, 0, 0, 1]
