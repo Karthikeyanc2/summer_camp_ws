@@ -43,7 +43,7 @@ jan1_12am_1980 = 315532800 + 5 * 60*60*24
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.settimeout(1.0)
-sock.bind(("0.0.0.0", 1211))
+sock.bind(("0.0.0.0", 1212))
 
 try:
     while True:
