@@ -37,6 +37,7 @@ def create_datasets():
     np.savetxt("../datasets/train.csv", train_data, delimiter=',')
     np.savetxt("../datasets/test.csv", test_data, delimiter=',')
 
+
 def train_with_nonlinear_basefnc(X, Y):
     M, N = X.shape
     N_basefnc = 9
@@ -56,6 +57,7 @@ def train_with_nonlinear_basefnc(X, Y):
     theta = np.dot(second, Y_valid)
 
     return theta
+
 
 def normalize(X, Y):
     M, N = X.shape
@@ -129,9 +131,9 @@ def linear_regression_pytorch(X, Y):
     Y = torch.from_numpy(Y).type(torch.float32)
 
     linear_layer = torch.nn.Linear(N_in, N_out, bias=True)
-    optimizer = torch.optim.SGD(linear_layer.parameters(), lr=1e-5)
+    optimizer = torch.optim.SGD(linear_layer.parameters(), lr=3e-4)
     loss_fn = torch.nn.MSELoss()
-    nrEpochs = 3000
+    nrEpochs = 1000
 
     for idxEpoch in range(nrEpochs):
         for input_sample, target_sample in zip(X, Y):
@@ -196,18 +198,18 @@ class MLP(torch.nn.Module):
     def __init__(self, N_in, N_out):
         super(MLP, self).__init__()
         self.linear_in = torch.nn.Linear(N_in, 20, bias=True)
-        self.linear_middle1 = torch.nn.Linear(20, 30, bias=True)
-        self.linear_middle2 = torch.nn.Linear(30, 20, bias=True)
+        #self.linear_middle1 = torch.nn.Linear(20, 20, bias=True)
+        #self.linear_middle2 = torch.nn.Linear(30, 20, bias=True)
         self.linear_out = torch.nn.Linear(20, N_out, bias=True)
         self.activation = torch.nn.Sigmoid()
 
     def forward(self, x):
         x = self.linear_in(x)
         x = self.activation(x)
-        x = self.linear_middle1(x)
-        x = self.activation(x)
-        x = self.linear_middle2(x)
-        x = self.activation(x)
+        # x = self.linear_middle1(x)
+        # x = self.activation(x)
+        # x = self.linear_middle2(x)
+        # x = self.activation(x)
         x = self.linear_out(x)
         return x
 
@@ -231,7 +233,7 @@ def test_model(X, Y, flag="single"):
         output = np.empty((M, 1))
         output[:] = np.nan
 
-        x_tilde = np.hstack((X, np.ones((M, 1))))
+        x_tilde = np.hstack((Xnorm, np.ones((M, 1))))
         for index, sample in enumerate(x_tilde):
             TTCnorm = np.dot(np.transpose(theta), sample)
             output[index, 0] = TTCnorm * y_max
@@ -278,7 +280,8 @@ def test_model(X, Y, flag="single"):
         Xnorm[:] = np.nan
         for n in range(N):
             Xnorm[:, n] = (X[:, n] - minVal[n]) / (maxVal[n] - minVal[n])
-        output = model(torch.from_numpy(X).type(torch.float32))
+        x_tensor = torch.from_numpy(Xnorm).type(torch.float32)
+        output = model(x_tensor)
         output = output * y_max
 
     loss_fn = torch.nn.MSELoss()
@@ -295,19 +298,18 @@ def main():
     test_data = np.genfromtxt(test_path, delimiter=',')
     X_train = train_data[:, 0:2]
     Y_train = train_data[:, 2:3]
-    train(X_train, Y_train, 'mlp')
+    # train(X_train, Y_train, 'mlp')
 
     # test
     X_test = test_data[:, 0:2]
     Y_test = test_data[:, 2:3]
 
-    TTC_estimate = test_model(X_test, Y_test, 'mlp')
+    TTC_estimate = test_model(X_test, Y_test, 'nonlinear')
 
     plotting = True
     if plotting:
         import plotting
         plotting.plot_3Ddata(test_data, TTC_estimate, 'points')
-
 
 
 if __name__ == '__main__':
