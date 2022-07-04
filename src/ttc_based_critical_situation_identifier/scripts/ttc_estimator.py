@@ -1,16 +1,16 @@
-import rospy
-import ros_numpy
-from vehicle_msgs.msg import ADMAData
-from sensor_msgs.msg import PointCloud2
+#import rospy
+#import ros_numpy
+#from vehicle_msgs.msg import ADMAData
+#from sensor_msgs.msg import PointCloud2
 import numpy as np
 
 
 class TTCEstimator:
     def __init__(self):
         self.adma_msg = None
-        self.boundary = # read csv
-        rospy.Subscriber("/vehicle_marie/adma_data", ADMAData, self.adma_callback)
-        rospy.Subscriber("/vehicle_marie/velodyne_points", PointCloud2, self.pcd_callback)
+        self.boundary = 1# read csv
+       # rospy.Subscriber("/vehicle_marie/adma_data", ADMAData, self.adma_callback)
+        #rospy.Subscriber("/vehicle_marie/velodyne_points", PointCloud2, self.pcd_callback)
 
     def adma_callback(self, msg):
         """
@@ -39,9 +39,9 @@ class TTCEstimator:
         4. 
         """
 
-        publish final estimated cluster (jsk bounding box)
-        publish ttc
-
+        #publish final estimated cluster (jsk bounding box)
+        #publish ttc
+        pass
     def roi_removal(self, data:np.array): # data: Nx4 (x, y, z, ref)
 
         return data # (M x 4)
@@ -54,11 +54,12 @@ class TTCEstimator:
         return data
 
     def knn(self, data):
-        return clusters
-
+        # return clusters
+        pass
     def object_detection(self, clusters):
-        return cluster  # (for our car)
-
+        # return cluster  # (for our car)
+        pass
     def ttc_estimator(self, cluster, adma_information):
+        pass
         # ml inference
-        return ttc
+        # return ttc
