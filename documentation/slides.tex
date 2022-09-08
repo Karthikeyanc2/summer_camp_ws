@@ -2,14 +2,14 @@
 \usepackage{biblatex}
 
 \input{preamble.tex}
-\title{Summercamp 2022}
+\title{Ignaz Kögler Research Summer Camp}
 
 \newcommand{\argmin}{\mathop{\mathrm{arg\,min}}}
-\subtitle{Projekt Automatisiertes Fahren}
+\subtitle{KI \& Mobilität der Zukunft}
 
 \date{01.03.2022}
 
-\author{Karthikeyan Chandra Sekaran}
+%\author{Karthikeyan Chandra Sekaran}
 
 
 \begin{document}
@@ -19,18 +19,17 @@
 	\begin{frame}{Outline}
 		\begin{minipage}{0.4\textwidth}
 			\begin{enumerate}
-				\item Szenariobeschreibung
-				\item Sensor Setup
+				\item Einarbeitung in die Generierung von Echtdaten:
 				\begin{enumerate}
-					\item LiDAR
-					\item ADMA
+					\item Grundlagen zur Aufzeichnung von Realdaten
+					\item Robot Operating System (ROS)
 				\end{enumerate}
-				\item Datenverarbeitung
+				\item Datenvorverarbeitung:
 				\begin{enumerate}
-					\item ROS
 					\item Region of Interest
-					\item Ground Subtraction
-					\item Clustering		
+					\item Subtraktion der Bodenebene
+					\item Clustering
+					\item Objektliste
 				\end{enumerate}
 			\item[]
 			\end{enumerate}
@@ -39,88 +38,110 @@
 		\begin{minipage}{0.5\textwidth}
 		\begin{tabular}{p{\textwidth}}
 			\begin{enumerate}
-				\setcounter{enumi}{4}	
-				\item KI-Algorithmus 				
+				\setcounter{enumi}{2}	
+				\item KI-Methoden: 				
 				\begin{enumerate}
-					\item Grundlagen des Maschinellen Lernens
-					\item Ermittlung der kritischen Zeit	
+					\item Grundlagen der künstlichen Intelligenz					
+					\item Ermittlung der Kritikalität	
 					\item Lineare Regression 
 					\item Nicht-lineare Basisfunktionen 
 				\end{enumerate}	
-				\item Verwendung der Algorithmen in einer Echtzeit-Anwendung
+				\item Online-Verwendung der KI-Methoden
 			\end{enumerate}
 		\end{tabular}
 		\end{minipage}%
 	\end{frame}
-	\begin{frame}{Szenariobeschreibung}
-		Das mit LiDAR- und ADMA-Sensorik ausgestattete Ego-Fahrzeug folgt einem Fahrzeug der gleichen Spur, welches überraschend eine Notbremsung einleitet. Um den Auffahrunfall zu verhindern, ist der kritsche Zeitpunkt $t_{\text{crit}}$ zu bestimmen, zu dem das Ego-Fahrzeug spätestens seine Bremsung einleiten muss.
-		\\
+\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
+	\textbf{Szenariobeschreibung:}\\
+	Zwei Fahrzeuge fahren auf der gleichen Spur, in der gleichen Richtung und mit einer ähnlichen konstanten Geschwindigkeit. Das vorausfahrende Fahrzeug führt eine Vollbremsung durch.\\
+	\textbf{Forschungsfrage:} \\
+	Wie könnte man einen Unfall verhindern?.\\
+Welche Informationen werden benötigt, um eine Entscheidung zu treffen?.
+\end{frame}
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
+Viele Fahrzeuge sind mit externen Sensoren, wie Radar und Kameras, ausgestattet. Und viele Unternehmen (wie z. B. Velodyne oder Valeo) entwickeln LiDAR-Sensoren für die Automobilbranche.\\
+Unter der Annahme, dass einige Zustandsgrößen des Fahrzeugs bekannt sind, z. B. seine Geschwindigkeit über Grund und seine Längsbeschleunigung, ist es möglich, die Zeit bis zur Kollision (engl. Time To Collision - TTC) $t_{\text{ttc}}$ zu schätzen.\\
 		\textbf{Ziele:} \\
-		\begin{enumerate}
-			\item Verarbeitung der Sensorrohdaten des Szenarios
-			\item Entwicklung eines KI-Algorithmus zur Ermittlung der kritischen Zeit $t_{\text{crit}}$.
-			\item Anwendung der Algorithmen in einer Echtzeit-Simulation des Szenarios.
-		\end{enumerate}
+Eine KI-Methode zu programmieren, die es erlaubt, die TTC eines Fahrzeugs zu schätzen. 
 	\end{frame}
-	\begin{frame}{Fragen zur Szenariobeschreibung}
+\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
+	\textbf{Vorgeschlagenes Verfahren:} \\
+	Ein Testfahrzeug mit hochmodernen Sensoren auszustatten: einen Automotive Dynamic Motion Analyzer (ADMA), a Correvit S-Motion and a LiDAR.
+	\textbf{Vorteile:} \\
+	\begin{enumerate}
+		\item Hochpräziser Fahrzeugzustand (Position, Geschwindigkeit, Orientierung, Beschleunigungen usw.).
+		\item Hochpräzise Informationen über die Umgebung, inkl. andere Fahrzeuge.
+		\item Zusätzlich können die Fahrzeuginformationen von den bordeigenen Sensoren abgerufen werden.
+	\end{enumerate}
+\end{frame}
+		\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
 		\begin{figure}
-
-			\includegraphics[scale=0.4]{"required/Szenariobeschreibung_auto.jpg"}
-
-		\end{figure}	
-		\textbf{Fragen:}\\
-		\begin{enumerate}
-			\item Welche Assistenzsysteme sind in Fahrzeugen mit LiDAR-Sensoren vorstellbar?
-			\item Welches Assistenzsystem könnte mit diesem Aufbau erprobt werden?
-			\item Wie kann die Implementierung eines Assistenzsystems aussehen? Welche Eingangsgrößen benötigt die Entscheidungslogik?
-		\end{enumerate}
+			\centering
+			\begin{subfigure}[b]{0.4\textwidth}
+				\includegraphics[scale=0.4]{required/Sensorkoordinatensysteme.jpg}
+				\caption{Sensorkoordinatensysteme in nuScenes [Caesar.2020]}
+				\label{ROS}
+			\end{subfigure}
+			\vfill
+			\begin{subfigure}[b]{0.4\textwidth}
+				\includegraphics[scale=0.5]{required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg}
+				\caption{Fahrzeugkoordinatensystem exterozeptiver Sensoren}
+				\label{ROS}
+			\end{subfigure}
+			\hspace{1.5 cm}
+			\begin{subfigure}[b]{0.4\textwidth}
+				\includegraphics[scale=0.2]{required/Fahrzeugkoordinatensystem CoG.jpg}
+				\caption{Fahrzeugkoordinatensystem der Fahrdynamikgleichungen [Breuer.2015]}
+				\label{ROS}
+			\end{subfigure}
+		\end{figure}
+		
 	\end{frame}
-	\begin{frame}{Sensor Setup}{Lidar Sensor}
-		\textbf{LiDAR}...		
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
 		\begin{itemize}
-			\item ... steht als Akronym für \enquote{Light Detection And Ranging}
-			\item ... ist ein optisches Verfahren zur Messung von Distanzen
-			\item ... sendet optisches Laserlicht in Pulsen aus. 
-			\item ... arbeitet mit Wellenlängen nahe des sichtbaren Bereichs ($\mu m$-Wellen)
+			\item \textbf{LiDAR} steht als Akronym für \enquote{Light Detection And Ranging}.
+			\item Es ist ein optisches Verfahren zur Messung von Distanzen.
+			\item Es sendet Laserlicht in Pulsen aus und misst die Flugzeit des Pulses.
+			\item Es arbeitet mit Wellenlängen nahe des sichtbaren Bereichs ($\mu m$-Wellen).
 		\end{itemize}
-		\textbf{Visualisierung} des Lidar-Prinzips [Wik.2022]
+		Gezeigt ist eine visualisierung des Lidar-Prinzips[Wik.2022]:
 		\begin{figure}[htbp]
     		\centering
     		\begin{subfigure}[b]{0.15\textwidth}
-        		\includegraphics[scale=0.2]{required/LiDAR-Sensor1.jpg}
+        		\includegraphics[scale=0.21]{required/LiDAR-Sensor1.jpg}
         		\label{Lidar-t1}
    		 	\end{subfigure}
     		\begin{subfigure}[b]{0.15\textwidth}
-       		 	\includegraphics[scale=0.2]{required/LiDAR-Sensor2.jpg}
+       		 	\includegraphics[scale=0.21]{required/LiDAR-Sensor2.jpg}
         		\label{Lidar-t2}
     		\end{subfigure}
    	 		\begin{subfigure}[b]{0.15\textwidth}
-        		\includegraphics[scale=0.2]{required/LiDAR-Sensor3.jpg}
+        		\includegraphics[scale=0.21]{required/LiDAR-Sensor3.jpg}
         		\label{Lidar-t3}
     		\end{subfigure}
     		\label{Lidar in Raum}
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}{Sensor Setup}{LiDAR Sensor}
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
 		\begin{itemize}
 			\item \textbf{Distanzmessung} per \enquote{time-of-flight}-Prinzip:
 			\begin{itemize}
-				\item Sende und Empfangszeit des Pulses wird gemessen
-				\item Aus der Zeitdifferenz $\Delta t$ und der Geschwindigkeit des Lichts $ c = 3 \cdot 10^{8} \frac{m}{s} $
+				\item Sende- $t_\text{send}$ und Empfangszeit $t_\text{back}$ des Pulses wird gemessen, d.h., die Zeit, die der Puls braucht, um ein Objekt zu erreichen und zum LiDAR zurückgeworfen zu werden.
+				\item Aus der Zeitdifferenz $\Delta t_\text{L}=t_\text{back}-t_\text{send}$ und der Geschwindigkeit des Lichts $ c = 3 \cdot 10^{8} \frac{m}{s} $.
 				\begin{equation}
 					r = \frac{c}{2} \cdot \delta t
 				\end{equation}
 			\end{itemize}
-			\item \textbf{Geschwindigkeitsbestimmung:} Nur indirekt auf Basis von Signalverarbeitungstechniken aus der Distanzmessung ableitbar
+			\item \textbf{Geschwindigkeitsbestimmung:} Auf Basis von Signalverarbeitungstechniken aus der Distanzmessung ableitbar.
 			\item \textbf{Vorteile}: Großer Öffnungswinkel, Detektion aller möglichen Objekte (ohne Training, da aktiver Sensor), Klassifizierung von Objekten möglich, etc.
-			\item \textbf{Nachteile:} Wetteranfälligkeit, keine direkte Geschwindigkeitsmessung, etc.
+			\item \textbf{Nachteile:} Wetteranfälligkeit, keine direkte Geschwindigkeitsmessung.
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{Sensor Setup}{LiDAR Sensor: Rohdaten Ausgabe}
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}
 		\begin{itemize}
-			\item \textbf{Ausgabeformat:} [$x, y, z, int, t$] $\rightarrow$ $N \times 4$ Matrix für eine Punktwolke mit $N$ Punkten
-			\item \textbf{Speicheranforderungen} am Beispiel des Velodyne HDL-64E (rotierender 3D Laserscanner, der z.B. im  Open-Source Kitti-Datensatz verwendet wird):
+			\item \textbf{Ausgabeformat:} [$x, y, z, int, t$] $\rightarrow$ $N \times 5$ Matrix für eine Punktwolke mit $N$ Punkten
+			\item \textbf{Speicheranforderungen:} Als Beispiel, der Velodyne HDL-64E (rotierender 3D Laserscanner, der z.B. im  Open-Source Kitti-Datensatz verwendet wird):
 			\begin{itemize}
 				\item Sichtfeld: 360° horizontal, 36.8° vertikal | Reichweite: 120 m | Frequenz: 10 Hz
 				\item Ausgegebene Punkte: $~ 1.3 \cdot 10^{6}$ $\frac{\text{pts}}{\text{s}}$ 
@@ -133,60 +154,76 @@
 			\caption{LiDAR-Aufnahme auf einem Parkplatz [Rummelhard.2017]}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Sensor Setup}{ADMA Sensor}
-		\textbf{ADMA}...		
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{Grundlagen zur Aufzeichnung von Realdaten}	
 		\begin{itemize}
-			\item ... steht als Akronym für \enquote{Automotive Dynamic Motion Analyzer}
-			\item ... setzt sich aus IMU, GNSS und einem Prozessor zusammen und kann somit Geschwindigkeit, räumliche Lage des Fahrzeugs und Standort in Echtzeit ausgeben
+			\item \textbf{ADMA} steht als Akronym für \enquote{Automotive Dynamic Motion Analyzer}
+			\item Er setzt sich aus Inertialmesssystem (engl. Inertial Measurement Unit - IMU), Satellitennavigation (engl. Global Navigation Satellite System - GNSS) und einem Prozessor zusammen, und kann somit Geschwindigkeit, räumliche Lage des Fahrzeugs und Standort in Echtzeit ausgeben.
 		\end{itemize}
 		\begin{figure}
 			\centering
     		\begin{subfigure}[b]{0.3\textwidth}
-				\includegraphics[scale=0.35]{required/ADMA-Erklärung.jpg}
+				\includegraphics[scale=0.3]{required/ADMA-Erklärung.jpg}
 				\caption{ADMA als \enquote{Sinnesorgan} des Fahrzeugs [AD14]}
         		\label{ADMA Erklärung}
    		 	\end{subfigure}
    		 	\hspace{3cm}
     		\begin{subfigure}[b]{0.3\textwidth}
-				\includegraphics[scale=0.35]{required/ADMA.jpg}
+				\includegraphics[scale=0.3]{required/ADMA.jpg}
 				\caption{ADMA im Fahrzeug [GeneSys.2022]}
         		\label{ADMA in Fahrzeug}
     		\end{subfigure}
     		\label{ADMA figures} 
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Erläuterung}
-		\textbf{Motivation:} 
+
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{ROS}
+		Die Arbeit mit realen Daten hat jedoch ihre Herausforderungen:
 		\begin{itemize}
-			\item Filtern von störenden oder für den Verwendungszweck nicht relevanten Anteile
-			\item Reduktion des Speicher- und Rechenbedarfs in folgenden Algorithmen
-			\item Ausgabe der Daten entsprechend der Schnittstellenanforderungen folgender Algorithmen
-			\item Nutzen von A-Priori Wissen zur Verkleinerung des ausgewerteten Lösungsraums für folgende Alogrithmen $\rightarrow$ Algorithmus muss diese Eingrenzung nicht mehr erlernen
-			\item Erfüllung der Echzeitanforderungen
+			\item Die Menge des benötigten Speicherplatzes kann schnell wachsen, besonders bei Verwendung mehrerer Sensoren.
+			\item Selbst High-End-Sensoren führen keine fehlerfreien Messungen durch: Ein Sensorrauschen ist immer vorhanden.
+			\item Eine Koordinatentransformation kann erforderlich sein, wenn mehrere Sensoren verwendet werden.
+			\item Abhängig davon, u.a. ob die Zustandsvariablen getrackt werden, kann eine Sensorfusion erforderlich sein.
 		\end{itemize}
-		\textbf{Aufgabenstellung:} Ausgabe der Punktewolke für die wichtigen Objekte der Aufnahme
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Erläuterung}
-		\textbf{Vorgehensweise:} 
-		\begin{enumerate}
-			\item \enquote{Region of Interest}-Filterung: Filterung der für den Verwendungszweck unrelvanten Daten
-			\item \enquote{Ground Subtraction}: Filterung der Lidarpunkte der Fahrbahnfläche
-			\item \enquote{Clustering}: Segmentierung zusammenhängender Punkte 
-			\item \enquote{Objekterkennung}: Ausgabe von Objekten auf Basis der Clustergrenzen
-		\end{enumerate}
-		\vspace{0.5cm}
-		Eine genauere Erläuterung zu den einzelnen Schritten wird in den folgenden Kapiteln gegeben.
-	\end{frame}	
-	\begin{frame}{Datenverarbeitung}{Erläuterung ROS}				
-		\textbf{Motivation}: 
+%\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{ROS}
+%	\textbf{Solutions:} 
+%	\begin{itemize}
+%		\item \textcolor{purple}{remove floor}
+%		\item \textcolor{purple}{cluster}
+%		\item \textcolor{purple}{track? }
+%		\item Filtern von störenden oder für den Verwendungszweck nicht relevanten Anteile.
+%		\item Algorithmus-Optimierung für die Reduzierung des Speicher- und Rechenbedarfs.
+%		\item Nutzen von A-Priori Wissen zur Verkleinerung des ausgewerteten Lösungsraums.
+%		\item Erfüllung der Echzeitanforderungen
+%	\end{itemize}
+%	\textbf{Aufgabenstellung:} Ausgabe der Punktewolke für die wichtigen Objekte der Aufnahme
+%\end{frame}
+%	\begin{frame}{Datenvorverarbeitung}{Erläuterung}
+%		\textbf{Vorgehensweise:} 
+%		\begin{enumerate}
+%			\item \enquote{Region of Interest}-Filterung: Filterung der für den Verwendungszweck unrelvanten Daten
+%			\item \enquote{Ground Subtraction}: Filterung der Lidarpunkte der Fahrbahnfläche
+%			\item \enquote{Clustering}: Segmentierung zusammenhängender Punkte 
+%			\item \enquote{Objekterkennung}: Ausgabe von Objekten auf Basis der Clustergrenzen
+%		\end{enumerate}
+%		\vspace{0.5cm}
+%		Eine genauere Erläuterung zu den einzelnen Schritten wird in den folgenden Kapiteln gegeben.
+%	\end{frame}	
+\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{ROS}
+	\textbf{Vorgehensweise:} 
+	\begin{enumerate}
+		\item \enquote{Region of Interest}-Filterung: Reduzierung der benötigten Speicher- und Rechenleistung durch Begrenzung der zu messenden Fläche.
+		\item \enquote{Subtraktion der Bodenebene}: Reduzierung der benötigten Speicher- und Rechenleistung durch Ausblenden irrelevanter Daten (Fahrbahnfläche).
+		\item \enquote{Clustering}: Bestimmte Messungen gruppieren, um sie als ein einziges Objekt und nicht als mehrere Punkte zu betrachten.
+		\item \enquote{Objektverfolgung}: Mobile Objekte in der Umgebung des Fahrzeugs zu verfolgen. 
+	\end{enumerate}
+\end{frame}
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{ROS}			
+		Der Algorithmus wird in Robot Operating System (ROS) implementiert:
 		\begin{itemize}
-			\item bietet Struktur, Tools und Algorithmen für die Implementierung eigener Applikationen
-			\item Sensorausgabe kann in dieses System eingebunden und somit verarbeitet werden
-		\end{itemize}		
-		\textbf{Allgemein}:
-		\begin{itemize}
-			\item Open-Source Framework
-			\item Aufgaben: Hardwareabstraktion, Hilfsfunktionen, Interprozesskommunikation, Gerätetreiber, Paketmanagement
+			\item bietet Struktur, Tools und Algorithmen für die Implementierung eigener Applikationen.
+			\item die Sensorausgabe kann in dieses System eingebunden und somit verarbeitet werden.
+			\item Open-Source Framework.
 		\end{itemize}		
 		\begin{figure}
 			\centering
@@ -202,14 +239,23 @@
     		\end{subfigure}
 		\end{figure}			
 	\end{frame}
-	\begin{frame}{ROS}{Aufbau}
+\begin{frame}{Einarbeitung in die Generierung von Echtdaten}
+	\begin{figure}
+		\includegraphics[scale=0.4]{"required/Szenariobeschreibung_auto.jpg"}
+	\end{figure}	
+	\textbf{Gedankenexperiment:}\\
+	\begin{enumerate}
+		\item Welche weiteren Fahrerassistenzsysteme sind bei einem Fahrzeug mit dieser Ausstattung denkbar? 
+	\end{enumerate}
+\end{frame}
+	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{ROS}			
 		\footnotesize
+		ROS als Betriebssystem hat verschiedene Komponenten:
 		\begin{itemize}
-			\item \textbf{ROS Nodes}: Eigenständige Programme, die ihre vorgebene Logik ausführen
-			\item \textbf{ROS Master}: Zentraler Haupt-Knoten im System $\rightarrow$ kennt die Nodes des Systems und ermöglicht dadurch die Kommunikation zwischen der LiDAR-Sensor Node und der Datenverarbeitungs-Node.
-			\item \textbf{ROS Topic}: eigener \enquote{Kommunikationskanal}, wodurch die Erzeugung und Nutzung von Information entkoppelt ist
-			\item \textbf{ROS Messages}: Definieren die Daten die ROS Nodes über Topics kommuinizieren
-			\item Serviceorientierte Architektur, die mit Publisher-Subscriber Beziehungen arbeitet
+			\item \textbf{Nodes}: Prozesse, die eine bestimmte Aufgabe erfüllen.
+			\item \textbf{Topics}: eigener \enquote{Kommunikationskanal}. Wird für den Informationsaustausch verwendet
+			\item \textbf{Messages}: Enthalten die Informationen, die von den Knoten generiert und/oder konsumiert werden und die über die Topics ausgetauscht werden.
+			\item \textbf{Master}: Zentraler Knotenpunkt des Systems. Kennt alle Knoten, Topics und Messages. Koordiniert den Informationsaustausch und die Ausführung der Knoten.
 			\item Programmiersprachen: C++, Python 
 		\end{itemize}				
 		\begin{figure}
@@ -217,104 +263,92 @@
 			\caption{Darstellung der Kommuikation zwischen Nodes in ROS}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{ROS}{Ordnerstruktur}
-		\begin{figure}
-			\includegraphics[scale=0.5]{required/ROS_Folder_Structure.jpg}
-			\caption{Darstellung der Ordnerstruktur}
-		\end{figure}
-	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Erläuterung der geplanten Architektur}
-		\begin{figure}
-			\includegraphics[scale=0.35]{required/ROS_Architecture.jpg}
-			\caption{Darstellung der ROS Architektur des Szenarios}
-		\end{figure}
-	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Region of Interest}
-		\textbf{Motivation}
+%	\begin{frame}{ROS}{Ordnerstruktur}
+%		\begin{figure}
+%			\includegraphics[scale=0.5]{required/ROS_Folder_Structure.jpg}
+%			\caption{Darstellung der Ordnerstruktur}
+%		\end{figure}
+%	\end{frame}
+%	\begin{frame}{Einarbeitung in die Generierung von Echtdaten}{ROS}			
+%		\begin{figure}
+%			\includegraphics[scale=0.35]{required/ROS_Architecture.jpg}
+%			\caption{Darstellung der ROS Architektur des Szenarios}
+%		\end{figure}
+%	\end{frame}
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+		\textbf{Motivation:} Reduzierung der zu verarbeitenden Sensordatenmenge.
 		\begin{itemize}
-			\item Je nach Algorithmus ist nur ein Teil des Datensatzes für dessen Auswertung relevant
-			\item Beispiel für A-Piori Wissen im automatisierten Fahren: HD-Maps
-			\begin{itemize}
-				\item Im Fahrzeug verfügbare Information über die Umgebung
-				\item Daraus ableitbar: Regionen mit möglichem Verkehrsaufkommen und potentielle Gefahrenbereiche
-				\item Folgerung: gezielte Reduktion des ausgewerteten Datenraums auf den für den Algorithmus relevanten Bereich
-				\item Beispiel: Adaptive Cruise Control wertet Region aus, in der das vorausfahrende Fahrzeug vermutet wird, da nur jene für die Aufgabe relevant ist.
-			\end{itemize}
+			\item Je nach Anwendungsfall können nicht relevante Daten unberücksichtigt werden.
+			\item Für unseren Anwendungsfall, nicht relevante Daten können durch die Verwendung von HD (engl. High Definition)-Karten herausgefiltert werden.
+			\item HD-Karten liefern Informationen über die Straßeninfrastruktur.
+			\item Durch den Einsatz eines ADMA ist der genaue Standort des Fahrzeugs bekannt.
+			\item Folgerung: Feste Infrastrukturelemente (Gebäude, Masten, Ampeln) können ignoriert werden, wodurch sich die zu verarbeitende Datenmenge verringert.
 		\end{itemize}
 	\end{frame}
 
-	\begin{frame}{Region of Interest}{HD-map}
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 		\begin{figure}
 			\includegraphics[scale=0.3]{required/HD-Map.jpg}
-			\caption{Beispiel einer HD-map [Miller.2022]}			
+			\caption{Die Abbildung zeigt ein Beispiel für eine HD-Map. Die befahrbare Straße ist als farbige Linien dargestellt. [Miller.2022]}			
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Implementierung: Datenverarbeitung}{Region of Interest}							\textbf{Anwendung}: Wissen über die Teststrecke als im Fahrzeug verfügbare HD-map \\		
-		\textbf{Aufgabenstellung}: Begrenzung des Datensatzes auf Basis von 4 gegebenen Punkten $\hspace*{0.2em}^G\vspace*{-0.2em}P_{i}$ des globalen Koordinatensystems $G$ der Teststrecke
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+		Da die CARISSMA Teststrecke als HD-Karte vorliegt, kann man die LiDAR-Messungen außerhalb des befahrbaren Bereichs ignorieren.
 		\begin{figure}
-			\includegraphics[scale=0.4]{required/ROI-Teststrecke.jpg}
+			\includegraphics[scale=0.35]{required/ROI-Teststrecke.jpg}
+			\caption{Die Abbildung zeigt die CARISSMA-Teststrecke. Mit \textcolor{green}{grün}, der befahrbare Bereich. Mit \textcolor{red}{rot}, der nicht befahrbare Bereich.}	
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Region of Interest}	
-		\textbf{Gegeben:} 
-		\begin{itemize}
-			\item Punkte: $\hspace*{0.2em}^E\vspace*{-0.2em}P_{1}=(x,y,z)$, $\hspace*{0.2em}^E\vspace*{-0.2em}P_{2}=(x,y,z)$, $\hspace*{0.2em}^E\vspace*{-0.2em}P_{3}=(x,y,z)$, $\hspace*{0.2em}^E\vspace*{-0.2em}P_{4}=(x,y,z)$		
-			\item Transformationsmatrizen: 
-		\end{itemize}
-		\textbf{Vorgehensweise:}
-		\begin{enumerate}
-			\item Transformation der LiDAR-Punkte $\hspace*{0.2em}^L\vspace*{-0.2em}P_{i}$ in das globale Koordinatensystem 
-			\item Filterung aller Punkte mit Koordinaten $(x,y)$ außerhalb des durch die 4 Punkte $\hspace*{0.2em}^E\vspace*{-0.2em}P_{i}$ aufgespannten Bereichs
-		\end{enumerate}
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+		Der befahrbare Bereich kann als ein Polygon definiert werden, das aus Eckpunkten besteht.\\
+		Der $i$-th Eckpunkt kann definiert werden als
+		\begin{align}
+			\hspace*{0.2em}^E\vspace*{-0.2em}P_{i}=(x_i,y_i),
+		\end{align}
+wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
+		Wenn der befahrbare Bereich $\mathbf{P}$ aus 4 Eckpunkten besteht, kann er wie folgt definiert werden
+		\begin{align}
+			\mathbf{P}=\begin{matrix}
+				\hspace*{0.2em}^E\vspace*{-0.2em}P_{1}&\hspace*{0.2em}^E\vspace*{-0.2em}P_{2}&\hspace*{0.2em}^E\vspace*{-0.2em}P_{3}&\hspace*{0.2em}^E\vspace*{-0.2em}P_{4}
+			\end{matrix}
+		\end{align}
+	\textbf{Forschungsfrage:} Wenn die befahrbare Fläche bekannt ist, wie lassen sich dann nicht relevante LiDAR-Messungen herausfiltern? 
 	\end{frame}
-	\begin{frame}{Region of Interest}{Implementierungshinweise: Lokale Koordinatensysteme}
-		\begin{figure}
-			\centering
-    		\begin{subfigure}[b]{0.4\textwidth}
-				\includegraphics[scale=0.4]{required/Sensorkoordinatensysteme.jpg}
-				\caption{Sensorkoordinatensysteme in nuScenes [Caesar.2020]}
-        		\label{ROS}
-   		 	\end{subfigure}
-   		 	\vfill
-    		\begin{subfigure}[b]{0.4\textwidth}
-				\includegraphics[scale=0.5]{required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg}
-				\caption{Fahrzeugkoordinatensystem exterozeptiver Sensoren}
-        		\label{ROS}
-    		\end{subfigure}
-    		\hspace{1.5 cm}
-    		\begin{subfigure}[b]{0.4\textwidth}
-				\includegraphics[scale=0.2]{required/Fahrzeugkoordinatensystem CoG.jpg}
-				\caption{Fahrzeugkoordinatensystem der Fahrdynamikgleichungen [Breuer.2015]}
-        		\label{ROS}
-    		\end{subfigure}
-		\end{figure}
-		
-	\end{frame}
-	\begin{frame}{Region of Interest}{Implementierungshinweise: Lokale Koordinatensysteme}
+%\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+%		\begin{itemize}
+%			\item Transformationsmatrizen: 
+%		\end{itemize}
+%		\textbf{Vorgehensweise:}
+%		\begin{enumerate}
+%			\item Transformation der LiDAR-Punkte $\hspace*{0.2em}^L\vspace*{-0.2em}P_{i}$ in das globale Koordinatensystem 
+%			\item Filterung aller Punkte mit Koordinaten $(x,y)$ außerhalb des durch die 4 Punkte $\hspace*{0.2em}^E\vspace*{-0.2em}P_{i}$ aufgespannten Bereichs
+%		\end{enumerate}
+%	\end{frame}
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 		\begin{itemize}
-			\item Zahlreiche Koordinatensysteme im Fahrzeug, die eine Betrachtung der Information aus verschiedenen Perspektive ermöglichen
-			\item Zwischen den lokalen Koordinatensystemen des Fahrzeugs kann ein statischer Zusammenhang, analog einer Starrkörperbewegung, angenommen werden $\rightarrow$ Transformationsmatrizen sind zeitunabhängig
-			\item Fahrzeugkoordinatensysteme sind bei der Berechnung zwingend zu beachten, da Sie den Variablen Bedeutung verleihen
-			\item Beispiel einer Fahrdynamikgleichung:
-			\begin{equation}
-				\hspace*{0.2em}^V\vspace*{-0.2em}v_{x} = \frac{\delta}{\delta t}x \text{ gilt für } x =\hspace*{0.2em}^V\vspace*{-0.2em}x
-			\end{equation}
-					
+			\item Zahlreiche Koordinatensysteme im Fahrzeug, die eine Betrachtung der Information aus verschiedenen Perspektive ermöglichen.
+			\item Zwischen den lokalen Koordinatensystemen des Fahrzeugs kann ein statischer Zusammenhang, analog einer Starrkörperbewegung, angenommen werden $\rightarrow$ Transformationsmatrizen sind zeitunabhängig.
+			\item Fahrzeugkoordinatensysteme sind bei der Berechnung zwingend zu beachten, da Sie den Variablen Bedeutung verleihen.
+%			\item Beispiel einer Fahrdynamikgleichung:
+%			\begin{equation}
+%				\hspace*{0.2em}^V\vspace*{-0.2em}v_{x} = \frac{\delta}{\delta t}x \text{ gilt für } x =\hspace*{0.2em}^V\vspace*{-0.2em}x
+%			\end{equation}
+%					
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{Region of Interest}{Implementierungshinweise: Globale Koordinatensysteme}	
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 		\begin{figure}
-			\includegraphics[scale=0.35]{required/Globales Koordinatensystem.jpg}
-			\caption{Globales Koordinatensystem}
+			\includegraphics[scale=0.3]{required/Globales Koordinatensystem.jpg}
+			\caption{Dargestellt ist ein Fahrzeug in einem globalen Koordinatensystem.}
         	\label{Globales Koordinatensystem}
 		\end{figure}
 		\begin{itemize}
-			\item Stationäres Referenzkoordinatensystem
-			\item Ermöglicht die Beschreibung von Objekten relativ zu einem konstanten Koordinatensystem
-			\item Transformationsmatrix von lokalem Fahrzeugkoordinatensystem zu globalem Koordinatensystem ist für instationäre Objekte zeitabhängig
+			\item Die Daten aller Sensoren werden in ein Stationäres Referenzkoordinatensystem umgewandelt.
+			\item Ermöglicht die Beschreibung von Objekten relativ zu einem konstanten Koordinatensystem.
+			\item Transformationsmatrix von lokalem Fahrzeugkoordinatensystem zu globalem Koordinatensystem ist für instationäre Objekte zeitabhängig.
 		\end{itemize}					
 	\end{frame}
-	\begin{frame}{Region of Interest: Implementierungshinweise}{Anwendung auf das Szenario}
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 		\textbf{Nomenklatur:} 
 		\begin{itemize}
 			\item $\hspace*{0.2em}^E\vspace*{-0.2em}P$ : Punkt im globalen Koordinatensystem
@@ -323,21 +357,27 @@
 			\item $\hspace*{0.2em}^{S}\vspace*{-0.2em}P$ : Punkt im Fahrzeugkoordinatensystems der exterozeptiven Sensoren
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{Region of Interest}{Implementierungshinweise: Anwendung auf das Szenario}
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 		\begin{figure}
 			\includegraphics[scale=0.5]{required/Szenarioanwendung Koordinatentransformation.jpg}
-			\caption{Anwendung der Koordinatentransformation auf das Szenario. Zusammengesetzt aus Abbildungen in [Breuer.2015] und [Velodyne.2020]}
+			\caption{Die Abbildung zeigt eine grafische Darstellung der Koordinatentransformation vom LiDAR-Koordinatensystem in das Fahrzeugkoordinatensystem und vom Fahrzeugkoordinatensystem in das globale Koordinatensystem. Zusammengesetzt aus Abbildungen in [Breuer.2015] und [Velodyne.2020]}
         	\label{Globales Koordinatensystem}
        	\end{figure}
        	\footnotesize
-       	\begin{itemize}
-       		\item Innerhalb des Fahrzeug: statische Koordinatentransformation 
-       		\item Zwischen Fahrzeug- und Erdkoordinatensystem: zeitabhängige Koordinatentransformation (Position des Fahrzeugs im globalen Koordinatensystem durch den ADMA-Sensor gegeben)
-			\item Umsetzung mit tf-Modul aus ROS
-       	\end{itemize}
+%       	\begin{itemize}
+%       		\item Innerhalb des Fahrzeug: statische Koordinatentransformation 
+%       		\item Zwischen Fahrzeug- und Erdkoordinatensystem: zeitabhängige Koordinatentransformation (Position des Fahrzeugs im globalen Koordinatensystem durch den ADMA-Sensor gegeben)
+%			\item Umsetzung mit tf-Modul aus ROS
+%       	\end{itemize}
 	\end{frame}
-	\begin{frame}{Region of Interest}{Implementierungshinweise: Transformation in ROS}	
+	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 		\footnotesize
+		\begin{itemize}
+			\item Das ROS-Pachage \enquote{tf} liefert als Output die Transformationsmatrix zwischen Referenzsystemen.
+			\item Das RVIZ ROS-Package wird zur Visualisierung der transformierten Messungen verwendet.
+			\item RVIZ zeigt die transformierten Messungen an, wie sie vom tf-Package erzeugt wurden (see tutorial 2).
+%			\item Unterteilung in statische und dynamische (zeitabhängige) Transformatoren wird mit den jeweiligen Transformatoren umgesetzt
+		\end{itemize}
 		\textbf{Tutorial Links}
 		\begin{enumerate}
 			\item http://wiki.ros.org/tf/Tutorials
@@ -345,49 +385,40 @@
 			\item http://wiki.ros.org/tf2
 			\item Youtube-Tutorial: https://www.youtube.com/watch?v=QyvHhY4Y\_Y8
 		\end{enumerate}
-		\textbf{Implementierung}
-		\begin{itemize}
-			\item Unterteilung in statische und dynamische (zeitabhängige) Transformatoren wird mit den jeweiligen Transformatoren umgesetzt
-			\item Verwendung von rqt and rviz (see tutorial 2) um die Transformer zu visualisieren
-		\end{itemize}
-
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Ground Subtraction}
+	\begin{frame}{Datenvorverarbeitung}{Ground Subtraction}
 		\footnotesize
-		\textbf{Motivation}
+		\textbf{Motivation:} Reduzierung der zu verarbeitenden Sensordatenmenge.
 		\begin{itemize}
-			\item LiDAR Sensor gibt zahlreiche Reflektionen der Fahrbahnoberfläche aus
-			\item Diese Punkte gehören nicht zu den gesuchten Objekte und haben deswegen für die Objekterkennung keine Relevanz \\
-		\end{itemize}
-		\textbf{Ziele}
-		\begin{itemize}
-			\item Objektdetektionsalgorithmus muss Vernachlässigung von Reflektionen des Bodens nicht mehr erlernen
-			\item Verkleinerung des Lösungsraums  
+			\item LiDAR Sensor gibt zahlreiche Reflektionen der Fahrbahnoberfläche aus.
+			\item Einige Forschungsarbeiten befassen sich mit der Aufgabe, Objekte aus dem Schatten auf dem Boden zu erkennen.\\
+			\item Zur Vereinfachung wird in dieser Arbeit der Boden von der Punktwolke subtrahiert. 
+			\item Folgerung: Verkleinerung des Lösungsraums.		
 		\end{itemize}	
+	\textbf{Forschungsfrage:} Wie kann man die Grundebene subtrahieren? 
 		\begin{figure}
-			\includegraphics[scale=0.4]{required/Ground Subtraction.jpg}
-			\caption{Beispiel Ground Subtraction [Rummelhard.2017]}
+			\includegraphics[scale=0.33]{required/Ground Subtraction.jpg}
+			\caption{Die Abbildung zeigt ein Beispiel für eine Bodensubtraktion. Links: die rohe Punktwolke. In der Mitte die Punktwolkensegmentierung: bei Grün der Boden, bei Lila der Rest. Rechts: die Punktwolke ohne die Punkte, die dem Boden entsprechen. [Rummelhard.2017]}
         	\label{Ground Subtraction}
        	\end{figure}
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Ground Subtraction}
-		\textbf{Anwendung:}
+	\begin{frame}{Datenvorverarbeitung}{Ground Subtraction}
 		\begin{itemize}
-			\item Es wird eine ebene Fahrbahnoberfläche auf der Teststrecke angenommen
-			\item Zur Vereinfachung wird die Eliminierung der Punkte der Fahrbahnoberfläche auf Basis Höhe $z$ durchgeführt
-			\item Alternativen: RANSAC Algorithmus und weitere $\rightarrow$ weniger intuitiv, aber robuster			
+			\item Zwei Optionen für die Subtraktion der Grundfläche sind: z-Filterung und der RANSAC-Algorithmus.
+			\item Die z-Filterung bedeutet, dass alle Messungen unterhalb einer bestimmten Höhe weggelassen werden.
+			\item Die Implementierung der z-Filterung ist schneller als die Implementierung des RANSAC-Algorithmus.
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.5]{required/Ground Subtraction Implementierung.jpg} 
+			\caption{Die Abbildung zeigt eine grafische Darstellung der Bodensubtraktion. In Rot der Bereich, in dem die LiDAR-Messungen nicht berücksichtigt werden sollen. [Rummelhard.2017]}
 		\end{figure}
-		\textbf{Aufgabenstellung:} Verkleinerung des Datensatzes um Punkte der Fahrbahnoberfläche: Bedingung $\hspace*{0.2em}^{EF}\vspace*{-0.2em}z \leq 0.01m$
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Ground Subtraction}
+	\begin{frame}{Datenvorverarbeitung}{Ground Subtraction}
 		\footnotesize
-		\textbf{Alternative:} RANSAC Algorithmus (hohe Robustheit, vor allem auch gegen Ausreißer)
 		\begin{itemize}
-			\item Iterativen Ansatz: Statt allen Messwerten gleichzeitig zu betrachten, wird nur eine zufällige Auswahl auswertet. Aus diesen Messwerten wird ein Modell erstellt und, auf Basis der Distanz zwischen Messwerten und Modell, die Anzahl der das Modell unterstütztenden Punkte gespeichert. Nach einer definierten Anzahl an Iterationen wird das beste Modell ermittelt
-			\item Empfehlung: Verwendung einer existierenden High-Level Implementierung
+			\item Der Ransac-Algorithmus ist robuster, insbesondere gegenüber Ausreißern, aber seine Implementierung ist zeitaufwendiger.		
+			\item Der Algorithmus versucht, eine Ebenengleichung zu finden, die später als Schwellenwert für die Eliminierung von Punkten aus der Punktwolke verwendet wird.
+			\item Es nimmt zufällige Punkte aus der Punktwolke, um die Grundflächengleichung zu finden. 
 		\end{itemize}
 
 		\begin{figure}
@@ -396,24 +427,27 @@
         	\label{Clustering}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Clustering}
+	\begin{frame}{Datenvorverarbeitung}{Clustering}
 		\small
-		\textbf{Motivation:}
+		\textbf{Motivation:} um eine Objektliste aus der Punktwolke zu erstellen. 
 		\begin{itemize}
-			\item Verwendung der \enquote{Ähnlichkeit} von Datenpunkten (bspw. Koordinaten), um zusammengehörende Punkte zu erkennen und zu segmentieren
-			\item Ziel ist, die Struktur der Eingangsdaten zu lernen und eine automatische Segmentierung in Gruppen ähnlicher Datenpunkte vorzunehmen
+			\item Verwendung der \enquote{Ähnlichkeit} von Datenpunkten, um zusammengehörende Punkte zu erkennen und zu segmentieren.
+%			\item Ziel ist, die Struktur der Eingangsdaten zu lernen und eine automatische Segmentierung in Gruppen ähnlicher Datenpunkte vorzunehmen
 		\end{itemize}
+		\textbf{Forschungsfrage:} Welche Features können zum Clustern von Punkten verwendet werden? 
 		\begin{figure}
-			\includegraphics[scale=0.3]{required/Clustering.jpg}
-			\caption{Beispiel Clustering [Hyin.2018]}
+			\includegraphics[scale=0.37]{required/Clustering.jpg}
+			\caption{Die Abbildung zeigt ein Beispiel für Clustering. Mit grün, die Grundplatte. Bei rot, blau und gelb, die Fahrzeuge. [Hyin.2018]}
         	\label{Clustering}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{Datenverarbeitung}{Implementierung: Clustering}
-		\textbf{Anwendung:} Angewandt auf unser Szenario bedeutet dies, das einzelne Gruppen LiDAR-Punkte zu Clustern vereint werden. Diese Punktwolken repräsentieren Objekte der Umgebung, wodurch final eine Lokalisierung des vorausfahrenden Fahrzeugs ermöglicht wird. \\
-		\textbf{Aufgabenstellung:} Auf Basis des $k$-Means Clusteralgorithmus sollen die Datenpunkte des vorausfahrenden Autos gruppiert und segmentiert werden.
+	\begin{frame}{Datenvorverarbeitung}{Clustering}
+		\begin{itemize}
+\item Für unseren Anwendungsfall, bei dem die Grundfläche weg ist und sich nur wenige Objekte in der Umgebung befinden, kann eine Distanz-Clustering vorgenommen werden.\\
+\item Auf Basis des $k$-Means Clusteralgorithmus sollen die Datenpunkte des vorausfahrenden Autos gruppiert und segmentiert werden.
+		\end{itemize}
 	\end{frame}		
-	\begin{frame}{Datenverarbeitung}{Implementierungshinweise: Clustering}		
+	\begin{frame}{Datenvorverarbeitung}{Clustering}
 		\textbf{Allgemein:}
 		\begin{itemize}
 			\item Mehrere Optionen bei der Art der durchgeführten Clusteranalyse: partionierende, modellbasierte, hierachische, wahrscheinlichkeitsdichtebasierte, gitterbasierte Verfahren und Spectral Clustering
@@ -423,7 +457,7 @@
 			\end{equation}
 	\end{itemize}
 	\end{frame}
-	\begin{frame}{Clustering}{Implementierungshinweise: $k$-Means Algorithmus}
+	\begin{frame}{Datenvorverarbeitung}{Clustering}
 		\textbf{Beschreibung:} Aus einer Menge von ähnlichen Objekten wird eine vorher bekannte Anzahl von $k$ Clustern gebildet. Die Aufgabe wird gelöst, indem jeweils ein Repräsentant $c_k$ für jedes Cluster $C_k$ gesucht wird und zwar derart, dass alle Datenpunkte aus $\mathcal{D}$ nahe an ihrem jeweiligen Repräsentanten sind. \\
 		\textbf{Umsetzung:} 
 		\begin{itemize}
@@ -434,7 +468,7 @@
 			\item Diese Optimierungsaufgabe ist nicht konvex.
 		\end{itemize}
  	\end{frame}
- 	\begin{frame}{Clustering}{Implementierungshinweise: $k$-Means Algorithmus}
+ 	\begin{frame}{Datenvorverarbeitung}{Clustering}
  		\begin{itemize}
  			\item Um die nicht konvexe Optimierungsaufgabe zu lösen wird ein iteratives Verfahren, der $k$-Means Algorithmus verwendet. Dieser findet ein lokales Optimum.
  			\item Nutzt man im $k$-Means Algorithmus als Distanzmaß die quadrierte Euklidische Distanz
@@ -447,89 +481,87 @@
 			\end{equation}
  		\end{itemize}
  	\end{frame}
-	\begin{frame}{Clustering}{Implementierungshinweise: $k$-Means Algorithmus}
-		\textbf{Umsetzung LIoyd-Algorithmus:}
-		\begin{itemize}
-			\item 
-			\begin{enumerate}
-				\item Initialisierung: Wähle k zufällige Mittelwerte (Means): $m_1^{1},...,m_k^{1}$ aus dem Datensatz
-				\item Zuordnung: Jedes Datenobjekt wird dem Cluster zugeordnet, bei dem die Cluster-Varianz am wenigsten erhöht wird
-				\begin{equation}
-					S_i^{t} = { x_j : \lVert x_j - m_i^{t} \rVert ^2 \text{ für alle } i^{*}=1, ..., k}
-				\end{equation}
-				\item Aktualisierung: Neuberechnung der Mittelpunkte der Cluster:
-				\begin{equation}
-					m_i^{t+1} = \frac{1}{|S_i^{(t)}|} \sum_{x_j \in S_i}^{}\ x_j
-				\end{equation}
-				\item Schritte 2-3 werden wiederholt, bis die Zentren $c_1, ..., c_k$ stabil sind, d. h. sich nicht mehr signifikant ändern.
-			\end{enumerate}
-
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{$k$-Means-Algorithmus}{Vor- und Nachteile}
-		\textbf{Vorteil:} 
-		\begin{itemize}
-			\item Leistungsfähigkeit (Komplexität $\mathcal{O}(kM)$ pro Iteration)
-			\item Einfache Umsetzung, die lokales Minimum für die Optimierungsaufgabe liefert
-			\item Eines der am häufigsten verwendeten Datensätze
-		\end{itemize} 		
-		\textbf{Nachteile:}		
-		\begin{itemize}
-			\item Gefundene Lösung hängt stark von der initialen, zufälligen Startpunkten ab
-			\item Ausreißer in den Daten aus $\mathcal{D}$ beeinflussen , aufgrund der Mittelwertbildung für die Bestimmung der Clusterzentren, das finale Ergebnis stark
-			\item Anzahl der Clusterzentren $k$ bereits im Voraus gewählt
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{Objektdefinition}{Bestimmung der Bounding Box}
+%	\begin{frame}{Datenvorverarbeitung}{Clustering}
+%		\textbf{Umsetzung LIoyd-Algorithmus:}
+%		\begin{itemize}
+%			\item 
+%			\begin{enumerate}
+%				\item Initialisierung: Wähle k zufällige Mittelwerte (Means): $m_1^{1},...,m_k^{1}$ aus dem Datensatz
+%				\item Zuordnung: Jedes Datenobjekt wird dem Cluster zugeordnet, bei dem die Cluster-Varianz am wenigsten erhöht wird
+%				\begin{equation}
+%					S_i^{t} = { x_j : \lVert x_j - m_i^{t} \rVert ^2 \text{ für alle } i^{*}=1, ..., k}
+%				\end{equation}
+%				\item Aktualisierung: Neuberechnung der Mittelpunkte der Cluster:
+%				\begin{equation}
+%					m_i^{t+1} = \frac{1}{|S_i^{(t)}|} \sum_{x_j \in S_i}^{}\ x_j
+%				\end{equation}
+%				\item Schritte 2-3 werden wiederholt, bis die Zentren $c_1, ..., c_k$ stabil sind, d. h. sich nicht mehr signifikant ändern.
+%			\end{enumerate}
+%
+%		\end{itemize}
+%	\end{frame}
+%	\begin{frame}{Datenvorverarbeitung}{Clustering}
+%		\textbf{Vorteil:} 
+%		\begin{itemize}
+%			\item Leistungsfähigkeit (Komplexität $\mathcal{O}(kM)$ pro Iteration)
+%			\item Einfache Umsetzung, die lokales Minimum für die Optimierungsaufgabe liefert
+%			\item Eines der am häufigsten verwendeten Datensätze
+%		\end{itemize} 		
+%		\textbf{Nachteile:}		
+%		\begin{itemize}
+%			\item Gefundene Lösung hängt stark von der initialen, zufälligen Startpunkten ab
+%			\item Ausreißer in den Daten aus $\mathcal{D}$ beeinflussen , aufgrund der Mittelwertbildung für die Bestimmung der Clusterzentren, das finale Ergebnis stark
+%			\item Anzahl der Clusterzentren $k$ bereits im Voraus gewählt
+%		\end{itemize}
+%	\end{frame}
+	\begin{frame}{Datenvorverarbeitung}{Objektliste}
 		\footnotesize
-		\begin{itemize}
-			\item \textbf{Bounding Box:} Umschließt das Objekt und beschreibt dessen Position und Größe relativ zum Fahrzeug
-			\item \textbf{Motivation:} Sensordatenverabeitung stellt of nur eine kompremierte Form der Information zur Verfügung. Dies ist z.B. eine Objektliste, die u. a. "bounding box"- Informationen enthalten kann. 
-			\item \textbf{Vorgehen:} Bestimmung der Objektgrenzen auf Basis der segmentierten Objekt-LiDAR Punkte. Deren Koordinaten können für eine Bestimmung der Objektposition verwendet werden.
-			\item \textbf{Implementierungshinweise:} Verwenden sie zur Vereinfachung den 2D Bird's eye view. Bestimmen Sie auf Basis der Punktkoordinaten das Objektzentrum und schätzen sie mit ihrem Wissen über die typische Größe eines Autos die bounding box. Mögliche Größe: $1.6 \text{ m} \times 3.9 \text{ m}$.
-		\end{itemize}
+	\textbf{Motivation:} Um die Kritikalität mit Hilfe von KI-Algorithmen abschätzen zu können, wird eine Objektliste benötigt. Die Objektliste enthält Informationen über die Objekte in der Umgebung: Position, Geschwindigkeit, Ausrichtung usw.\\
+	Ein Bounding Box kann helfen, die Objekte in der Umgebung zu visualisieren, da er ihre Ausrichtung, Breite, Länge und Höhe anzeigt. Es hilft auch bei der Visualisierung der Clustering-Leistung.
+%			\item \textbf{Vorgehen:} Bestimmung der Objektgrenzen auf Basis der segmentierten Objekt-LiDAR Punkte. Deren Koordinaten können für eine Bestimmung der Objektposition verwendet werden.
+%			\item \textbf{Implementierungshinweise:} Verwenden sie zur Vereinfachung den 2D Bird's eye view. Bestimmen Sie auf Basis der Punktkoordinaten das Objektzentrum und schätzen sie mit ihrem Wissen über die typische Größe eines Autos die bounding box. Mögliche Größe: $1.6 \text{ m} \times 3.9 \text{ m}$.
 		\begin{figure}
-			\includegraphics[scale=0.35]{required/Bounding_Box.jpg}
+			\includegraphics[scale=0.4]{required/Bounding_Box.jpg}
 			\caption{Veranschaulichung der Bounding Box Bestimmung. Modifiziert von [Wang.2019]}
         	\label{Ground Subtraction}
        	\end{figure}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
-		Im Folgenden wird ein kurzer Einstieg in das Thema Maschinelles Lernen vermittelt. Der Fokus liegt auf einem oberflächlichen Verständnis für Begrifflichkeiten und Methoden. Es sei jedoch erwähnt, dass Maschinelles Lernen Mathematik und Statistik basiert, welche für ein tieferes Verständnis nötig ist, aber den Rahmen dieses Projektes übertreffen würde.
-		Für einen tieferen Einstieg empfiehlt sich bspw.: 
-		\begin{itemize}
-			\item  Literatur: z.B. [Botsch.2020]
-			\item Diverse Online-Quellen und Videos
-			\item Studium im entsprechenden Bereich 
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+%	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
+%		Im Folgenden wird ein kurzer Einstieg in das Thema künstlichen Intelligenz vermittelt. Der Fokus liegt auf einem oberflächlichen Verständnis für Begrifflichkeiten und Methoden. Es sei jedoch erwähnt, dass künstlichen Intelligenz Mathematik und Statistik basiert, welche für ein tieferes Verständnis nötig ist, aber den Rahmen dieses Projektes übertreffen würde.
+%		Für einen tieferen Einstieg empfiehlt sich bspw.: 
+%		\begin{itemize}
+%			\item  Literatur: z.B. [Botsch.2020]
+%			\item Diverse Online-Quellen und Videos
+%			\item Studium im entsprechenden Bereich 
+%		\end{itemize}
+%	\end{frame}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\footnotesize
-		\textbf{Allgemein:} Der Begriff Maschinelles Lernen fasst Methoden der Signalverarbeitung zusammen, die statistische Zusammenhänge in Daten mit Hilfe von Computern finden und damit in der Lage sind, zukünftige Daten vorherzusagen. Man spricht auch von der künstlichen Generierung von Wissen aus Erfahrung. Das maschinelle Lernen beruht auf der mathematischen Statistik und beschäftigt sich mit dem „Lernen“ aus Daten, d. h. mit dem Finden von Gesetzmäßigkeiten in den Daten\\
+		Der Begriff künstlichen Intelligenz fasst Methoden der Signalverarbeitung zusammen, die statistische Zusammenhänge in Daten mit Hilfe von Computern finden und damit in der Lage sind, zukünftige Daten vorherzusagen.\\ Man spricht auch von der künstlichen Generierung von Wissen aus Erfahrung. Das maschinelle Lernen beruht auf der mathematischen Statistik und beschäftigt sich mit dem „Lernen“ aus Daten, d. h. mit dem Finden von Gesetzmäßigkeiten in den Daten.\\
 		\begin{figure}
-			\includegraphics[scale=0.5]{required/ML_Einfuhrung.jpg}
+			\includegraphics[scale=0.45]{required/ML_Einfuhrung.jpg}
 			\caption{Grundkonzept des maschinellen Lernens [Wuttke.2020]}
         	\label{Ground Subtraction}
        	\end{figure}
 
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
-		Maschinelles Lernen ist ...
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
+		künstlichen Intelligenz ist ...
 		\begin{itemize}
-			\item ein Teilbereich der künstlichen Intelligenz
-			\item zunehmend relevant in allen Ingenieurswissenschaften, da die Rechenleistung und verfügbare Datenmenge in den letzten Jahren stark zugenommen hat
-			\item fähig zahlreiche komplexe praktische Anwendungen erfolgreich zu bearbeiten
+%			\item ein Teilbereich der künstlichen Intelligenz
+			\item zunehmend relevant in allen Ingenieurswissenschaften, da die Rechenleistung und verfügbare Datenmenge in den letzten Jahren stark zugenommen hat.
+			\item fähig zahlreiche komplexe praktische Anwendungen erfolgreich zu bearbeiten.
 	\end{itemize}		
 		Die Arbeitsschritte lassen sich grob folgender Maßen zusammenfassen:
 		\begin{enumerate}
-			\item Definition der Ziele
-			\item Vorbereitung der Daten
-			\item Lernphase
-			\item Interpretation der Ergebnisse
-			\item Nutzung in einer praktischen Anwendung
+			\item Definition der Ziele.
+			\item Vorbereitung der Daten.
+			\item Lernphase.
+			\item Interpretation der Ergebnisse.
+			\item Nutzung in einer praktischen Anwendung.
 		\end{enumerate}
 	\end{frame}
-    \begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+    \begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\begin{figure}
 			\includegraphics[scale=0.4]{required/Bereiche_Machine_Learning.jpg}
 			\caption{Anwendungsgebiete des maschinellen Lernens[Wuttke.2020]}
@@ -537,17 +569,17 @@
        	\end{figure}
      
     \end{frame}
-    \begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+    \begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\vspace{1cm}       	
-       	\textbf{Hinweis:} Der bereits angewandte $k$-Means-Algorithmus entspricht damit Maschinellem Lernen. Die Art wird des unüberwachten Lernens (eng. Unsupervised Learning) genannt. Bei dieser lernt Algorithmus allein aus den Eingängen, es gibt keine zugehörigen Ausgangsdaten. Ziel ist es, die Struktur in den Eingangsdaten zu lernen und ein Modell dafür zu erstellen.
+       	\textbf{Hinweis:} Der bereits angewandte $k$-Means-Algorithmus entspricht damit Maschinellem Lernen. Die Art wird des unüberwachten Lernens (eng. Unsupervised Learning) genannt. Bei dieser lernt Algorithmus allein aus den Eingängen, es gibt keine zugehörigen Labels. Ziel ist es, die Struktur in den Eingangsdaten zu lernen und ein Modell dafür zu erstellen.
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\small	
 		\textbf{Überwachtes Lernen} (engl. Supervised Learning)	
 		\footnotesize
 		\begin{itemize}
 			\item Eine Art des maschinellen Lernens (Andere: Unsupervised Learning, Semi-Supervised Learning, Reinforcement Learning)
-			\item Ein Algorithmus lernt aus Beispielen von Eingängen und Ausgängen, d. h. es sind Eingangsdaten und zugehörige Ausgangsdaten (label)
+			\item Ein Algorithmus lernt aus Beispielen von gelabelt Eingängen, d. h. es sind Eingangsdaten und zugehörige Labels
 für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingangsdaten zu machen.
 		\end{itemize}
 		\begin{figure}
@@ -557,7 +589,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
        	\end{figure}
 	\end{frame}
 
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\begin{itemize}
 			\item \textbf{Ziel:} Algorithmus zur Bestimmung einer beschreibenden Größe eines Systems, basierend auf im Vorfeld beobachteten Merkmalen dieses Systems, zu finden. Der Algorithmus soll dann auf Fälle angewandt werden, bei denen die Werte der zu beschreibenden Größe unbekannt sind
 			\item Wenn pro Beobachtung $N$ Merkmale vorliegen, so werden diese im Vektor \textbf{x} zusammengefasst
@@ -567,7 +599,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\item Die zu beschreibende Größe wird mit \textbf{y} notiert, die durch den Algorithmus berechnete mit $\hat{\textbf{y}} = f(\textbf{x})$.
 		\end{itemize}	
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\textbf{Regression}	
 		\begin{itemize}
 			\item Falls $\textbf{y}$ kontinuierliche Werte annimmt, also $\textbf{y} \in \mathbb{R}$, werden die Eingangswerte \textbf{x} auf eine Ausgabe $\hat{\textbf{y}}$ regressiert 
@@ -579,7 +611,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
         	\label{Machine Learning}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\footnotesize
 		\textbf{Training: } 		
 		\scriptsize	
@@ -597,7 +629,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
         	\label{Machine Learning}
 		\end{figure}			
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\small		
 		\textbf{Funktion f(x):}
 		\begin{itemize}
@@ -606,13 +638,34 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\item Die Komplexität der Funktion spielt eine entscheidende Rolle für Over- bzw. Underfitting
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
+	%		\textbf{Umgang mit großen Datenmengen:}
+	\begin{itemize}
+		\item Falls die Anzahl der Datenpunkte $M$ sehr groß wird, kann es sinnvoll sein den Datensatz im Training in sogenannte Batches aufzuteilen und sich über ein Gradientenabstiegsverfahren sequentiell der Lösung anzunähern.
+		\begin{equation}
+			\Theta ^{(l+1)} = \theta ^{(l)} - \alpha \frac{\delta}{\delta \theta} \Bigl(\mathcal{L} (y_m, f_{\theta} (x_m))\Bigr) \Big| _{\theta = \theta^{(l)}}
+		\end{equation}
+		\item[] Dabei ist $l$ der Index der Iteration und $\alpha$ die sogenannte Lernrate, die die Schrittweite pro Iteration festlegt.
+		\item Nutzt man für die Aktualisierung der Parameter den gesamten Datensatz $\mathcal{D}$, so nennt man dies eine Epoche.
+	\end{itemize}
+\end{frame}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
+	\textbf{Normierung}
+	\begin{itemize}
+		\item Bei der Minimierung des quadratischen Fehlers haben Merkmale $x_n$, deren Wertebereich auch Zahlen mit großem Betrag enthält, einen größeren Einfluss auf die Lösung, als Merkmale, deren Wertebereich nur Zahlen mit kleinem Betrag besteht.
+		\item Um dies zu neutralisieren, werden die Wertebereiche aller Merkmale auf das Intervall [0, 1] abgebildet
+		\begin{equation}
+			x_{n,m}^{\text{norm}} = \frac{x_{n,m} - x_{n,\text{min}}}{x_{n,\text{max}} - x_{n,\text{min}}}
+		\end{equation}
+	\end{itemize}
+\end{frame}
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\footnotesize		
 		\textbf{Over- und Underfitting:}	
 		\begin{itemize}
-			\item Beachte: Auch der verwendete Trainingsdatensatz unterliegt der Statistik (Welcher Teil der Realität wird dargestellt?, Messfehler?, Rauschen?, etc.)		
-			\item Bei zu hoher Freiheit, kann der Verlust im Training sehr gering werden, obwohl der Algorithmus für neue, unbekannte Daten weniger gut approximieren würde. ist. Grund dafür ist, dass der Algorithmus sich zu stark an den eingeschränkten Trainingsdatensatz anpasst. Man spricht von Overfitting.
-			\item Bei zu geringer Freiheit, kann die Funktion den geforderten Datensatz nicht darstellen. Man spricht von Underfittng.
+			\item Underfitting bedeutet, dass die Leistung des Algorithmus gering ist. Der Algorithmus ist nicht in der Lage, zu generalisieren.		
+			\item Overfitting bedeutet, dass die Leistung des Algorithmus sehr hoch ist, wenn er für die Trainingsdaten ausgewertet wird, aber nicht generalisieren kann.
+			\item Gründe für Under- und Overfitting sind unter anderem: die Komplexität des Algorithmus, die Anzahl der Trainingsepochen, mangelnde Diversität der Trainingsdaten.
 		\end{itemize}
 		\begin{figure}
 			\includegraphics[scale=0.25]{required/Over and Underfitting.png}
@@ -620,43 +673,21 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
         	\label{Over and Underfitting}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
-		\textbf{Umgang mit großen Datenmengen:}
+	\begin{frame}{KI-Methoden}{Ermittlung der Kritikalität}
+		\textbf{Motivation: }die Kritikalität kann dazu dienen, zu bestimmen, wie kritisch ein bestimmtes Verkehrsszenario ist. Sie kann bei der Entscheidung über die Auslösung von Fahrerassistenzsystemen (z. B. Notbremsung), reversiblem Insassenschutz (z. B. Gurtstraffer) und nicht reversiblem Insassenschutz (z. B. Airbags und Sicherheitsgurt-Pirotecnic) helfen.
 		\begin{itemize}
-			\item Falls $M$, die Anzahl der Datenpunkte, sehr groß wird, kann es sinnvoll sein den Datensatz im Training in sogenannte Batches aufzuteilen und sich über ein Gradientenabstiegsverfahren sequentiell der Lösung anzunähern.
-			\begin{equation}
-				\Theta ^{(l+1)} = \theta ^{(l)} - \alpha \frac{\delta}{\delta \theta} \Bigl(\mathcal{L} (y_m, f_{\theta} (x_m))\Bigr) \Big| _{\theta = \theta^{(l)}}
-			\end{equation}
-			\item[] Dabei ist $l$ der Index der Iteration und $\alpha$ die sogenannte Lernrate, die die Schrittweite pro Iteration festlegt.
-			\item Nutzt man für die Aktualisierung der Parameter den gesamten Datensatz $\mathcal{D}$, so nennt man dies eine Epoche.
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Grundlagen des Maschinellen Lernens}
-		\textbf{Normierung}
-		\begin{itemize}
-			\item Bei der Minimierung des quadratischen Fehlers haben Merkmale $x_n$, deren Wertebereich auch Zahlen mit großem Betrag enthält, einen größeren Einfluss auf die Lösung, als Merkmale, deren Wertebereich nur Zahlen mit kleinem Betrag besteht.
-			\item Um dies zu neutralisieren, werden die Wertebereiche aller Merkmale auf das Intervall [0, 1] abgebildet
-			\begin{equation}
-				x_{n,m}^{\text{norm}} = \frac{x_{n,m} - x_{n,\text{min}}}{x_{n,\text{max}} - x_{n,\text{min}}}
-			\end{equation}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Ermittlung der kritischen Zeit}
-		\textbf{Motivation}
-		\begin{itemize}
-			\item Die Berechnung der kritischen Zeit ist auch aus Fahrdynamikgleichungen ableitbar und setzt deswegen keine Notwendigkeit für KI-Algorithmen voraus.
+			\item Die Berechnung der Kritikalität ist auch aus Fahrdynamikgleichungen ableitbar und setzt deswegen keine Notwendigkeit für KI-Algorithmen voraus.
 			\item Die dadurch gegebene Intuition für das Ergebnis ermöglicht aber ein gutes Verständnis für die Möglichkeiten und Grenzen von KI-Algorithmen.
 			\item Ziel ist die kritische Zeit bis zum Auffahrunfall zu berechnen, um z. B. eine Notbremsung zu entwerfen
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Erläuterung: Ermittlung der kritischen Zeit}
-		Ein Maß für die Kritikalität eines Verkehrsszenarios ist die sogenannte \textbf{\enquote{Time-To-Collision} (TTC)} \\ 
-		\textbf{Erläuterung:}
+	\begin{frame}{KI-Methoden}{Ermittlung der Kritikalität}
+		Ein Maß für die Kritikalität eines Verkehrsszenarios ist die \textbf{\enquote{Time-To-Collision} (TTC)} \\ 
 		\begin{itemize}
-			\item Je kleiner der Wert der TTC, desto kritischer das Szenario
-			\item Für Auffahrunfälle: TTC kann aus der Distanz $d$ der beiden Fahrzeuge und der relativen Geschwindigkeit $v_{x,\text{rel}}$ bestimmt werden
+			\item Je kleiner der Wert der TTC, desto kritischer das Szenario.
+			\item Für Auffahrunfälle, die TTC kann aus der Distanz $d$  zwischen beiden Fahrzeugen und der relativen Geschwindigkeit $v_{x,\text{rel}}=v_{x,\text{ego}}-v_{x,\text{tp}}$, die aus der Geschwindigkeit des EGO-Fahrzeugs $v_{x,\text{ego}}$ und der Geschwindigkeit der anderen Verkehrsteilnehmer $v_{x,\text{tp}}$ geschätzt wird, bestimmt werden:
 			\begin{equation}
-				TTC = 
+				\text{TTC} = 
 				\begin{cases}
 					\frac{d}{|v_{\text{x,\text{rel}}}|} \text{ für } v_{x,\text{rel}}<0 \\
 					\tau \text{ für } v_{x,\text{rel}} \geq 0 \text{,}
@@ -665,9 +696,10 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\item[] wobei $\tau$ einen großen Wert besitzt, der indiziert, dass das Szenario unkritisch ist.
 		\end{itemize}			
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierung: lineare Regression}
+	\begin{frame}{KI-Methoden}{Lineare Regression}
 		\begin{enumerate}
-			\item Generieren Sie einen Datensatz $\mathcal{D}_{train}$ mit den Eingangsvektoren $x_m$, der die Distanz und relativ Geschwindigkeit zwischen Ego- und vorausfahrendem Fahrzeug enthält. Erzeugen sie zudem das zugehörige Label, die kritische Zeit bis zur Kollision. Damit sind die Zufallsvariablen für Ein- und Ausgang:
+			\item Generieren Sie einen Datensatz $\mathcal{D}_\text{train}$ mit den Eingangsvektoren $x_m$, der die Distanz und relativ Geschwindigkeit zwischen Ego- und vorausfahrendem Fahrzeug enthält. 
+			\item Erzeugen sie zudem das zugehörige Label: die TTC. Damit sind die Zufallsvariablen für Ein- und Ausgang:
 		\begin{equation}
 			x = 			
 			\begin{bmatrix}
@@ -677,7 +709,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\hspace{0.2 cm}
 			\text{und}
 			\hspace{0.2 cm}			
-			y = TTC \in \mathbb{R}
+			y = \text{TTC} \in \mathbb{R}
 		\end{equation}
 			\item[] Vorgaben bei der Erzeugung des Trainingsdatensatzes $\mathcal{D}_{\text{train}}$:
 			\begin{itemize}
@@ -687,21 +719,21 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\end{itemize}			 
 		\end{enumerate}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierung: lineare Regression}
+	\begin{frame}{KI-Methoden}{Lineare Regression}
 		\begin{enumerate}
-			\setcounter{enumi}{1}
+			\setcounter{enumi}{2}
 			\item Erzeugen Sie ein Testdatenset $\mathcal{D}_{\text{test}}$ mit folgenden Vorgaben:
 			\begin{itemize}
 				\item Distanz $d$: Schrittweite $0.5m$; Intervall $[1m, 40m]$ 
 				\item Relativgeschwindigkeit $v_{x,\text{rel}}$: Schrittweite $3 km/h$; Intervall $[-70 km/h, -7 km/h]$
 			\end{itemize}
-			\item Wenden sie als Methode eine lineare Regression an. Bestimmen Sie den Parameter $\theta$ mit Hilfe des Trainingsdatensatzes $\mathcal{D}_{train}$. Vergessen Sie dabei die Normierung des Eingangsvektors nicht.
-			\item Testen sie den trainierten Algorithmus mit dem Testdatensatz $\mathcal{D}_{test}$, indem Sie die Ausgaben $\hat{y}$ mit den korrekten Ergebnissen $y = TTC$ vergleichen
-			\item Visualisieren Sie das das Mapping der linearen Regressios zwischen $d$, $v_{x,\text{rel}}$ und $\hat{y}$. Visualisieren Sie im selben Plot auch den Datensatz $\mathcal{D}_{test}$
-			\item Integration in die ROS-Pipeline zur Bestimmung der kritischen Zeit TTC in Echtzeit
+			\item Wenden sie als Methode eine lineare Regression an. Bestimmen Sie den Parameter $\theta$ mit Hilfe des Trainingsdatensatzes $\mathcal{D}_\text{train}$. Vergessen Sie dabei die Normierung des Eingangsvektors nicht.
+			\item Testen sie den trainierten Algorithmus mit dem Testdatensatz $\mathcal{D}_\text{test}$, indem Sie die Ausgaben $\hat{y}$ mit den korrekten Ergebnissen $y = \text{TTC}$ vergleichen
+			\item Visualisieren Sie das das Mapping der linearen Regressios zwischen $d$, $v_{x,\text{rel}}$ und $\hat{y}$. Visualisieren Sie im selben Plot auch den Datensatz $\mathcal{D}_\text{test}$
+			\item Integration in die ROS-Pipeline zur Bestimmung der Kritikalität TTC online
 		\end{enumerate}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierungshinweise: Lineare Regression}
+	\begin{frame}{KI-Methoden}{Lineare Regression}
 		\footnotesize		
 		\textbf{Motivation:} Einfaches ML-Modell zur Prognose der TTC. Zudem eine gute Veranschaulichung des MLs.
 		\begin{itemize}
@@ -717,7 +749,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
         	\label{Over and Underfitting}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierungshinweise: Lineare Regression}
+	\begin{frame}{KI-Methoden}{Lineare Regression}
 		\footnotesize
 		\begin{itemize}			
 			\item Für eine kompaktere Schreibweise lassen sich $w$ und $t$ in den Parametervektor $\Theta = [w^{\text{T}}, t]^{\text{T}}$ der Dimension $(N+1)$ zusammenfassen und der Eingang $x$ erweitern zu $ \tilde{x} = [x^{\text{T}}, 1]^{\text{T}}$.
@@ -735,7 +767,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierungshinweise: Lineare Regression}
+	\begin{frame}{KI-Methoden}{Lineare Regression}
 		Die Lösung ist:
 		\begin{equation}
 				\theta = \Bigl( \sum_{m=1}^M\ \tilde{x}_m \tilde{x}_m^{\text{T}} \Bigr)^{-1} \Bigl( \sum_{m=1}^M\ \tilde{x}_m y_m \Bigr)
@@ -763,7 +795,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 		\end{equation}
 	\end{frame}
 	
-	\begin{frame}{KI-Algorithmus}{Implementierung: Nicht-lineare Basisfunktionen}
+	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
 		\small		
 		\textbf{Motivation}
 		\footnotesize
@@ -779,7 +811,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
         	\label{Over and Underfitting}
 		\end{figure}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierung: Nicht-lineare Basisfunktionen}
+	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
 		\begin{enumerate}
 			\item Verwenden Sie die Datensätze der vorhergehenden Aufgabe.
 			\item Analog zum beschriebenen Verfahren $x$ soll eine nichtlineare Basisfunktion $\varphi (x)$ verwendet werden. Folgende wird in diesem Fall gegeben:
@@ -799,16 +831,16 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\end{flalign}
 		\end{enumerate}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierung: Nicht-lineare Basisfunktionen}
+	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
 		\begin{enumerate}
 			\setcounter{enumi}{2}	
-			\item Bestimmung von $\theta$ für das neue Regressionsmodell. Test der Ausgabe $\hat{y}$ für den Testdatensatz $\mathcal{D}_{test}$.
-			\item Visualisierung des Zusammenhangs von $d$ und $v_x,rel$ zu $\hat{y}$ für das berechnete Regressionsmodell. Visualisierung des Datensatzes $\mathcal{D}_{test}$ im selben Plot.
-			\item Integration in die ROS-Pipeline zur Bestimmung der kritischen Zeit TTC in Echtzeit
+			\item Bestimmung von $\theta$ für das neue Regressionsmodell. Test der Ausgabe $\hat{y}$ für den Testdatensatz $\mathcal{D}_\text{test}$.
+			\item Visualisierung des Zusammenhangs von $d$ und $v_x,rel$ zu $\hat{y}$ für das berechnete Regressionsmodell. Visualisierung des Datensatzes $\mathcal{D}_\text{test}$ im selben Plot.
+			\item Integration in die ROS-Pipeline zur Bestimmung der Kritikalität TTC online
 			\item Zusatzaufgabe: Untersuchen sie die Folgen einer Änderung des Trainingsdatensatzes oder der Basisfunktion
 		\end{enumerate}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierungshinweise: Nicht-lineare Basisfunktionen}
+	\begin{frame}{KI-Methoden}{Implementierungshinweise: Nicht-lineare Basisfunktionen}
 		\begin{itemize}
 			\item Basiert auf der linearen Regression, wobei $x$ durch $\phi (x)$ ersetzt wird.
 			\begin{equation}
@@ -834,7 +866,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\end{equation}
 		\end{itemize}
 	\end{frame}
-	\begin{frame}{KI-Algorithmus}{Implementierungshinweise: Nicht-lineare Basisfunktionen}
+	\begin{frame}{KI-Methoden}{Implementierungshinweise: Nicht-lineare Basisfunktionen}
 		\begin{itemize}
 			\item In Matrixschreibweise ergibt sich:			
 		\begin{equation}

@@ -1,0 +1,3310 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8) (preloaded format=pdflatex 2022.8.18)  8 SEP 2022 19:38
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./slides.tex
+(slides.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-08-05> (THIbeamer.cls
+Document Class: THIbeamer 
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamer.cls
+Document Class: beamer 2022/05/17 v3.67 A class for typesetting presentations
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemod
+es.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
+y
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count185
+)
+\beamer@tempbox=\box51
+\beamer@tempcount=\count186
+\c@beamerpauses=\count187
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasedec
+ode.sty
+\beamer@slideinframe=\count188
+\beamer@minimum=\count189
+\beamer@decode@box=\box52
+)
+\beamer@commentbox=\box53
+\beamer@modecount=\count190
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen138
+\footheight=\dimen139
+\sidebarheight=\dimen140
+\beamer@tempdim=\dimen141
+\beamer@finalheight=\dimen142
+\beamer@animht=\dimen143
+\beamer@animdp=\dimen144
+\beamer@animwd=\dimen145
+\beamer@leftmargin=\dimen146
+\beamer@rightmargin=\dimen147
+\beamer@leftsidebar=\dimen148
+\beamer@rightsidebar=\dimen149
+\beamer@boxsize=\dimen150
+\beamer@vboxoffset=\dimen151
+\beamer@descdefault=\dimen152
+\beamer@descriptionwidth=\dimen153
+\beamer@lastskip=\skip47
+\beamer@areabox=\box54
+\beamer@animcurrent=\box55
+\beamer@animshowbox=\box56
+\beamer@sectionbox=\box57
+\beamer@logobox=\box58
+\beamer@linebox=\box59
+\beamer@sectioncount=\count191
+\beamer@subsubsectionmax=\count192
+\beamer@subsectionmax=\count193
+\beamer@sectionmax=\count194
+\beamer@totalheads=\count195
+\beamer@headcounter=\count196
+\beamer@partstartpage=\count197
+\beamer@sectionstartpage=\count198
+\beamer@subsectionstartpage=\count199
+\beamer@animationtempa=\count266
+\beamer@animationtempb=\count267
+\beamer@xpos=\count268
+\beamer@ypos=\count269
+\beamer@ypos@offset=\count270
+\beamer@showpartnumber=\count271
+\beamer@currentsubsection=\count272
+\beamer@coveringdepth=\count273
+\beamer@sectionadjust=\count274
+\beamer@toclastsection=\count275
+\beamer@tocsectionnumber=\count276
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseopt
+ions.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+\beamer@paperwidth=\skip48
+\beamer@paperheight=\skip49
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.st
+y
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count277
+\Gm@cntv=\count278
+\c@Gm@tempcnt=\count279
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks17
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cf
+g))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs
+.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-common.tex
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-common-lists.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfu
+til-latex.def
+\pgfutil@abb=\box60
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfr
+cs.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.t
+ex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkey
+s.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eysfiltered.code.tex
+\pgfkeys@tmptoks=\toks21
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
+ode.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathca
+lc.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathut
+il.code.tex
+\pgf@x=\dimen164
+\pgf@xa=\dimen165
+\pgf@xb=\dimen166
+\pgf@xc=\dimen167
+\pgf@y=\dimen168
+\pgf@ya=\dimen169
+\pgf@yb=\dimen170
+\pgf@yc=\dimen171
+\c@pgf@counta=\count280
+\c@pgf@countb=\count281
+\c@pgf@countc=\count282
+\c@pgf@countd=\count283
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathpa
+rser.code.tex
+\pgfmath@dimen=\dimen172
+\pgfmath@count=\count284
+\pgfmath@box=\box61
+\pgfmath@toks=\toks22
+\pgfmath@stack@operand=\toks23
+\pgfmath@stack@operation=\toks24
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.basic.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.trigonometric.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.random.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.comparison.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.base.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.round.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.misc.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfu
+nctions.integerarithmetics.code.tex)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfl
+oat.code.tex
+\c@pgfmathroundto@lastzeros=\count285
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfco
+re.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.st
+y
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.st
+y
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphic
+s.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.
+def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfs
+ys.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfk
+eys.code.tex)
+\pgf@x=\dimen175
+\pgf@y=\dimen176
+\pgf@xa=\dimen177
+\pgf@ya=\dimen178
+\pgf@xb=\dimen179
+\pgf@yb=\dimen180
+\pgf@xc=\dimen181
+\pgf@yc=\dimen182
+\pgf@xd=\dimen183
+\pgf@yd=\dimen184
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count286
+\c@pgf@countb=\count287
+\c@pgf@countc=\count288
+\c@pgf@countd=\count289
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+\pgf@sys@id@count=\count290
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+f.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsys-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count291
+\pgfsyssoftpath@bigbuffer@items=\count292
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pg
+fsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.c
+fg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex-dev/graphics\mathcol
+or.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+core.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
+ode.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.co
+de.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepoints.code.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen185
+\pgf@picmaxx=\dimen186
+\pgf@picminy=\dimen187
+\pgf@picmaxy=\dimen188
+\pgf@pathminx=\dimen189
+\pgf@pathmaxx=\dimen190
+\pgf@pathminy=\dimen191
+\pgf@pathmaxy=\dimen192
+\pgf@xx=\dimen193
+\pgf@xy=\dimen194
+\pgf@yx=\dimen195
+\pgf@yy=\dimen196
+\pgf@zx=\dimen197
+\pgf@zy=\dimen198
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen199
+\pgf@path@lasty=\dimen256
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathusage.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen257
+\pgf@shorten@start@additional=\dimen258
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corescopes.code.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count293
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen259
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coretransformations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen260
+\pgf@pt@y=\dimen261
+\pgf@pt@temp=\dimen262
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corequick.code.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreobjects.code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corearrows.code.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen263
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreshade.code.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen264
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreimage.code.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coreexternal.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box65
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corelayers.code.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+coretransparency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corepatterns.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgf
+corerdf.code.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\xxcolo
+r.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count296
+\XC@countmixins=\count297
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.st
+y
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.st
+y
+Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.st
+y
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexc
+mds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarer
+r.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkey
+s.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdef
+inekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescap
+e.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxma
+cro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.st
+y
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\get
+titlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.
+sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count298
+)
+\@linkdim=\dimen265
+\Hy@linkcounter=\count299
+\Hy@pagecounter=\count300
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.st
+y
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.
+sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count301
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4045.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4045.
+Package hyperref Info: Option `implicit' set `false' on input line 4045.
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4408.
+\c@Hy@tempcnt=\count302
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4746.
+\XeTeXLinkMargin=\dimen266
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintc
+alc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count303
+\Field@Width=\dimen267
+\Fld@charsize=\dimen268
+Package hyperref Info: Hyper figures OFF on input line 6024.
+Package hyperref Info: Link nesting OFF on input line 6029.
+Package hyperref Info: Hyper index ON on input line 6032.
+Package hyperref Info: backreferencing OFF on input line 6039.
+Package hyperref Info: Link coloring OFF on input line 6044.
+Package hyperref Info: Link coloring with OCG OFF on input line 6049.
+Package hyperref Info: PDF/A mode OFF on input line 6054.
+\Hy@abspage=\count304
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.s
+ty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count305
+\c@bookmark@seq@number=\count306
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerun
+filecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniq
+uecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasereq
+uires.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecom
+patibility.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefon
+t.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.st
+y
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\sansm
+athaccent.sty
+Package: sansmathaccent 2020/01/31
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile
+.sty
+Package: scrlfile 2022/07/04 v3.37 KOMA-Script package (file load hooks)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile
+-hook.sty
+Package: scrlfile-hook 2022/07/04 v3.37 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.
+sty
+Package: scrlogo 2022/07/04 v3.37 KOMA-Script package (logo)
+)))))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetra
+nslator.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasemis
+c.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetwo
+screens.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseove
+rlay.sty
+\beamer@argscount=\count307
+\beamer@lastskipcover=\skip50
+\beamer@trivlistdepth=\count308
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetit
+le.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasesec
+tion.sty
+\c@lecture=\count309
+\c@part=\count310
+\c@section=\count311
+\c@subsection=\count312
+\c@subsubsection=\count313
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefra
+me.sty
+\beamer@framebox=\box66
+\beamer@frametitlebox=\box67
+\beamer@zoombox=\box68
+\beamer@zoomcount=\count314
+\beamer@zoomframecount=\count315
+\beamer@frametextheight=\dimen269
+\c@subsectionslide=\count316
+\beamer@frametopskip=\skip51
+\beamer@framebottomskip=\skip52
+\beamer@frametopskipautobreak=\skip53
+\beamer@framebottomskipautobreak=\skip54
+\beamer@envbody=\toks29
+\framewidth=\dimen270
+\c@framenumber=\count317
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasever
+batim.sty
+\beamer@verbatimfileout=\write4
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefra
+mesize.sty
+\beamer@splitbox=\box69
+\beamer@autobreakcount=\count318
+\beamer@autobreaklastheight=\dimen271
+\beamer@frametitletoks=\toks30
+\beamer@framesubtitletoks=\toks31
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasefra
+mecomponents.sty
+\beamer@footins=\box70
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasecol
+or.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenot
+es.sty
+\beamer@frameboxcopy=\box71
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetoc
+.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasetem
+plates.sty
+\beamer@sbttoks=\toks32
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseaux
+templates.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasebox
+es.sty
+\bmb@box=\box72
+\bmb@colorbox=\box73
+\bmb@boxwidth=\dimen272
+\bmb@boxheight=\dimen273
+\bmb@prevheight=\dimen274
+\bmb@temp=\dimen275
+\bmb@dima=\dimen276
+\bmb@dimb=\dimen277
+\bmb@prevheight=\dimen278
+)
+\beamer@blockheadheight=\dimen279
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbaseloc
+alstructure.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks33
+)
+\beamer@bibiconwidth=\skip55
+\c@figure=\count319
+\c@table=\count320
+\abovecaptionskip=\skip56
+\belowcaptionskip=\skip57
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasenav
+igation.sty
+\beamer@section@min@dim=\dimen280
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasethe
+orems.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks34
+\ex@=\dimen281
+)) (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.st
+y
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen282
+) (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count321
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count322
+\leftroot@=\count323
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count324
+\DOTSCASE@=\count325
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box74
+\strutbox@=\box75
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen283
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count326
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count327
+\dotsspace@=\muskip17
+\c@parentequation=\count328
+\dspbrk@lvl=\count329
+\tag@help=\toks35
+\row@=\count330
+\column@=\count331
+\maxfields@=\count332
+\andhelp@=\toks36
+\eqnshift@=\dimen284
+\alignsep@=\dimen285
+\tagshift@=\dimen286
+\tagwidth@=\dimen287
+\totwidth@=\dimen288
+\lineht@=\dimen289
+\@envbody=\toks37
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks38
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks39
+\thm@bodyfont=\toks40
+\thm@headfont=\toks41
+\thm@notefont=\toks42
+\thm@headpunct=\toks43
+\thm@preskip=\skip61
+\thm@postskip=\skip62
+\thm@headsep=\skip63
+\dth@everypar=\toks44
+)
+\c@theorem=\count333
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerbasethe
+mes.sty))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemede
+fault.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfontthe
+medefault.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolorth
+emedefault.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnerth
+emedefault.sty
+\beamer@dima=\dimen290
+\beamer@dimb=\dimen291
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerouterth
+emedefault.sty)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\ti
+kz.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.s
+ty
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box76
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uleplot.code.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
+fcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen292
+\pgf@nodesepend=\dimen293
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pg
+fcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor
+.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgff
+or.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.c
+ode.tex)
+\pgffor@iter=\dimen294
+\pgffor@skip=\dimen295
+\pgffor@stack=\toks45
+\pgffor@toks=\toks46
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz\tikz.code.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count334
+\pgfplotmarksize=\dimen296
+)
+\tikz@lastx=\dimen297
+\tikz@lasty=\dimen298
+\tikz@lastxsaved=\dimen299
+\tikz@lastysaved=\dimen300
+\tikz@lastmovetox=\dimen301
+\tikz@lastmovetoy=\dimen302
+\tikzleveldistance=\dimen303
+\tikzsiblingdistance=\dimen304
+\tikz@figbox=\box77
+\tikz@figbox@bg=\box78
+\tikz@tempbox=\box79
+\tikz@tempbox@bg=\box80
+\tikztreelevel=\count335
+\tikznumberofchildren=\count336
+\tikznumberofcurrentchild=\count337
+\tikz@fig@count=\count338
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+ulematrix.code.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count339
+\pgfmatrixcurrentcolumn=\count340
+\pgf@matrix@numberofcolumns=\count341
+)
+\tikz@expandcount=\count342
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
+2.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 112.
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.st
+y
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+
+pdfTeX warning: pdflatex.exe (file ./required/plainback.pdf): PDF inclusion: fo
+und PDF version <1.6>, but at most version <1.5> allowed
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.st
+y
+Package: biblatex 2022/07/12 v3.18b programmable bibliographies (PK/MW)
+ (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count343
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count344
+\c@listtotal=\count345
+\c@listcount=\count346
+\c@liststart=\count347
+\c@liststop=\count348
+\c@citecount=\count349
+\c@citetotal=\count350
+\c@multicitecount=\count351
+\c@multicitetotal=\count352
+\c@instcount=\count353
+\c@maxnames=\count354
+\c@minnames=\count355
+\c@maxitems=\count356
+\c@minitems=\count357
+\c@citecounter=\count358
+\c@maxcitecounter=\count359
+\c@savedcitecounter=\count360
+\c@uniquelist=\count361
+\c@uniquename=\count362
+\c@refsection=\count363
+\c@refsegment=\count364
+\c@maxextratitle=\count365
+\c@maxextratitleyear=\count366
+\c@maxextraname=\count367
+\c@maxextradate=\count368
+\c@maxextraalpha=\count369
+\c@abbrvpenalty=\count370
+\c@highnamepenalty=\count371
+\c@lownamepenalty=\count372
+\c@maxparens=\count373
+\c@parenlevel=\count374
+\blx@tempcnta=\count375
+\blx@tempcntb=\count376
+\blx@tempcntc=\count377
+\c@blx@maxsection=\count378
+\blx@maxsegment@0=\count379
+\blx@notetype=\count380
+\blx@parenlevel@text=\count381
+\blx@parenlevel@foot=\count382
+\blx@sectionciteorder@0=\count383
+\blx@sectionciteorderinternal@0=\count384
+\blx@entrysetcounter=\count385
+\blx@biblioinstance=\count386
+\labelnumberwidth=\skip64
+\labelalphawidth=\skip65
+\biblabelsep=\skip66
+\bibitemsep=\skip67
+\bibnamesep=\skip68
+\bibinitsep=\skip69
+\bibparsep=\skip70
+\bibhang=\skip71
+\blx@bcfin=\read3
+\blx@bcfout=\write5
+\blx@langwohyphens=\language79
+\c@mincomprange=\count387
+\c@maxcomprange=\count388
+\c@mincompwidth=\count389
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count390
+\c@savedafterword=\count391
+\c@annotator=\count392
+\c@savedannotator=\count393
+\c@author=\count394
+\c@savedauthor=\count395
+\c@bookauthor=\count396
+\c@savedbookauthor=\count397
+\c@commentator=\count398
+\c@savedcommentator=\count399
+\c@editor=\count400
+\c@savededitor=\count401
+\c@editora=\count402
+\c@savededitora=\count403
+\c@editorb=\count404
+\c@savededitorb=\count405
+\c@editorc=\count406
+\c@savededitorc=\count407
+\c@foreword=\count408
+\c@savedforeword=\count409
+\c@holder=\count410
+\c@savedholder=\count411
+\c@introduction=\count412
+\c@savedintroduction=\count413
+\c@namea=\count414
+\c@savednamea=\count415
+\c@nameb=\count416
+\c@savednameb=\count417
+\c@namec=\count418
+\c@savednamec=\count419
+\c@translator=\count420
+\c@savedtranslator=\count421
+\c@shortauthor=\count422
+\c@savedshortauthor=\count423
+\c@shorteditor=\count424
+\c@savedshorteditor=\count425
+\c@labelname=\count426
+\c@savedlabelname=\count427
+\c@institution=\count428
+\c@savedinstitution=\count429
+\c@lista=\count430
+\c@savedlista=\count431
+\c@listb=\count432
+\c@savedlistb=\count433
+\c@listc=\count434
+\c@savedlistc=\count435
+\c@listd=\count436
+\c@savedlistd=\count437
+\c@liste=\count438
+\c@savedliste=\count439
+\c@listf=\count440
+\c@savedlistf=\count441
+\c@location=\count442
+\c@savedlocation=\count443
+\c@organization=\count444
+\c@savedorganization=\count445
+\c@origlocation=\count446
+\c@savedoriglocation=\count447
+\c@origpublisher=\count448
+\c@savedorigpublisher=\count449
+\c@publisher=\count450
+\c@savedpublisher=\count451
+\c@language=\count452
+\c@savedlanguage=\count453
+\c@origlanguage=\count454
+\c@savedoriglanguage=\count455
+\c@pageref=\count456
+\c@savedpageref=\count457
+\shorthandwidth=\skip72
+\shortjournalwidth=\skip73
+\shortserieswidth=\skip74
+\shorttitlewidth=\skip75
+\shortauthorwidth=\skip76
+\shorteditorwidth=\skip77
+\locallabelnumberwidth=\skip78
+\locallabelalphawidth=\skip79
+\localshorthandwidth=\skip80
+\localshortjournalwidth=\skip81
+\localshortserieswidth=\skip82
+\localshorttitlewidth=\skip83
+\localshortauthorwidth=\skip84
+\localshorteditorwidth=\skip85
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.
+def
+File: blx-compat.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.de
+f
+File: biblatex.def 2022/07/12 v3.18b biblatex compatibility (PK/MW)
+\c@textcitecount=\count458
+\c@textcitetotal=\count459
+\c@textcitemaxnames=\count460
+\c@biburlbigbreakpenalty=\count461
+\c@biburlbreakpenalty=\count462
+\c@biburlnumpenalty=\count463
+\c@biburlucpenalty=\count464
+\c@biburllcpenalty=\count465
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count466
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric
+.bbx
+File: numeric.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standar
+d.bbx
+File: standard.bbx 2022/07/12 v3.18b biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count467
+\c@bbx:relatedtotal=\count468
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric
+.cbx
+File: numeric.cbx 2022/07/12 v3.18b biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cf
+g
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2022-08-05 L3 programming layer (loader) 
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-
+pdftex.def
+File: l3backend-pdftex.def 2022-08-05 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count469
+\l__pdf_internal_box=\box81
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2022-08-05 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-ex
+pl3.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xp
+arse.sty
+Package: xparse 2022-06-22 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2022/07/12 v3.18b expl3 case changing code for biblatex
+
+)) (preamble.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks47
+\inpenc@posthook=\toks48
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2022/07/20 3.78 The Babel package
+\babel@savecnt=\count470
+\U@D=\dimen305
+\l@unhyphenated=\language80
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def
+)
+\bbl@readstream=\read4
+LaTeX Info: Redefining \textlatin on input line 4078.
+\bbl@dirlevel=\count471
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/babel-greek\greek.ld
+f
+Language: greek 2020/11/10 v1.10 Greek support for the babel system
+\bbl@monogreek=\count472
+\bbl@polygreek=\count473
+\bbl@ancientgreek=\count474
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\lgrenc
+.def
+File: lgrenc.def 2022/06/14 2.1 LGR Greek font encoding definitions
+Now handling font encoding LGR ...
+... processing UTF-8 mapping file for font encoding LGR
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/greek-inputenc\lgren
+c.dfu
+File: lgrenc.dfu 2019/07/11 1.7 UTF-8 support for Greek
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0259 (decimal 601)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+0374 (decimal 884)
+   defining Unicode char U+0375 (decimal 885)
+   defining Unicode char U+037A (decimal 890)
+   defining Unicode char U+037E (decimal 894)
+   defining Unicode char U+0384 (decimal 900)
+   defining Unicode char U+0385 (decimal 901)
+   defining Unicode char U+0386 (decimal 902)
+   defining Unicode char U+0387 (decimal 903)
+   defining Unicode char U+0388 (decimal 904)
+   defining Unicode char U+0389 (decimal 905)
+   defining Unicode char U+038A (decimal 906)
+   defining Unicode char U+038C (decimal 908)
+   defining Unicode char U+038E (decimal 910)
+   defining Unicode char U+038F (decimal 911)
+   defining Unicode char U+0390 (decimal 912)
+   defining Unicode char U+0391 (decimal 913)
+   defining Unicode char U+0392 (decimal 914)
+   defining Unicode char U+0393 (decimal 915)
+   defining Unicode char U+0394 (decimal 916)
+   defining Unicode char U+0395 (decimal 917)
+   defining Unicode char U+0396 (decimal 918)
+   defining Unicode char U+0397 (decimal 919)
+   defining Unicode char U+0398 (decimal 920)
+   defining Unicode char U+0399 (decimal 921)
+   defining Unicode char U+039A (decimal 922)
+   defining Unicode char U+039B (decimal 923)
+   defining Unicode char U+039C (decimal 924)
+   defining Unicode char U+039D (decimal 925)
+   defining Unicode char U+039E (decimal 926)
+   defining Unicode char U+039F (decimal 927)
+   defining Unicode char U+03A0 (decimal 928)
+   defining Unicode char U+03A1 (decimal 929)
+   defining Unicode char U+03A3 (decimal 931)
+   defining Unicode char U+03A4 (decimal 932)
+   defining Unicode char U+03A5 (decimal 933)
+   defining Unicode char U+03A6 (decimal 934)
+   defining Unicode char U+03A7 (decimal 935)
+   defining Unicode char U+03A8 (decimal 936)
+   defining Unicode char U+03A9 (decimal 937)
+   defining Unicode char U+03AA (decimal 938)
+   defining Unicode char U+03AB (decimal 939)
+   defining Unicode char U+03AC (decimal 940)
+   defining Unicode char U+03AD (decimal 941)
+   defining Unicode char U+03AE (decimal 942)
+   defining Unicode char U+03AF (decimal 943)
+   defining Unicode char U+03B0 (decimal 944)
+   defining Unicode char U+03B1 (decimal 945)
+   defining Unicode char U+03B2 (decimal 946)
+   defining Unicode char U+03B3 (decimal 947)
+   defining Unicode char U+03B4 (decimal 948)
+   defining Unicode char U+03B5 (decimal 949)
+   defining Unicode char U+03B6 (decimal 950)
+   defining Unicode char U+03B7 (decimal 951)
+   defining Unicode char U+03B8 (decimal 952)
+   defining Unicode char U+03B9 (decimal 953)
+   defining Unicode char U+03BA (decimal 954)
+   defining Unicode char U+03BB (decimal 955)
+   defining Unicode char U+03BC (decimal 956)
+   defining Unicode char U+03BD (decimal 957)
+   defining Unicode char U+03BE (decimal 958)
+   defining Unicode char U+03BF (decimal 959)
+   defining Unicode char U+03C0 (decimal 960)
+   defining Unicode char U+03C1 (decimal 961)
+   defining Unicode char U+03C2 (decimal 962)
+   defining Unicode char U+03C3 (decimal 963)
+   defining Unicode char U+03C4 (decimal 964)
+   defining Unicode char U+03C5 (decimal 965)
+   defining Unicode char U+03C6 (decimal 966)
+   defining Unicode char U+03C7 (decimal 967)
+   defining Unicode char U+03C8 (decimal 968)
+   defining Unicode char U+03C9 (decimal 969)
+   defining Unicode char U+03CA (decimal 970)
+   defining Unicode char U+03CB (decimal 971)
+   defining Unicode char U+03CC (decimal 972)
+   defining Unicode char U+03CD (decimal 973)
+   defining Unicode char U+03CE (decimal 974)
+   defining Unicode char U+03D0 (decimal 976)
+   defining Unicode char U+03D1 (decimal 977)
+   defining Unicode char U+03D5 (decimal 981)
+   defining Unicode char U+03D6 (decimal 982)
+   defining Unicode char U+03D8 (decimal 984)
+   defining Unicode char U+03D9 (decimal 985)
+   defining Unicode char U+03DA (decimal 986)
+   defining Unicode char U+03DB (decimal 987)
+   defining Unicode char U+03DC (decimal 988)
+   defining Unicode char U+03DD (decimal 989)
+   defining Unicode char U+03DF (decimal 991)
+   defining Unicode char U+03E0 (decimal 992)
+   defining Unicode char U+03E1 (decimal 993)
+   defining Unicode char U+03F0 (decimal 1008)
+   defining Unicode char U+03F1 (decimal 1009)
+   defining Unicode char U+03F4 (decimal 1012)
+   defining Unicode char U+03F5 (decimal 1013)
+   defining Unicode char U+1F00 (decimal 7936)
+   defining Unicode char U+1F01 (decimal 7937)
+   defining Unicode char U+1F02 (decimal 7938)
+   defining Unicode char U+1F03 (decimal 7939)
+   defining Unicode char U+1F04 (decimal 7940)
+   defining Unicode char U+1F05 (decimal 7941)
+   defining Unicode char U+1F06 (decimal 7942)
+   defining Unicode char U+1F07 (decimal 7943)
+   defining Unicode char U+1F08 (decimal 7944)
+   defining Unicode char U+1F09 (decimal 7945)
+   defining Unicode char U+1F0A (decimal 7946)
+   defining Unicode char U+1F0B (decimal 7947)
+   defining Unicode char U+1F0C (decimal 7948)
+   defining Unicode char U+1F0D (decimal 7949)
+   defining Unicode char U+1F0E (decimal 7950)
+   defining Unicode char U+1F0F (decimal 7951)
+   defining Unicode char U+1F10 (decimal 7952)
+   defining Unicode char U+1F11 (decimal 7953)
+   defining Unicode char U+1F12 (decimal 7954)
+   defining Unicode char U+1F13 (decimal 7955)
+   defining Unicode char U+1F14 (decimal 7956)
+   defining Unicode char U+1F15 (decimal 7957)
+   defining Unicode char U+1F18 (decimal 7960)
+   defining Unicode char U+1F19 (decimal 7961)
+   defining Unicode char U+1F1A (decimal 7962)
+   defining Unicode char U+1F1B (decimal 7963)
+   defining Unicode char U+1F1C (decimal 7964)
+   defining Unicode char U+1F1D (decimal 7965)
+   defining Unicode char U+1F20 (decimal 7968)
+   defining Unicode char U+1F21 (decimal 7969)
+   defining Unicode char U+1F22 (decimal 7970)
+   defining Unicode char U+1F23 (decimal 7971)
+   defining Unicode char U+1F24 (decimal 7972)
+   defining Unicode char U+1F25 (decimal 7973)
+   defining Unicode char U+1F26 (decimal 7974)
+   defining Unicode char U+1F27 (decimal 7975)
+   defining Unicode char U+1F28 (decimal 7976)
+   defining Unicode char U+1F29 (decimal 7977)
+   defining Unicode char U+1F2A (decimal 7978)
+   defining Unicode char U+1F2B (decimal 7979)
+   defining Unicode char U+1F2C (decimal 7980)
+   defining Unicode char U+1F2D (decimal 7981)
+   defining Unicode char U+1F2E (decimal 7982)
+   defining Unicode char U+1F2F (decimal 7983)
+   defining Unicode char U+1F30 (decimal 7984)
+   defining Unicode char U+1F31 (decimal 7985)
+   defining Unicode char U+1F32 (decimal 7986)
+   defining Unicode char U+1F33 (decimal 7987)
+   defining Unicode char U+1F34 (decimal 7988)
+   defining Unicode char U+1F35 (decimal 7989)
+   defining Unicode char U+1F36 (decimal 7990)
+   defining Unicode char U+1F37 (decimal 7991)
+   defining Unicode char U+1F38 (decimal 7992)
+   defining Unicode char U+1F39 (decimal 7993)
+   defining Unicode char U+1F3A (decimal 7994)
+   defining Unicode char U+1F3B (decimal 7995)
+   defining Unicode char U+1F3C (decimal 7996)
+   defining Unicode char U+1F3D (decimal 7997)
+   defining Unicode char U+1F3E (decimal 7998)
+   defining Unicode char U+1F3F (decimal 7999)
+   defining Unicode char U+1F40 (decimal 8000)
+   defining Unicode char U+1F41 (decimal 8001)
+   defining Unicode char U+1F42 (decimal 8002)
+   defining Unicode char U+1F43 (decimal 8003)
+   defining Unicode char U+1F44 (decimal 8004)
+   defining Unicode char U+1F45 (decimal 8005)
+   defining Unicode char U+1F48 (decimal 8008)
+   defining Unicode char U+1F49 (decimal 8009)
+   defining Unicode char U+1F4A (decimal 8010)
+   defining Unicode char U+1F4B (decimal 8011)
+   defining Unicode char U+1F4C (decimal 8012)
+   defining Unicode char U+1F4D (decimal 8013)
+   defining Unicode char U+1F50 (decimal 8016)
+   defining Unicode char U+1F51 (decimal 8017)
+   defining Unicode char U+1F52 (decimal 8018)
+   defining Unicode char U+1F53 (decimal 8019)
+   defining Unicode char U+1F54 (decimal 8020)
+   defining Unicode char U+1F55 (decimal 8021)
+   defining Unicode char U+1F56 (decimal 8022)
+   defining Unicode char U+1F57 (decimal 8023)
+   defining Unicode char U+1F59 (decimal 8025)
+   defining Unicode char U+1F5B (decimal 8027)
+   defining Unicode char U+1F5D (decimal 8029)
+   defining Unicode char U+1F5F (decimal 8031)
+   defining Unicode char U+1F60 (decimal 8032)
+   defining Unicode char U+1F61 (decimal 8033)
+   defining Unicode char U+1F62 (decimal 8034)
+   defining Unicode char U+1F63 (decimal 8035)
+   defining Unicode char U+1F64 (decimal 8036)
+   defining Unicode char U+1F65 (decimal 8037)
+   defining Unicode char U+1F66 (decimal 8038)
+   defining Unicode char U+1F67 (decimal 8039)
+   defining Unicode char U+1F68 (decimal 8040)
+   defining Unicode char U+1F69 (decimal 8041)
+   defining Unicode char U+1F6A (decimal 8042)
+   defining Unicode char U+1F6B (decimal 8043)
+   defining Unicode char U+1F6C (decimal 8044)
+   defining Unicode char U+1F6D (decimal 8045)
+   defining Unicode char U+1F6E (decimal 8046)
+   defining Unicode char U+1F6F (decimal 8047)
+   defining Unicode char U+1F70 (decimal 8048)
+   defining Unicode char U+1F71 (decimal 8049)
+   defining Unicode char U+1F72 (decimal 8050)
+   defining Unicode char U+1F73 (decimal 8051)
+   defining Unicode char U+1F74 (decimal 8052)
+   defining Unicode char U+1F75 (decimal 8053)
+   defining Unicode char U+1F76 (decimal 8054)
+   defining Unicode char U+1F77 (decimal 8055)
+   defining Unicode char U+1F78 (decimal 8056)
+   defining Unicode char U+1F79 (decimal 8057)
+   defining Unicode char U+1F7A (decimal 8058)
+   defining Unicode char U+1F7B (decimal 8059)
+   defining Unicode char U+1F7C (decimal 8060)
+   defining Unicode char U+1F7D (decimal 8061)
+   defining Unicode char U+1F80 (decimal 8064)
+   defining Unicode char U+1F81 (decimal 8065)
+   defining Unicode char U+1F82 (decimal 8066)
+   defining Unicode char U+1F83 (decimal 8067)
+   defining Unicode char U+1F84 (decimal 8068)
+   defining Unicode char U+1F85 (decimal 8069)
+   defining Unicode char U+1F86 (decimal 8070)
+   defining Unicode char U+1F87 (decimal 8071)
+   defining Unicode char U+1F88 (decimal 8072)
+   defining Unicode char U+1F89 (decimal 8073)
+   defining Unicode char U+1F8A (decimal 8074)
+   defining Unicode char U+1F8B (decimal 8075)
+   defining Unicode char U+1F8C (decimal 8076)
+   defining Unicode char U+1F8D (decimal 8077)
+   defining Unicode char U+1F8E (decimal 8078)
+   defining Unicode char U+1F8F (decimal 8079)
+   defining Unicode char U+1F90 (decimal 8080)
+   defining Unicode char U+1F91 (decimal 8081)
+   defining Unicode char U+1F92 (decimal 8082)
+   defining Unicode char U+1F93 (decimal 8083)
+   defining Unicode char U+1F94 (decimal 8084)
+   defining Unicode char U+1F95 (decimal 8085)
+   defining Unicode char U+1F96 (decimal 8086)
+   defining Unicode char U+1F97 (decimal 8087)
+   defining Unicode char U+1F98 (decimal 8088)
+   defining Unicode char U+1F99 (decimal 8089)
+   defining Unicode char U+1F9A (decimal 8090)
+   defining Unicode char U+1F9B (decimal 8091)
+   defining Unicode char U+1F9C (decimal 8092)
+   defining Unicode char U+1F9D (decimal 8093)
+   defining Unicode char U+1F9E (decimal 8094)
+   defining Unicode char U+1F9F (decimal 8095)
+   defining Unicode char U+1FA0 (decimal 8096)
+   defining Unicode char U+1FA1 (decimal 8097)
+   defining Unicode char U+1FA2 (decimal 8098)
+   defining Unicode char U+1FA3 (decimal 8099)
+   defining Unicode char U+1FA4 (decimal 8100)
+   defining Unicode char U+1FA5 (decimal 8101)
+   defining Unicode char U+1FA6 (decimal 8102)
+   defining Unicode char U+1FA7 (decimal 8103)
+   defining Unicode char U+1FA8 (decimal 8104)
+   defining Unicode char U+1FA9 (decimal 8105)
+   defining Unicode char U+1FAA (decimal 8106)
+   defining Unicode char U+1FAB (decimal 8107)
+   defining Unicode char U+1FAC (decimal 8108)
+   defining Unicode char U+1FAD (decimal 8109)
+   defining Unicode char U+1FAE (decimal 8110)
+   defining Unicode char U+1FAF (decimal 8111)
+   defining Unicode char U+1FB0 (decimal 8112)
+   defining Unicode char U+1FB1 (decimal 8113)
+   defining Unicode char U+1FB2 (decimal 8114)
+   defining Unicode char U+1FB3 (decimal 8115)
+   defining Unicode char U+1FB4 (decimal 8116)
+   defining Unicode char U+1FB6 (decimal 8118)
+   defining Unicode char U+1FB7 (decimal 8119)
+   defining Unicode char U+1FB8 (decimal 8120)
+   defining Unicode char U+1FB9 (decimal 8121)
+   defining Unicode char U+1FBA (decimal 8122)
+   defining Unicode char U+1FBB (decimal 8123)
+   defining Unicode char U+1FBC (decimal 8124)
+   defining Unicode char U+1FBD (decimal 8125)
+   defining Unicode char U+1FBE (decimal 8126)
+   defining Unicode char U+1FBF (decimal 8127)
+   defining Unicode char U+1FC0 (decimal 8128)
+   defining Unicode char U+1FC1 (decimal 8129)
+   defining Unicode char U+1FC2 (decimal 8130)
+   defining Unicode char U+1FC3 (decimal 8131)
+   defining Unicode char U+1FC4 (decimal 8132)
+   defining Unicode char U+1FC6 (decimal 8134)
+   defining Unicode char U+1FC7 (decimal 8135)
+   defining Unicode char U+1FC8 (decimal 8136)
+   defining Unicode char U+1FC9 (decimal 8137)
+   defining Unicode char U+1FCA (decimal 8138)
+   defining Unicode char U+1FCB (decimal 8139)
+   defining Unicode char U+1FCC (decimal 8140)
+   defining Unicode char U+1FCD (decimal 8141)
+   defining Unicode char U+1FCE (decimal 8142)
+   defining Unicode char U+1FCF (decimal 8143)
+   defining Unicode char U+1FD0 (decimal 8144)
+   defining Unicode char U+1FD1 (decimal 8145)
+   defining Unicode char U+1FD2 (decimal 8146)
+   defining Unicode char U+1FD3 (decimal 8147)
+   defining Unicode char U+1FD6 (decimal 8150)
+   defining Unicode char U+1FD7 (decimal 8151)
+   defining Unicode char U+1FD8 (decimal 8152)
+   defining Unicode char U+1FD9 (decimal 8153)
+   defining Unicode char U+1FDA (decimal 8154)
+   defining Unicode char U+1FDB (decimal 8155)
+   defining Unicode char U+1FDD (decimal 8157)
+   defining Unicode char U+1FDE (decimal 8158)
+   defining Unicode char U+1FDF (decimal 8159)
+   defining Unicode char U+1FE0 (decimal 8160)
+   defining Unicode char U+1FE1 (decimal 8161)
+   defining Unicode char U+1FE2 (decimal 8162)
+   defining Unicode char U+1FE3 (decimal 8163)
+   defining Unicode char U+1FE4 (decimal 8164)
+   defining Unicode char U+1FE5 (decimal 8165)
+   defining Unicode char U+1FE6 (decimal 8166)
+   defining Unicode char U+1FE7 (decimal 8167)
+   defining Unicode char U+1FE8 (decimal 8168)
+   defining Unicode char U+1FE9 (decimal 8169)
+   defining Unicode char U+1FEA (decimal 8170)
+   defining Unicode char U+1FEB (decimal 8171)
+   defining Unicode char U+1FEC (decimal 8172)
+   defining Unicode char U+1FED (decimal 8173)
+   defining Unicode char U+1FEE (decimal 8174)
+   defining Unicode char U+1FEF (decimal 8175)
+   defining Unicode char U+1FF2 (decimal 8178)
+   defining Unicode char U+1FF3 (decimal 8179)
+   defining Unicode char U+1FF4 (decimal 8180)
+   defining Unicode char U+1FF6 (decimal 8182)
+   defining Unicode char U+1FF7 (decimal 8183)
+   defining Unicode char U+1FF8 (decimal 8184)
+   defining Unicode char U+1FF9 (decimal 8185)
+   defining Unicode char U+1FFA (decimal 8186)
+   defining Unicode char U+1FFB (decimal 8187)
+   defining Unicode char U+1FFC (decimal 8188)
+   defining Unicode char U+1FFD (decimal 8189)
+   defining Unicode char U+1FFE (decimal 8190)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+10144 (decimal 65860)
+   defining Unicode char U+10145 (decimal 65861)
+   defining Unicode char U+10146 (decimal 65862)
+   defining Unicode char U+10147 (decimal 65863)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\greek-
+fontenc.def
+File: greek-fontenc.def 2020/10/30 2.0 Common Greek font encoding definitions
+))
+LaTeX Info: Redefining \& on input line 125.
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman
+.ldf
+Language: ngerman 2021/02/27 v2.13 German support for babel (post-1996 orthogra
+phy)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman
+b.ldf
+Language: ngermanb 2021/02/27 v2.13 German support for babel (post-1996 orthogr
+aphy)
+Package babel Info: Making " an active character on input line 122.
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\ba
+bel-ngerman.tex
+Package babel Info: Importing font and identification data for ngerman
+(babel)             from babel-de.ini. Reported on input line 11.
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/el\ba
+bel-greek.tex
+Package babel Info: Importing font and identification data for greek
+(babel)             from babel-el.ini. Reported on input line 11.
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\multimedia.st
+y
+Package: multimedia 2012/05/02 ver 0.02
+ (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+\mm@movie=\count475
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.st
+y
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+\csq@reset=\count476
+\csq@gtype=\count477
+\csq@glevel=\count478
+\csq@qlevel=\count479
+\csq@maxlvl=\count480
+\csq@tshold=\count481
+\csq@ltx@everypar=\toks49
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.de
+f
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cf
+g
+File: csquotes.cfg 
+)) (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/tools\hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
+y
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip86
+\multirow@cntb=\count482
+\multirow@dima=\skip87
+\bigstrutjot=\dimen306
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.s
+ty
+Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen307
+\captionmargin=\dimen308
+\caption@leftmargin=\dimen309
+\caption@rightmargin=\dimen310
+\caption@width=\dimen311
+\caption@indent=\dimen312
+\caption@parindent=\dimen313
+\caption@hangindent=\dimen314
+Package caption Info: beamer document class detected.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-beam
+er.sto
+File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to th
+e beamer document classes (AR)
+))
+\c@caption@flags=\count483
+\c@continuedfloat=\count484
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+)
+\c@subfigure=\count485
+\c@subtable=\count486
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfontthe
+meserif.sty)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/units\units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip88
+\L@UnitsRaiseTextstyle=\skip89
+\L@UnitsRaiseScriptstyle=\skip90
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@layerbox@background=\box82
+\pgf@layerboxsaved@background=\box83
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen315
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.st
+y
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.
+revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.
+code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsc
+ore.code.tex
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
+\pgfplots@tmpa=\dimen316
+\c@pgfplots@coordindex=\count487
+\c@pgfplots@scanlineindex=\count488
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfpl
+otssysgeneric.code.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfp
+lotslibrary.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcom
+patib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryfpu.code.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfp
+lotsutil.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststruc
+ture\pgfplotsliststructure.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststruc
+ture\pgfplotsliststructureext.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststruc
+ture\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count489
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststruc
+ture\pgfplotsmatrix.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\
+pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count490
+\t@pgfplotstable@a=\toks53
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststruc
+ture\pgfplotsdeque.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfp
+lotsbinary.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfp
+lotsbinary.data.code.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfp
+lotsutil.verb.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfl
+ibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count491
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfli
+brarypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfp
+lotscolormap.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfp
+lotscolor.code.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotss
+tackedplots.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsp
+lothandlers.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsm
+eshplothandler.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsm
+eshplotimage.code.tex)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.
+scaling.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsc
+oordprocessing.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.
+errorbars.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.
+markers.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotst
+icks.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.
+paths.code.tex)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmod
+uledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen317
+\pgfdecoratedremainingdistance=\dimen318
+\pgfdecoratedinputsegmentcompleteddistance=\dimen319
+\pgfdecoratedinputsegmentremainingdistance=\dimen320
+\pgf@decorate@distancetomove=\dimen321
+\pgf@decorate@repeatstate=\count492
+\pgfdecorationsegmentamplitude=\dimen322
+\pgfdecorationsegmentlength=\dimen323
+)
+\tikz@lib@dec@box=\box84
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/deco
+rations\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/deco
+rations\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikz
+librarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count493
+\pgfplots@xmin@reg=\dimen324
+\pgfplots@xmax@reg=\dimen325
+\pgfplots@ymin@reg=\dimen326
+\pgfplots@ymax@reg=\dimen327
+\pgfplots@zmin@reg=\dimen328
+\pgfplots@zmax@reg=\dimen329
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgfgantt\pgfgantt.st
+y
+Package: pgfgantt 2018/01/10 v5.0 Draw Gantt diagrams with TikZ
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgfl
+ibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/
+tikz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shap
+es\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfcal
+endar.sty
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfc
+alendar.code.tex
+File: pgfcalendar.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.co
+de.tex)
+\pgfcalendarcurrentjulian=\count494
+\pgf@cal@easter@Y=\count495
+\pgf@cal@easter@G=\count496
+\pgf@cal@easter@C=\count497
+\pgf@cal@easter@X=\count498
+\pgf@cal@easter@Z=\count499
+\pgf@cal@easter@D=\count500
+\pgf@cal@easter@E=\count501
+\pgf@cal@easter@N=\count502
+\pgf@cal@easter@M=\count503
+\pgf@cal@easter@julianday=\count504
+))
+\gtt@currentline=\count505
+\gtt@lasttitleline=\count506
+\gtt@currgrid=\count507
+\gtt@chartwidth=\count508
+\gtt@lasttitleslot=\count509
+\gtt@elementid=\count510
+\gtt@today@slot=\count511
+\gtt@startjulian=\count512
+\gtt@endjulian=\count513
+\gtt@chartid=\count514
+\gtt@vrule@slot=\count515
+\gtt@calendar@slots=\count516
+\gtt@calendar@weeknumber=\count517
+\gtt@calendar@startofweek=\count518
+\gtt@left@slot=\count519
+\gtt@right@slot=\count520
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.
+sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+
+Package biblatex Warning: Load 'inputenc' before biblatex.
+
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
+(slides.aux
+
+LaTeX Warning: Label `ROS' multiply defined.
+
+
+LaTeX Warning: Label `sub@ROS' multiply defined.
+
+
+LaTeX Warning: Label `ROS' multiply defined.
+
+
+LaTeX Warning: Label `sub@ROS' multiply defined.
+
+
+LaTeX Warning: Label `ROS' multiply defined.
+
+
+LaTeX Warning: Label `sub@ROS' multiply defined.
+
+
+LaTeX Warning: Label `ROS' multiply defined.
+
+
+LaTeX Warning: Label `sub@ROS' multiply defined.
+
+
+LaTeX Warning: Label `Globales Koordinatensystem' multiply defined.
+
+
+LaTeX Warning: Label `Clustering' multiply defined.
+
+
+LaTeX Warning: Label `Ground Subtraction' multiply defined.
+
+
+LaTeX Warning: Label `Ground Subtraction' multiply defined.
+
+
+LaTeX Warning: Label `Ground Subtraction' multiply defined.
+
+
+LaTeX Warning: Label `Ground Subtraction' multiply defined.
+
+
+LaTeX Warning: Label `Machine Learning' multiply defined.
+
+
+LaTeX Warning: Label `Over and Underfitting' multiply defined.
+
+
+LaTeX Warning: Label `Over and Underfitting' multiply defined.
+
+)
+\openout1 = `slides.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 15.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
+5.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/cbfonts-fd\lgrcmr.fd
+File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
+)
+LaTeX Font Info:    ... okay on input line 15.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(14.22636pt, 426.79135pt, 14.22636pt)
+* v-part:(T,H,B)=(0.0pt, 256.0748pt, 0.0pt)
+* \paperwidth=455.24408pt
+* \paperheight=256.0748pt
+* \textwidth=426.79135pt
+* \textheight=227.62207pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
+.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count521
+\scratchdimen=\dimen330
+\scratchbox=\box85
+\nofMPsegments=\count522
+\nofMParguments=\count523
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count524
+\MPscratchDim=\dimen331
+\MPnumerator=\count525
+\makeMPintoPDFobject=\count526
+\everyMPtoPDFconversion=\toks55
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopd
+f-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sy
+s.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 15.
+ (slides.out) (slides.out)
+\@outlinefile=\write6
+\openout6 = `slides.out'.
+
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-basic-dictionary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-bibliography-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-environment-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-months-dictionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-numbers-dictionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/translator\translato
+r-theorem-dictionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\ngerman
+.lbx
+File: ngerman.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.
+lbx
+File: german.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\german.
+lbx
+File: german.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'greek'...
+Package biblatex Info: ... file 'greek.lbx' found.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\greek.l
+bx
+File: greek.lbx 2022/07/12 v3.18b biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `slides.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'slides.bbl' found.
+ (slides.bbl)
+Package biblatex Info: Reference section=0 on input line 15.
+Package biblatex Info: Reference segment=0 on input line 15.
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\puenc-
+greek.def
+File: puenc-greek.def 2020/10/18 2.0 Greek LICRs for PDF strings
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/greek-fontenc\greek-
+fontenc.def
+File: greek-fontenc.def 2020/10/30 2.0 Common Greek font encoding definitions
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(slides.nav)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.69998pt on input line 15.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 13.67995pt on input line 18.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+
+
+(C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[1
+
+{C:/Users/AININ_G1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./require
+d/plainback.pdf> <./required/kivi.png> <./required/ainin.png>]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 53--53
+[][] 
+ []
+
+<required/ainin.png, id=54, 500.62032pt x 204.765pt>
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 53.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 53--53
+[][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 53.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 3.79999pt on input line 53.
+[2
+
+ <./required/ainin.png>]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.40245pt on input line 60.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 60.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 60--60
+[][] 
+ []
+
+[3
+
+]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 66.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 66.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 66--66
+[][] 
+ []
+
+[4
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 76.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 76--76
+[][] 
+ []
+
+[5
+
+]
+<required/Sensorkoordinatensysteme.jpg, id=78, 354.57469pt x 181.42781pt>
+File: required/Sensorkoordinatensysteme.jpg Graphic file (type jpg)
+<use required/Sensorkoordinatensysteme.jpg>
+Package pdftex.def Info: required/Sensorkoordinatensysteme.jpg  used on input l
+ine 99.
+(pdftex.def)             Requested size: 141.82736pt x 72.56984pt.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.54997pt on input line 99.
+<required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg, id=79, 260.473
+13pt x 70.76437pt>
+File: required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg Graphic fi
+le (type jpg)
+<use required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg>
+Package pdftex.def Info: required/Fahrzeugkoordinatensystem exterozeptiver Sens
+oren.jpg  used on input line 99.
+(pdftex.def)             Requested size: 130.23624pt x 35.3821pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+[][]\T1/phv/m/n/8 (b)[][][] |Fahr-zeug-ko-or-di-na-ten-sys-tem ex-tero-zep-ti-v
+er
+ []
+
+<required/Fahrzeugkoordinatensystem CoG.jpg, id=80, 625.58719pt x 286.82156pt>
+File: required/Fahrzeugkoordinatensystem CoG.jpg Graphic file (type jpg)
+<use required/Fahrzeugkoordinatensystem CoG.jpg>
+Package pdftex.def Info: required/Fahrzeugkoordinatensystem CoG.jpg  used on in
+put line 99.
+(pdftex.def)             Requested size: 125.11522pt x 57.36328pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 99.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 99--99
+[][] 
+ []
+
+
+Overfull \vbox (4.14807pt too high) detected at line 99
+ []
+
+[6
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
+n already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 	\end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 	\end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
+n already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 	\end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.99 	\end{frame}
+                  <./required/Sensorkoordinatensysteme.jpg> <./required/Fahrzeu
+gkoordinatensystem exterozeptiver Sensoren.jpg> <./required/Fahrzeugkoordinaten
+system CoG.jpg>]
+<required/LiDAR-Sensor1.jpg, id=88, 169.38281pt x 367.3725pt>
+File: required/LiDAR-Sensor1.jpg Graphic file (type jpg)
+<use required/LiDAR-Sensor1.jpg>
+Package pdftex.def Info: required/LiDAR-Sensor1.jpg  used on input line 124.
+(pdftex.def)             Requested size: 35.57143pt x 77.1505pt.
+<required/LiDAR-Sensor2.jpg, id=89, 164.86594pt x 371.88937pt>
+File: required/LiDAR-Sensor2.jpg Graphic file (type jpg)
+<use required/LiDAR-Sensor2.jpg>
+Package pdftex.def Info: required/LiDAR-Sensor2.jpg  used on input line 124.
+(pdftex.def)             Requested size: 34.62286pt x 78.09906pt.
+<required/LiDAR-Sensor3.jpg, id=90, 164.86594pt x 367.3725pt>
+File: required/LiDAR-Sensor3.jpg Graphic file (type jpg)
+<use required/LiDAR-Sensor3.jpg>
+Package pdftex.def Info: required/LiDAR-Sensor3.jpg  used on input line 124.
+(pdftex.def)             Requested size: 34.62286pt x 77.1505pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 124.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 124--124
+[][] 
+ []
+
+[7
+
+ <./required/LiDAR-Sensor1.jpg> <./required/LiDAR-Sensor2.jpg> <./required/LiDA
+R-Sensor3.jpg>]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.64998pt on input line 140.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 4.74998pt on input line 140.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 140.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 140--140
+[][] 
+ []
+
+[8
+
+]
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+56.
+ (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
+File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 156.
+<required/LiDAR auf Parkplatz.jpg, id=113, 403.5075pt x 225.09094pt>
+File: required/LiDAR auf Parkplatz.jpg Graphic file (type jpg)
+<use required/LiDAR auf Parkplatz.jpg>
+Package pdftex.def Info: required/LiDAR auf Parkplatz.jpg  used on input line 1
+56.
+(pdftex.def)             Requested size: 121.05318pt x 67.52779pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 156.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 156--156
+[][] 
+ []
+
+
+Overfull \vbox (18.25627pt too high) detected at line 156
+ []
+
+[9
+
+ <./required/LiDAR auf Parkplatz.jpg>]
+<required/ADMA-Erklärung.jpg, id=119, 451.6875pt x 202.50656pt>
+File: required/ADMA-Erklärung.jpg Graphic file (type jpg)
+<use required/ADMA-Erklärung.jpg>
+Package pdftex.def Info: required/ADMA-Erklärung.jpg  used on input line 177.
+(pdftex.def)             Requested size: 135.5073pt x 60.75243pt.
+
+Overfull \hbox (7.4686pt too wide) in paragraph at lines 177--177
+[][] 
+ []
+
+<required/ADMA.jpg, id=120, 296.526pt x 253.821pt>
+File: required/ADMA.jpg Graphic file (type jpg)
+<use required/ADMA.jpg>
+Package pdftex.def Info: required/ADMA.jpg  used on input line 177.
+(pdftex.def)             Requested size: 88.95848pt x 76.14688pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
+[][]\T1/phv/m/n/8 (b)[][][] |AD-MA im Fahr-zeug [Ge-ne-
+ []
+
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 177.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 177--177
+[][] 
+ []
+
+
+Overfull \vbox (9.07655pt too high) detected at line 177
+ []
+
+[10
+
+ <./required/ADMA-Erklärung.jpg> <./required/ADMA.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 187.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 187--187
+[][] 
+ []
+
+[11
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 220.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 220--220
+[][] 
+ []
+
+[12
+
+]
+<required/ROS.jpg, id=141, 107.65219pt x 150.5625pt>
+File: required/ROS.jpg Graphic file (type jpg)
+<use required/ROS.jpg>
+Package pdftex.def Info: required/ROS.jpg  used on input line 241.
+(pdftex.def)             Requested size: 32.2959pt x 45.16908pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
+n already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.241 	\end{frame}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.241 	\end{frame}
+                  
+<required/ROS2.jpg, id=142, 115.18031pt x 150.5625pt>
+File: required/ROS2.jpg Graphic file (type jpg)
+<use required/ROS2.jpg>
+Package pdftex.def Info: required/ROS2.jpg  used on input line 241.
+(pdftex.def)             Requested size: 34.55435pt x 45.16908pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
+n already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.241 	\end{frame}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.241 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 241.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 241--241
+[][] 
+ []
+
+[13
+
+ <./required/ROS.jpg> <./required/ROS2.jpg>]
+<required/Szenariobeschreibung_auto.jpg, id=149, 733.869pt x 175.419pt>
+File: required/Szenariobeschreibung_auto.jpg Graphic file (type jpg)
+<use required/Szenariobeschreibung_auto.jpg>
+Package pdftex.def Info: required/Szenariobeschreibung_auto.jpg  used on input 
+line 250.
+(pdftex.def)             Requested size: 293.5424pt x 70.16635pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 250.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 250--250
+[][] 
+ []
+
+[14
+
+ <./required/Szenariobeschreibung_auto.jpg>]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.54997pt on input line 265.
+<required/ROS-Aufbau.jpg, id=155, 310.15875pt x 155.07938pt>
+File: required/ROS-Aufbau.jpg Graphic file (type jpg)
+<use required/ROS-Aufbau.jpg>
+Package pdftex.def Info: required/ROS-Aufbau.jpg  used on input line 265.
+(pdftex.def)             Requested size: 108.55717pt x 54.27858pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 265.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 265--265
+[][] 
+ []
+
+
+Overfull \vbox (16.79617pt too high) detected at line 265
+ []
+
+[15
+
+ <./required/ROS-Aufbau.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 287.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 287--287
+[][] 
+ []
+
+[16
+
+]
+<required/HD-Map.jpg, id=167, 965.6075pt x 487.8225pt>
+File: required/HD-Map.jpg Graphic file (type jpg)
+<use required/HD-Map.jpg>
+Package pdftex.def Info: required/HD-Map.jpg  used on input line 294.
+(pdftex.def)             Requested size: 289.68448pt x 146.34787pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 294.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 294--294
+[][] 
+ []
+
+[17
+
+ <./required/HD-Map.jpg>]
+<required/ROI-Teststrecke.jpg, id=173, 576.846pt x 349.962pt>
+File: required/ROI-Teststrecke.jpg Graphic file (type jpg)
+<use required/ROI-Teststrecke.jpg>
+Package pdftex.def Info: required/ROI-Teststrecke.jpg  used on input line 301.
+(pdftex.def)             Requested size: 201.89911pt x 122.48853pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 301.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 301--301
+[][] 
+ []
+
+
+Overfull \vbox (5.3781pt too high) detected at line 301
+ []
+
+[18
+
+ <./required/ROI-Teststrecke.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 316.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 316--316
+[][] 
+ []
+
+
+Overfull \vbox (1.16994pt too high) detected at line 316
+ []
+
+[19
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 338.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 338--338
+[][] 
+ []
+
+[20
+
+]
+<required/Globales Koordinatensystem.jpg, id=193, 297.402pt x 201.261pt>
+File: required/Globales Koordinatensystem.jpg Graphic file (type jpg)
+<use required/Globales Koordinatensystem.jpg>
+Package pdftex.def Info: required/Globales Koordinatensystem.jpg  used on input
+ line 350.
+(pdftex.def)             Requested size: 89.22128pt x 60.37875pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 350.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 350--350
+[][] 
+ []
+
+
+Overfull \vbox (3.98848pt too high) detected at line 350
+ []
+
+[21
+
+ <./required/Globales Koordinatensystem.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 359.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 359--359
+[][] 
+ []
+
+[22
+
+]
+<required/Szenarioanwendung Koordinatentransformation.jpg, id=205, 671.673pt x 
+168.849pt>
+File: required/Szenarioanwendung Koordinatentransformation.jpg Graphic file (ty
+pe jpg)
+<use required/Szenarioanwendung Koordinatentransformation.jpg>
+Package pdftex.def Info: required/Szenarioanwendung Koordinatentransformation.j
+pg  used on input line 372.
+(pdftex.def)             Requested size: 335.83568pt x 84.42429pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Globales\040K
+oordinatensystem}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.372 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 372.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 372--372
+[][] 
+ []
+
+[23
+
+ <./required/Szenarioanwendung Koordinatentransformation.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 388.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 388--388
+[][] 
+ []
+
+[24
+
+]
+<required/Ground Subtraction.jpg, id=216, 764.10469pt x 150.5625pt>
+File: required/Ground Subtraction.jpg Graphic file (type jpg)
+<use required/Ground Subtraction.jpg>
+Package pdftex.def Info: required/Ground Subtraction.jpg  used on input line 40
+4.
+(pdftex.def)             Requested size: 252.15532pt x 49.68576pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 404.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 404--404
+[][] 
+ []
+
+
+Overfull \vbox (17.90326pt too high) detected at line 404
+ []
+
+[25
+
+ <./required/Ground Subtraction.jpg>]
+<required/Ground Subtraction Implementierung.jpg, id=224, 252.726pt x 83.001pt>
+
+File: required/Ground Subtraction Implementierung.jpg Graphic file (type jpg)
+<use required/Ground Subtraction Implementierung.jpg>
+Package pdftex.def Info: required/Ground Subtraction Implementierung.jpg  used 
+on input line 415.
+(pdftex.def)             Requested size: 126.36269pt x 41.5004pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 415.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 415--415
+[][] 
+ []
+
+[26
+
+ <./required/Ground Subtraction Implementierung.jpg>]
+<required/RANSAC.jpg, id=230, 265.4718pt x 211.0284pt>
+File: required/RANSAC.jpg Graphic file (type jpg)
+<use required/RANSAC.jpg>
+Package pdftex.def Info: required/RANSAC.jpg  used on input line 429.
+(pdftex.def)             Requested size: 106.18683pt x 84.40985pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 429.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 429--429
+[][] 
+ []
+
+[27
+
+ <./required/RANSAC.jpg>]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 443.
+<required/Clustering.jpg, id=237, 475.7775pt x 257.46187pt>
+File: required/Clustering.jpg Graphic file (type jpg)
+<use required/Clustering.jpg>
+Package pdftex.def Info: required/Clustering.jpg  used on input line 443.
+(pdftex.def)             Requested size: 176.03491pt x 95.25938pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Clustering}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.443 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 443.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 443--443
+[][] 
+ []
+
+
+Overfull \vbox (12.98816pt too high) detected at line 443
+ []
+
+[28
+
+ <./required/Clustering.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 449.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 449--449
+[][] 
+ []
+
+[29
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 459.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 459--459
+[][] 
+ []
+
+[30
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 470.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 470--470
+[][] 
+ []
+
+
+Overfull \vbox (2.20267pt too high) detected at line 470
+ []
+
+[31
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 483.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 483--483
+[][] 
+ []
+
+
+Overfull \vbox (22.12354pt too high) detected at line 483
+ []
+
+[32
+
+]
+<required/Bounding_Box.jpg, id=270, 605.097pt x 150.672pt>
+File: required/Bounding_Box.jpg Graphic file (type jpg)
+<use required/Bounding_Box.jpg>
+Package pdftex.def Info: required/Bounding_Box.jpg  used on input line 528.
+(pdftex.def)             Requested size: 242.0345pt x 60.26772pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.528 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 528.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 528--528
+[][] 
+ []
+
+[33
+
+ <./required/Bounding_Box.jpg>]
+<required/ML_Einfuhrung.jpg, id=276, 553.31718pt x 206.27063pt>
+File: required/ML_Einfuhrung.jpg Graphic file (type jpg)
+<use required/ML_Einfuhrung.jpg>
+Package pdftex.def Info: required/ML_Einfuhrung.jpg  used on input line 547.
+(pdftex.def)             Requested size: 248.99043pt x 92.8209pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.547 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 547.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 547--547
+[][] 
+ []
+
+
+Overfull \vbox (14.73843pt too high) detected at line 547
+ []
+
+[34
+
+ <./required/ML_Einfuhrung.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 563.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 563--563
+[][] 
+ []
+
+[35
+
+]
+<required/Bereiche_Machine_Learning.jpg, id=287, 809.205pt x 451.359pt>
+File: required/Bereiche_Machine_Learning.jpg Graphic file (type jpg)
+<use required/Bereiche_Machine_Learning.jpg>
+Package pdftex.def Info: required/Bereiche_Machine_Learning.jpg  used on input 
+line 571.
+(pdftex.def)             Requested size: 323.67625pt x 180.54039pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.571     \end{frame}
+                     
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 571.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 571--571
+[][] 
+ []
+
+
+Overfull \vbox (14.75537pt too high) detected at line 571
+ []
+
+[36
+
+ <./required/Bereiche_Machine_Learning.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 575.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 575--575
+[][] 
+ []
+
+[37
+
+]
+<required/supervised_learning.jpg, id=299, 527.133pt x 270.246pt>
+File: required/supervised_learning.jpg Graphic file (type jpg)
+<use required/supervised_learning.jpg>
+Package pdftex.def Info: required/supervised_learning.jpg  used on input line 5
+90.
+(pdftex.def)             Requested size: 158.14111pt x 81.07442pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.590 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 590.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 590--590
+[][] 
+ []
+
+
+Overfull \vbox (7.25972pt too high) detected at line 590
+ []
+
+[38
+
+ <./required/supervised_learning.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 601.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 601--601
+[][] 
+ []
+
+[39
+
+]
+<required/Machine Learning.jpg, id=310, 526.21594pt x 98.61844pt>
+File: required/Machine Learning.jpg Graphic file (type jpg)
+<use required/Machine Learning.jpg>
+Package pdftex.def Info: required/Machine Learning.jpg  used on input line 613.
+
+(pdftex.def)             Requested size: 368.34865pt x 69.03241pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 613.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 613--613
+[][] 
+ []
+
+[40
+
+ <./required/Machine Learning.jpg>]
+<required/Loss_function.jpg, id=317, 744.381pt x 388.068pt>
+File: required/Loss_function.jpg Graphic file (type jpg)
+<use required/Loss_function.jpg>
+Package pdftex.def Info: required/Loss_function.jpg  used on input line 631.
+(pdftex.def)             Requested size: 148.87355pt x 77.61221pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Machine\040Le
+arning}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.631 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 631.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 631--631
+[][] 
+ []
+
+
+Overfull \vbox (15.27736pt too high) detected at line 631
+ []
+
+[41
+
+ <./required/Loss_function.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 640.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 640--640
+[][] 
+ []
+
+[42
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 651.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 651--651
+[][] 
+ []
+
+[43
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 661.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 661--661
+[][] 
+ []
+
+[44
+
+]
+<required/Over and Underfitting.png, id=339, 847.092pt x 216.81pt>
+File: required/Over and Underfitting.png Graphic file (type png)
+<use required/Over and Underfitting.png>
+Package pdftex.def Info: required/Over and Underfitting.png  used on input line
+ 675.
+(pdftex.def)             Requested size: 211.77248pt x 54.20236pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 675.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 675--675
+[][] 
+ []
+
+[45
+
+ <./required/Over and Underfitting.png>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 683.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 683--683
+[][] 
+ []
+
+[46
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 698.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 698--698
+[][] 
+ []
+
+[47
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 721.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 721--721
+[][] 
+ []
+
+[48
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 735.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 735--735
+[][] 
+ []
+
+[49
+
+]
+<required/Lineare_Regression.jpg, id=368, 564.60938pt x 373.395pt>
+File: required/Lineare_Regression.jpg Graphic file (type jpg)
+<use required/Lineare_Regression.jpg>
+Package pdftex.def Info: required/Lineare_Regression.jpg  used on input line 75
+1.
+(pdftex.def)             Requested size: 141.152pt x 93.34851pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Over\040and\0
+40Underfitting}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.751 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 751.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 751--751
+[][] 
+ []
+
+
+Overfull \vbox (12.016pt too high) detected at line 751
+ []
+
+[50
+
+ <./required/Lineare_Regression.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 769.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 769--769
+[][] 
+ []
+
+[51
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 796.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 796--796
+[][] 
+ []
+
+[52
+
+]
+<required/Nicht_lineare_Regression.jpg, id=388, 238.491pt x 187.902pt>
+File: required/Nicht_lineare_Regression.jpg Graphic file (type jpg)
+<use required/Nicht_lineare_Regression.jpg>
+Package pdftex.def Info: required/Nicht_lineare_Regression.jpg  used on input l
+ine 813.
+(pdftex.def)             Requested size: 107.31995pt x 84.55511pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Over\040and\0
+40Underfitting}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.813 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 813.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 813--813
+[][] 
+ []
+
+
+Overfull \vbox (16.02263pt too high) detected at line 813
+ []
+
+[53
+
+ <./required/Nicht_lineare_Regression.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 833.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 833--833
+[][] 
+ []
+
+[54
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 842.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 842--842
+[][] 
+ []
+
+[55
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 868.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 868--868
+[][] 
+ []
+
+[56
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 895.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 895--895
+[][] 
+ []
+
+[57
+
+]
+Overfull \hbox (1065.85876pt too wide) in paragraph at lines 906--906
+[]  
+ []
+
+
+Overfull \hbox (382.75117pt too wide) in paragraph at lines 906--906
+[]  
+ []
+
+
+Overfull \hbox (276.27258pt too wide) in paragraph at lines 906--906
+[]  
+ []
+
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 906.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 906--906
+[][] 
+ []
+
+[58
+
+]
+Overfull \hbox (251.33842pt too wide) in paragraph at lines 915--915
+[]  
+ []
+
+
+Overfull \hbox (168.86786pt too wide) in paragraph at lines 915--915
+[]  
+ []
+
+
+Overfull \hbox (547.21309pt too wide) in paragraph at lines 915--915
+[]  
+ []
+
+[59
+
+] [60
+
+] [61
+
+] [62
+
+]
+\tf@nav=\write7
+\openout7 = `slides.nav'.
+
+\tf@toc=\write8
+\openout8 = `slides.toc'.
+
+\tf@snm=\write9
+\openout9 = `slides.snm'.
+
+ (slides.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `slides.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'slides.run.xml'.
+\openout1 = `slides.run.xml'.
+
+ )
+(\end occurred when \iftrue on line 916 was incomplete) 
+Here is how much of TeX's memory you used:
+ 49568 strings out of 477992
+ 1150494 string characters out of 2826050
+ 1931449 words of memory out of 3000000
+ 67273 multiletter control sequences out of 15000+600000
+ 522563 words of font info for 104 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 142i,14n,136p,746b,2365s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/AININ_G1/AppDa
+ta/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/AININ_G1/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/AINI
+N_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
+:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmex
+tra/cmex9.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/AININ_G1/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/AININ_G1/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/AININ_G1/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users
+/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr7.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/AININ_G1/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/AININ_G1/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/AINI
+N_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy9.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/symbols/msam10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/AININ_G1/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/AININ_G1/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on slides.pdf (62 pages, 6845158 bytes).
+PDF statistics:
+ 560 PDF objects out of 1000 (max. 8388607)
+ 144 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
+
