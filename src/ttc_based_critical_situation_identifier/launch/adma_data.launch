@@ -1,5 +1,5 @@
 <launch>
-
+<!-- unplug gps plug; system-> reset; plug gps -> no removal of power required; -->
     <arg name="vehicle_name" />
     <arg name="vehicle_number" />
     <arg name="with_velodyne" default="False"/>
@@ -10,6 +10,7 @@
             <param name="vehicle_name" value="$(arg vehicle_name)" />
             <param name="vehn" value="$(arg vehicle_number)"/>
             <param name="port_adma" value="1210" />
+            <param name="with_velodyne" value="$(arg with_velodyne)" />
             <param name="color" value="red" />
             <param name="length" value="2.83" />
             <param name="width" value="1.752" />
@@ -23,7 +24,7 @@
                 <include file="$(find velodyne_pointcloud)/launch/32e_points.launch" >
                     <arg name="device_ip" value="192.168.1.62" />
                     <arg name="port" value="2368" />
-                    <arg name="gps_time" value="false" />
+                    <arg name="gps_time" value="true" />
                 </include>
             </group>
         </group>
@@ -32,6 +33,7 @@
                 <param name="vehicle_name" value="$(arg vehicle_name)" />
                 <param name="vehn" value="$(arg vehicle_number)"/>
                 <param name="port_adma" value="1211"/>
+                <param name="with_velodyne" value="$(arg with_velodyne)" />
                 <param name="color" value="blue" />
                 <param name="length" value="2.83" />
                 <param name="width" value="1.752" />
@@ -45,7 +47,7 @@
                     <include file="$(find velodyne_pointcloud)/launch/32e_points.launch" >
                         <arg name="device_ip" value="192.168.1.62" />
                         <arg name="port" value="2368" />
-                        <arg name="gps_time" value="false" />
+                        <arg name="gps_time" value="true" />
                     </include>
                 </group>
         </group>

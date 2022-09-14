@@ -1,4 +1,9 @@
 <launch>
-    <node pkg="rosbag" type="play" name="rosbag_play" args="/home/schenker2/summer_camp_3.bag" output="screen" />
+
+    <group ns="vehicle_marie">
+        <node pkg="ttc_based_critical_situation_identifier" type="ttc_estimator.py" name="tty_estimator" output="screen" />
+    </group>
+
+    <node pkg="rosbag" type="play" name="rosbag_play" args="/home/schenker2/bags/summer_camp/summer_camp_3.bag" output="screen" />
     <node pkg="rviz" type="rviz" name="my_rviz" args="-d $(find ttc_based_critical_situation_identifier)/rviz/rviz.rviz" output="screen" />
 </launch>

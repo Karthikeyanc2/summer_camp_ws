@@ -78,24 +78,25 @@ imuPcg = np.array([dx_adma_rear_axle + rear_axle_to_gc, dy_adma_rear_axle, dz_ad
 UDP_IP = "0.0.0.0"
 UDP_PORT = int(rospy.get_param("port_adma"))
 
-# static tf publisher for vehicle_cg and velodyne
-static_transformStamped = TransformStamped()
-static_transformStamped.header.stamp = rospy.Time.now()
-static_transformStamped.header.frame_id = tf_prefix + "/vehicle_cg"
-static_transformStamped.child_frame_id = tf_prefix + "/velodyne"
-static_transformStamped.transform.translation = Vector3(*vehicle_config["vehiclecg_T_velodyne"][:-1, -1].tolist())
-rotation_quaternion = Rotation.from_matrix(vehicle_config["vehiclecg_T_velodyne"][:-1, :-1]).as_quat().tolist()
-static_transformStamped.transform.rotation = Quaternion(*rotation_quaternion)
-tf2_ros.StaticTransformBroadcaster().sendTransform(static_transformStamped)
+# static tf publisher for vehicle_cg and velodyne only if the vehicle has velodyne
+if rospy.get_param("with_velodyne"):
+    static_transformStamped = TransformStamped()
+    static_transformStamped.header.stamp = rospy.Time.now()
+    static_transformStamped.header.frame_id = tf_prefix + "/vehicle_cg"
+    static_transformStamped.child_frame_id = tf_prefix + "/velodyne"
+    static_transformStamped.transform.translation = Vector3(*vehicle_config["vehiclecg_T_velodyne"][:-1, -1].tolist())
+    rotation_quaternion = Rotation.from_matrix(vehicle_config["vehiclecg_T_velodyne"][:-1, :-1]).as_quat().tolist()
+    static_transformStamped.transform.rotation = Quaternion(*rotation_quaternion)
+    tf2_ros.StaticTransformBroadcaster().sendTransform(static_transformStamped)
 
 # tf publisher for vehicle_cg to basestation
 basestation_T_vehicle_cg = TransformStamped()
 basestation_T_vehicle_cg.header.stamp = rospy.Time.now()
-basestation_T_vehicle_cg.header.frame_id = "basestation"
+basestation_T_vehicle_cg.header.frame_id = "/basestation"
 basestation_T_vehicle_cg.child_frame_id = tf_prefix + "/vehicle_cg"
 basestation_T_vehicle_cg_publisher = tf2_ros.TransformBroadcaster()
 
-# create scoket and bind
+# create socket and bind
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.settimeout(1.0)
@@ -154,7 +155,7 @@ while not rospy.is_shutdown():
     vehicle_marker_publisher.publish(vehicle_marker)
 
     # publish tf between vehicle_cg and basestation
-    basestation_T_vehicle_cg.header.stamp = rospy.Time.now()
+    basestation_T_vehicle_cg.header.stamp = rospy.Time.from_sec(time_adma)  # rospy.Time.now()
     basestation_T_vehicle_cg.transform.translation = adma_message.pose_cg.position
     basestation_T_vehicle_cg.transform.rotation = adma_message.pose_cg.orientation
     basestation_T_vehicle_cg_publisher.sendTransform(basestation_T_vehicle_cg)
