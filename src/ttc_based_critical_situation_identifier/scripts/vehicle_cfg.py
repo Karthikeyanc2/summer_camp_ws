@@ -37,3 +37,12 @@ marie = dict(
         [0, 0, 0, 1]
     ])
 )
+
+#marie['vehiclecg_T_velodyne'] = np.array([[ 0.04100374,  0.99915899,  0.      , 0],
+#                                         [-0.99915899,  0.04100374, -0.     , 0],
+#                                         [-0., 0., 1.   ,0.8],
+#                                         [0, 0, 0, 1]
+#]
+#)
+
+# Rotation.from_euler('xyz', [0, 0, -87.65], degrees=True).as_matrix()

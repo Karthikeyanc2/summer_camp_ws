@@ -20,6 +20,42 @@
             <param name="dz_adma_rear_axle" value="-0.737"/>
             <param name="rear_axle_to_gc" value="1.29445"/>
             <node pkg="ttc_based_critical_situation_identifier" type="adma_data.py" name="adma_data" output="screen"/>
+            <group ns="velodyne" if="$(eval arg('with_velodyne'))">
+                <include file="$(find ttc_based_critical_situation_identifier)/launch/velodyne.launch" >
+                    <arg name="data_port" default="2368"/>
+                    <arg name="tele_port" default="8308"/>
+                    <arg name="tf_prefix" value="vehicle_$(arg vehicle_name)" />
+                </include>
+            </group>
+        </group>
+
+        <group if="$(eval arg('vehicle_name') == 'marie')">
+            <param name="vehicle_name" value="$(arg vehicle_name)" />
+            <param name="vehn" value="$(arg vehicle_number)"/>
+            <param name="port_adma" value="1211"/>
+            <param name="with_velodyne" value="$(arg with_velodyne)" />
+            <param name="color" value="blue" />
+            <param name="length" value="2.83" />
+            <param name="width" value="1.752" />
+            <param name="height" value="1.542" />
+            <param name="dx_adma_rear_axle" value="0.109"/>
+            <param name="dy_adma_rear_axle" value="-0.112"/>
+            <param name="dz_adma_rear_axle" value="-0.720"/>
+            <param name="rear_axle_to_gc" value="1.29445"/>
+            <node pkg="ttc_based_critical_situation_identifier" type="adma_data.py" name="adma_data" output="screen"/>
+            <group ns="velodyne" if="$(eval arg('with_velodyne'))">
+                <include file="$(find ttc_based_critical_situation_identifier)/launch/velodyne.launch" >
+                    <arg name="data_port" default="2368"/>
+                    <arg name="tele_port" default="8308"/>
+                    <arg name="tf_prefix" value="vehicle_$(arg vehicle_name)" />
+                </include>
+            </group>
+        </group>
+    </group>
+
+</launch>
+
+<!--
             <group if="$(eval arg('with_velodyne'))">
                 <include file="$(find velodyne_pointcloud)/launch/32e_points.launch" >
                     <arg name="device_ip" value="192.168.1.62" />
@@ -27,30 +63,4 @@
                     <arg name="gps_time" value="true" />
                 </include>
             </group>
-        </group>
-
-        <group if="$(eval arg('vehicle_name') == 'marie')">
-                <param name="vehicle_name" value="$(arg vehicle_name)" />
-                <param name="vehn" value="$(arg vehicle_number)"/>
-                <param name="port_adma" value="1211"/>
-                <param name="with_velodyne" value="$(arg with_velodyne)" />
-                <param name="color" value="blue" />
-                <param name="length" value="2.83" />
-                <param name="width" value="1.752" />
-                <param name="height" value="1.542" />
-                <param name="dx_adma_rear_axle" value="0.109"/>
-                <param name="dy_adma_rear_axle" value="-0.112"/>
-                <param name="dz_adma_rear_axle" value="-0.720"/>
-                <param name="rear_axle_to_gc" value="1.29445"/>
-                <node pkg="ttc_based_critical_situation_identifier" type="adma_data.py" name="adma_data" output="screen"/>
-                <group if="$(eval arg('with_velodyne'))">
-                    <include file="$(find velodyne_pointcloud)/launch/32e_points.launch" >
-                        <arg name="device_ip" value="192.168.1.62" />
-                        <arg name="port" value="2368" />
-                        <arg name="gps_time" value="true" />
-                    </include>
-                </group>
-        </group>
-    </group>
-
-</launch>
+-->

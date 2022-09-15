@@ -59,6 +59,7 @@ find_package(catkin REQUIRED COMPONENTS
    Pedestrian_info.msg
    AMS_trajectory.msg
    AdmaData.msg
+   Buffer.msg
  )
 
 ## Generate services in the 'srv' folder
