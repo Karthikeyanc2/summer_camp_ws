@@ -180,9 +180,9 @@ def mlp(X, Y):
     X = torch.from_numpy(X).type(torch.float32)
     Y = torch.from_numpy(Y).type(torch.float32)
     model = MLP(2, 1)
-    optimizer = torch.optim.SGD(model.parameters(), lr=1e-5)
+    optimizer = torch.optim.SGD(model.parameters(), lr=3e-4)
     loss_fn = torch.nn.MSELoss()
-    nrEpochs = 3000
+    nrEpochs = 1000
     for idxEpoch in range(nrEpochs):
         for input_sample, target_sample in zip(X, Y):
             optimizer.zero_grad()
@@ -197,19 +197,19 @@ def mlp(X, Y):
 class MLP(torch.nn.Module):
     def __init__(self, N_in, N_out):
         super(MLP, self).__init__()
-        self.linear_in = torch.nn.Linear(N_in, 20, bias=True)
-        #self.linear_middle1 = torch.nn.Linear(20, 20, bias=True)
-        #self.linear_middle2 = torch.nn.Linear(30, 20, bias=True)
-        self.linear_out = torch.nn.Linear(20, N_out, bias=True)
-        self.activation = torch.nn.Sigmoid()
+        self.linear_in = torch.nn.Linear(N_in, 50, bias=True)
+        self.linear_middle1 = torch.nn.Linear(50, 100, bias=True)
+        self.linear_middle2 = torch.nn.Linear(100, 50, bias=True)
+        self.linear_out = torch.nn.Linear(50, N_out, bias=True)
+        self.ReLU_activation = torch.nn.ReLU()
 
     def forward(self, x):
         x = self.linear_in(x)
-        x = self.activation(x)
-        # x = self.linear_middle1(x)
-        # x = self.activation(x)
-        # x = self.linear_middle2(x)
-        # x = self.activation(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_middle1(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_middle2(x)
+        x = self.ReLU_activation(x)
         x = self.linear_out(x)
         return x
 
@@ -298,13 +298,13 @@ def main():
     test_data = np.genfromtxt(test_path, delimiter=',')
     X_train = train_data[:, 0:2]
     Y_train = train_data[:, 2:3]
-    # train(X_train, Y_train, 'mlp')
+    #train(X_train, Y_train, 'mlp')
 
     # test
     X_test = test_data[:, 0:2]
     Y_test = test_data[:, 2:3]
 
-    TTC_estimate = test_model(X_test, Y_test, 'nonlinear')
+    TTC_estimate = test_model(X_test, Y_test, 'mlp') # nonlinear, mlp
 
     plotting = True
     if plotting:
