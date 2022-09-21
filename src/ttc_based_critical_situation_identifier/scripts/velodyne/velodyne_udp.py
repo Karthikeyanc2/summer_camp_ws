@@ -7,6 +7,10 @@ from vehicle_msgs.msg import Buffer
 
 rospy.init_node('~')
 
+if bool(rospy.get_param('/replay')):
+    import sys
+    sys.exit()
+
 data_port = int(rospy.get_param('data_port'))
 sock_data = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock_data.bind(("0.0.0.0", data_port))

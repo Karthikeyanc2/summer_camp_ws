@@ -10,7 +10,7 @@ import rospy
 import tf2_ros
 from geometry_msgs.msg import Vector3, Point, Quaternion, TransformStamped
 from jsk_recognition_msgs.msg import BoundingBox
-from vehicle_msgs.msg import AdmaData
+from vehicle_msgs.msg import AdmaData, Buffer
 from vehicle_cfg import issaak, marie
 from scipy.spatial.transform import Rotation
 
@@ -75,8 +75,8 @@ rear_axle_to_gc = float(rospy.get_param("rear_axle_to_gc"))
 vehicle_config = eval(str(rospy.get_param("vehicle_name")))
 jan1_12am_1980 = 315532800 + 5 * 60*60*24  # 1980 day 1 is tuesday but as adma time always starts from sunday, we need to add 5 days to it
 imuPcg = np.array([dx_adma_rear_axle + rear_axle_to_gc, dy_adma_rear_axle, dz_adma_rear_axle + height / 2, 1]).reshape(4, -1)
-UDP_IP = "0.0.0.0"
-UDP_PORT = int(rospy.get_param("port_adma"))
+# UDP_IP = "0.0.0.0"
+# UDP_PORT = int(rospy.get_param("port_adma"))
 
 # static tf publisher for vehicle_cg and velodyne only if the vehicle has velodyne
 if rospy.get_param("with_velodyne"):
@@ -97,13 +97,15 @@ basestation_T_vehicle_cg.child_frame_id = tf_prefix + "/vehicle_cg"
 basestation_T_vehicle_cg_publisher = tf2_ros.TransformBroadcaster()
 
 # create socket and bind
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sock.settimeout(1.0)
-sock.bind((UDP_IP, UDP_PORT))
+# sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+# sock.settimeout(1.0)
+# sock.bind((UDP_IP, UDP_PORT))
 
-while not rospy.is_shutdown():
-    data, _ = sock.recvfrom(856)
+
+def callback(msg):
+    # data, _ = sock.recvfrom(856)
+    data = bytes(msg.buf)
 
     # get time
     time_ms = unpack('I', data[584:588])[0]
@@ -159,3 +161,7 @@ while not rospy.is_shutdown():
     basestation_T_vehicle_cg.transform.translation = adma_message.pose_cg.position
     basestation_T_vehicle_cg.transform.rotation = adma_message.pose_cg.orientation
     basestation_T_vehicle_cg_publisher.sendTransform(basestation_T_vehicle_cg)
+
+
+rospy.Subscriber("data_raw", Buffer, callback=callback)
+rospy.spin()

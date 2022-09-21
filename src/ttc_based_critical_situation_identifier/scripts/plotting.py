@@ -1,6 +1,8 @@
 #import rosbag
 from mpl_toolkits import mplot3d
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 

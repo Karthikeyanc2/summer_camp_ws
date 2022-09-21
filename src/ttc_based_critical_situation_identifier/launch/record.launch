@@ -2,9 +2,11 @@
     <arg name="lat_origin" default="48.78461825" />
     <arg name="lon_origin" default="11.47318240" />
     <arg name="height_origin" default="374.565" />
+    <arg name="replay" default="False" />
 
     <param name="/lat_origin" value="$(arg lat_origin)" />
     <param name="/lon_origin" value="$(arg lon_origin)" />
+    <param name="/replay" value="$(arg replay)" />
     <param name="/package_root" value="$(find ttc_based_critical_situation_identifier)"/>
 
     <include file="$(find ttc_based_critical_situation_identifier)/launch/adma_data.launch">

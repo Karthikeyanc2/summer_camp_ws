@@ -72,7 +72,7 @@ class Velodyne:
             intensities = this_array[:, 3::2]
             # print(xs.view(1, -1), ys.view(1, -1), zs.view(1, -1), intensities.view(1, -1))
             points = np.c_[xs.reshape(-1, 1), ys.reshape(-1, 1), zs.reshape(-1, 1),
-                           intensities.reshape(-1, 1)][distances.reshape(-1) > 0.5]
+                           intensities.reshape(-1, 1)][distances.reshape(-1) > 1]
 
             pts = np.zeros(len(points), dtype=[
                 ('x', np.float32),
@@ -82,10 +82,10 @@ class Velodyne:
             ])
             pts['x'], pts['y'], pts['z'], pts['intensity'] = points.transpose()
             pcl2_msg = ros_numpy.point_cloud2.array_to_pointcloud2(pts,
-                                                                   stamp=rospy.Time.from_seconds(utc_time_from_lidar),  # rospy.get_rostime(),
+                                                                   stamp=rospy.Time.from_seconds(utc_time_from_lidar - 0.1),  # rospy.get_rostime(),
                                                                    frame_id=self.tf_prefix + "/velodyne")
             self.publisher.publish(pcl2_msg)
-            print(round(time.time() - utc_time_from_lidar, 3), round(utc_time_from_lidar, 3))
+            # print(round(time.time() - utc_time_from_lidar, 3), round(utc_time_from_lidar, 3))
 
     def tele_raw_callback(self, msg):
         print(bytes(msg.buf)[206:278])

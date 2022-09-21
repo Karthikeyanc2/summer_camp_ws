@@ -29,10 +29,10 @@ class NonLinearCurveFittingFromClosedFormSolution:
         self.current_line = None
 
         self.fig = plt.figure(constrained_layout=True)
-        self.grid_spec = gridspec.GridSpec(42, 45, figure=self.fig)
+        self.grid_spec = gridspec.GridSpec(43, 40, figure=self.fig)
         self.ax = self.fig.add_subplot(self.grid_spec[:40, :])
-        slider_axis = self.fig.add_subplot(self.grid_spec[40:42, :])
-        self.slider = Slider(slider_axis, "Polynomial order: ", 1, 10, valstep=range(1, 11))
+        slider_axis = self.fig.add_subplot(self.grid_spec[41:43, :])
+        self.slider = Slider(slider_axis, "Polynomial order: ", 1, 10, valstep=1)
         self.slider.on_changed(self.on_click)
 
         self.fig.canvas.mpl_connect("button_press_event", self.on_click)
@@ -54,7 +54,7 @@ class NonLinearCurveFittingFromClosedFormSolution:
             pass
         if len(self.points) > 1:
             order = int(self.slider.val)
-            theta = np.asarray(self.get_line_parameters_m_and_c(self.points, order)).reshape(-1)
+            theta = np.asarray(self.get_curve_parameters(self.points, order)).reshape(-1)
             x = np.linspace(-10, 10, 100)
             y = np.asarray([sum(np.asarray(apply_polynomial(px, order)) * theta) for px in x])
             if self.current_line is not None:
@@ -63,7 +63,7 @@ class NonLinearCurveFittingFromClosedFormSolution:
         self.fig.canvas.draw()
 
     @staticmethod
-    def get_line_parameters_m_and_c(points, order):
+    def get_curve_parameters(points, order):
         """
         :param points: list of points [[x1, y1], ... [xm, ym]]
         :param order:
@@ -71,6 +71,7 @@ class NonLinearCurveFittingFromClosedFormSolution:
         """
         X_matrix = []
         Y_matrix = []
+        print(points, order)
         for point in points:
             X_matrix.append(apply_polynomial(point[0], order))
             Y_matrix.append([point[1]])
