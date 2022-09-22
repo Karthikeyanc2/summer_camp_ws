@@ -120,12 +120,12 @@ Visualization Manager:
       only edge: false
       show coords: false
     - Class: jsk_rviz_plugin/BoundingBoxArray
-      Enabled: true
+      Enabled: false
       Name: BoundingBoxArray
       Queue Size: 10
       Topic: /vehicle_marie/objects
       Unreliable: false
-      Value: true
+      Value: false
       alpha: 0.800000011920929
       color: 25; 255; 0
       coloring: Auto
@@ -159,36 +159,20 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: jsk_rviz_plugin/TabletViewController
-      Control Mode: Orbit
-      Distance: 149.90093994140625
+      Angle: 0
+      Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Eye:
-        X: -32.7514762878418
-        Y: -158.10516357421875
-        Z: 39.10194778442383
-      Focus:
-        X: -2.6674461364746094
-        Y: -16.212493896484375
-        Z: 1.2640151977539062
       Invert Z Axis: false
-      Maintain Vertical Axis: true
-      Mouse Enabled: true
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Placement Mouse Point: /rviz/current_mouse_point
-      Placement Publish Topic: /rviz/current_camera_placement
-      Placement Topic: /rviz/camera_placement
+      Scale: 23.363988876342773
       Target Frame: <Fixed Frame>
-      Transition Time: 0.5
-      Up:
-        X: 0
-        Y: 0
-        Z: 1
+      X: 13.40491771697998
+      Y: -33.13299560546875
     Saved: ~
 Window Geometry:
   Displays:

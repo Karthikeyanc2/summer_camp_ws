@@ -58,10 +58,10 @@ Y_val = torch.from_numpy(Y_norm_val).type(torch.float32).reshape(-1, 1)
 model = MLPModel(2, 1)
 model.train()
 optimizer = torch.optim.SGD(model.parameters(), lr=3e-4, momentum=0.9)  # 1e-3 works for single neuron
-loss_fn = torch.nn.MSELoss()
+loss_fn = torch.nn.MSELoss(reduction='sum')
 
-num_epochs = 1500
-batch_size = 1  # 1 works for single neuron
+num_epochs = 2000
+batch_size = 90  # 1 works for single neuron
 best_loss = 100000
 best_model = None
 
@@ -69,7 +69,7 @@ train_losses = []
 val_losses = []
 
 for idxEpoch in range(num_epochs):
-    break
+    # break
     model.train()
     shuffled_indices = np.random.permutation(range(len(X_train)))
     X = X_train[shuffled_indices]
@@ -105,7 +105,7 @@ for idxEpoch in range(num_epochs):
             best_model = model.state_dict()
 
 
-# torch.save(best_model, '../../config/mlp_ttc_estimator.pt')
+torch.save(best_model, '../../config/mlp_ttc_estimator.pt')
 best_model = torch.load('../../config/mlp_ttc_estimator.pt')
 
 model.load_state_dict(best_model)

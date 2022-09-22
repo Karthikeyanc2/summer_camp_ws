@@ -80,14 +80,58 @@ class TTCEstimator:
         self.points_publisher = rospy.Publisher('processed_points', PointCloud2, queue_size=10)
         self.bbox_publisher = rospy.Publisher('objects', BoundingBoxArray, queue_size=10)
         rospy.Subscriber("velodyne/points", PointCloud2, self.pcd_callback)
-        # rospy.Subscriber("/vehicle_marie/adma_data", ADMAData, self.adma_callback)
+        rospy.Subscriber("/vehicle_marie/adma_data", AdmaData, self.adma_callback_marie)
         rospy.Subscriber("/vehicle_isaak/adma_data", AdmaData, self.adma_callback_isaak)
-        self.latest_isaak_position = None
+        self.latest_isaak_position = 0, 0, 0
+        self.latest_marie_position = 0, 0, 0
         self.isaak_detected_object = Object()
         self.previous_objects = []
 
+    def pcd_callback(self, msg):
+        # convert the point cloud from ros format to numpy array --> output shape --> (N_points x 4) (x, y, z, intensity)
+        points = self.get_points_from_point_cloud(msg)
+
+        # Asking for the transf. matrix from "/basestation" to "/vehicle_marie/velodyne" at the time stamp given from the header
+        basestation_T_velodyne = self.transformer.asMatrix("/basestation", msg.header)
+
+        # transform the points from velodyne coordinate frame to basestation coordinates
+        points = self.transform_points(points, basestation_T_velodyne)
+
+        # Region of interest substration --> to remove points outside the track
+        points = self.roi_removal(points)
+
+        # ground substraction --> to remove ground points --> choose one below
+        points = self.ransac_based_ground_removal(points)
+        points = self.z_based_ground_removal(points, basestation_T_velodyne[2, 3])
+
+        # outlier filter
+        points = self.outlier_filter(points)
+
+        # publish the processed point cloud for visualization
+        header = msg.header
+        header.frame_id = "basestation"
+        foreground_points_as_message = self.get_point_cloud_from_points(points, header)
+        self.points_publisher.publish(foreground_points_as_message)
+
+        # clustering to generate boxes / clusters of points --> potential objects
+        clusters = self.clustering(points)
+
+        # track the clusters and create the bounding box for the CO vehicle
+        bboxes = self.object_detection_naive(clusters, msg.header)
+
+        # publish the bounding box
+        self.bbox_publisher.publish(bboxes)
+
+        # ttc estimation
+        ttc = self.ttc_estimator()
+
+        # publish ttc velue
+
     def adma_callback_isaak(self, msg):
-        self.latest_isaak_position = msg
+        self.latest_isaak_position = msg.pose_cg.position.x, msg.pose_cg.position.y, msg.pose_cg.position.z
+
+    def adma_callback_marie(self, msg):
+        self.latest_marie_position = msg.pose_cg.position.x, msg.pose_cg.position.y, msg.pose_cg.position.z
 
     @staticmethod
     def get_points_from_point_cloud(msg):
@@ -100,7 +144,7 @@ class TTCEstimator:
         return points
 
     @staticmethod
-    def get_point_cloud_from_points(points, original_msg):
+    def get_point_cloud_from_points(points, header):
         pts = np.zeros(len(points), dtype=[
             ('x', np.float32),
             ('y', np.float32),
@@ -108,33 +152,25 @@ class TTCEstimator:
             ('intensity', np.float32)
         ])
         pts['x'], pts['y'], pts['z'], pts['intensity'] = points.transpose()
-        pcl2_msg = ros_numpy.point_cloud2.array_to_pointcloud2(pts, stamp=original_msg.header.stamp, frame_id=original_msg.header.frame_id)
+        pcl2_msg = ros_numpy.point_cloud2.array_to_pointcloud2(pts, stamp=header.stamp, frame_id=header.frame_id)
         return pcl2_msg
 
-    def pcd_callback(self, msg):
-        basestation_T_velodyne = self.transformer.asMatrix("/basestation", msg.header)
-        points = self.get_points_from_point_cloud(msg)
-        points = self.roi_removal(points, basestation_T_velodyne)
-        # points = self.z_based_ground_removal(points)
-        points = self.ransac_based_ground_removal(points)
-        points = self.outlier_filter(points)
-        clusters = self.clustering(points)
-        bboxes = self.object_detection_naive(clusters, msg.header)
-        self.bbox_publisher.publish(bboxes)
-        foreground_points_as_message = self.get_point_cloud_from_points(points, msg)
-        self.points_publisher.publish(foreground_points_as_message)
+    @staticmethod
+    def transform_points(points, basestation_T_velodyne):
+        all_points_in_velodyne_coordinates = np.ones_like(points)
+        all_points_in_velodyne_coordinates[:, :3] = points[:, :3]
+        all_points_in_global_coordinates = all_points_in_velodyne_coordinates.dot(basestation_T_velodyne.T)
+        all_points_in_global_coordinates[:, -1] = points[:, -1]
+        return all_points_in_global_coordinates
 
-    def roi_removal(self, points, transformation_matrix):
-        all_points_in_vehicle_coordinates = np.ones_like(points)
-        all_points_in_vehicle_coordinates[:, :3] = points[:, :3]
-        all_points_in_global_coordinates = all_points_in_vehicle_coordinates.dot(transformation_matrix.T)
-        points_inside_test_track_in_vehicle_coordinates = points[self.track_path.contains_points(all_points_in_global_coordinates[:, :2])]
-        return points_inside_test_track_in_vehicle_coordinates
+    def roi_removal(self, points):
+        inlier_flag = self.track_path.contains_points(points[:, :2])
+        return points[inlier_flag]
 
     @staticmethod
-    def z_based_ground_removal(points):
+    def z_based_ground_removal(points, basestation_T_velodyne_z_offset):
         threshold = -1.5
-        return points[points[:, 2] > threshold]
+        return points[points[:, 2] - basestation_T_velodyne_z_offset > threshold]
 
     def ransac_based_ground_removal(self, points):
         self.ransac_regressor.fit(points[:, :2], points[:, 2])
@@ -170,7 +206,7 @@ class TTCEstimator:
             z_min, z_max = cluster[:, 2].min(), cluster[:, 2].max()
             transformation_matrix_2d, (length, width) = oriented_bounds_2D(cluster[:, :2])
             # this transformation is local_T_global, but we need --> global_T_local
-            print(transformation_matrix_2d[:-1, -1])
+            # print(transformation_matrix_2d[:-1, -1])
             transformation_matrix_2d = np.linalg.inv(transformation_matrix_2d)
             box.pose.position = Point(transformation_matrix_2d[0, -1], transformation_matrix_2d[1, -1], (z_max + z_min) / 2)
             print(box.pose.position)
@@ -180,7 +216,7 @@ class TTCEstimator:
             box.pose.orientation = Quaternion(*box_orientation)
             box.dimensions = Vector3(length, width, z_max - z_min)
             boxes.append(box)
-        print(len(clusters))
+        # print(len(clusters))
 
         bboxes = BoundingBoxArray()
         bboxes.header = header
@@ -196,7 +232,7 @@ class TTCEstimator:
             transformation_matrix_2d = np.linalg.inv(transformation_matrix_2d)
             position = transformation_matrix_2d[0, -1], transformation_matrix_2d[1, -1], (z_max + z_min) / 2
 
-            if distance(position, self.latest_isaak_position) < 3:
+            if math.sqrt((position[0] - self.latest_isaak_position[0])**2 + (position[1] - self.latest_isaak_position[1])**2) < 3:
                 box = BoundingBox()
                 box.header = header
                 orientation = math.atan2(transformation_matrix_2d[1, 0], transformation_matrix_2d[0, 0])
@@ -212,13 +248,8 @@ class TTCEstimator:
                 dimensions = length, width, z_max - z_min
                 isaak_box = box
 
-
-
-
-    def ttc_estimator(self, cluster, adma_information):
-        pass
-        # ml inference
-        # return ttc
+    def ttc_estimator(self):
+        return 0
 
 
 rospy.init_node('blas')

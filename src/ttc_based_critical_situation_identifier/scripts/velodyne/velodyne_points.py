@@ -11,8 +11,6 @@ from vehicle_msgs.msg import Buffer
 import datetime
 import calendar
 
-jan1_12am_1980 = 315532800
-
 
 class Velodyne:
     def __init__(self):

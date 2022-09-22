@@ -51,9 +51,15 @@ projector = UTMProjector(lato, lono)
 # adma message initialization
 adma_message = AdmaData()
 adma_message.obj_id = int(rospy.get_param("vehn"))
-length = float(rospy.get_param("length"))
-width = float(rospy.get_param("width"))
-height = float(rospy.get_param("height"))
+# length = float(rospy.get_param("length"))
+# width = float(rospy.get_param("width"))
+# height = float(rospy.get_param("height"))
+vehicle_config = eval(str(rospy.get_param("vehicle_name")))
+
+length = vehicle_config["length"]
+width = vehicle_config["width"]
+height = vehicle_config["height"]
+
 adma_message.dimensions = Vector3(length, width, height)
 adma_message.header.frame_id = "basestation"
 adma_message_publisher = rospy.Publisher('adma_data', AdmaData, queue_size=10)
@@ -68,13 +74,19 @@ vehicle_marker.dimensions = adma_message.dimensions
 vehicle_marker_publisher = rospy.Publisher('vehicle_marker', BoundingBox, queue_size=10)
 
 # get and set other parameters
-dx_adma_rear_axle = float(rospy.get_param("dx_adma_rear_axle"))
-dy_adma_rear_axle = float(rospy.get_param("dy_adma_rear_axle"))
-dz_adma_rear_axle = float(rospy.get_param("dz_adma_rear_axle"))
-rear_axle_to_gc = float(rospy.get_param("rear_axle_to_gc"))
-vehicle_config = eval(str(rospy.get_param("vehicle_name")))
-jan1_12am_1980 = 315532800 + 5 * 60*60*24  # 1980 day 1 is tuesday but as adma time always starts from sunday, we need to add 5 days to it
-imuPcg = np.array([dx_adma_rear_axle + rear_axle_to_gc, dy_adma_rear_axle, dz_adma_rear_axle + height / 2, 1]).reshape(4, -1)
+# dx_adma_rear_axle = float(rospy.get_param("dx_adma_rear_axle"))
+# dy_adma_rear_axle = float(rospy.get_param("dy_adma_rear_axle"))
+# dz_adma_rear_axle = float(rospy.get_param("dz_adma_rear_axle"))
+# rear_axle_to_gc = float(rospy.get_param("rear_axle_to_gc"))
+
+dx_adma_rear_axle = vehicle_config["dx_adma_rear_axle"]
+dy_adma_rear_axle = vehicle_config["dy_adma_rear_axle"]
+dz_adma_rear_axle = vehicle_config["dz_adma_rear_axle"]
+rear_axle_to_gc = vehicle_config["rear_axle_to_gc"]
+
+jan1_12am_1980 = 315532800 + 5 * 60 * 60 * 24  # 1980 day 1 is tuesday but as adma time always starts from sunday, we need to add 5 days to it
+imuPcg = np.array([dx_adma_rear_axle + rear_axle_to_gc, dy_adma_rear_axle, dz_adma_rear_axle + height / 2, 1]).reshape(
+    4, -1)
 # UDP_IP = "0.0.0.0"
 # UDP_PORT = int(rospy.get_param("port_adma"))
 
@@ -96,6 +108,7 @@ basestation_T_vehicle_cg.header.frame_id = "/basestation"
 basestation_T_vehicle_cg.child_frame_id = tf_prefix + "/vehicle_cg"
 basestation_T_vehicle_cg_publisher = tf2_ros.TransformBroadcaster()
 
+
 # create socket and bind
 # sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 # sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -113,11 +126,15 @@ def callback(msg):
     time_adma = time_ms * 0.001 + time_week * 7 * 24 * 60 * 60 + jan1_12am_1980
 
     # get pose
-    orientation = (unpack('H', data[508:510])[0] * 0.01 + 90.0) * np.pi / 180 + 0.032472  # angle correction from genesys to utm
+    orientation = (unpack('H', data[508:510])[0] * 0.01 + 90.0) * np.pi / 180 + 0.032472 + (
+                0.5 * (np.pi / 180))  # angle correction from genesys to utm + LiDAR-to-vehicle offset
     # INS absolute
     lat = unpack('i', data[592:596])[0] * 1e-7
     lon = unpack('i', data[596:600])[0] * 1e-7
     x, y, _ = projector.forward(lat, lon)
+
+    # y, x = unpack('i', data[600:604])[0] * 0.01, unpack('i', data[604:608])[0] * 0.01
+
     # INS relative
     # y = unpack('i', data[600:604])[0] * 0.01
     # x = unpack('i', data[604:608])[0] * 0.01
@@ -132,7 +149,8 @@ def callback(msg):
     # lat, lon, alt = projector.reverse(x, y)
     basestationPimu = np.array([x, y, -dz_adma_rear_axle, 1]).reshape(4, -1)
     basestationTimu = np.identity(4)
-    basestationTimu[:2, :2] = np.array([[np.cos(orientation), -np.sin(orientation)], [np.sin(orientation), np.cos(orientation)]])
+    basestationTimu[:2, :2] = np.array(
+        [[np.cos(orientation), -np.sin(orientation)], [np.sin(orientation), np.cos(orientation)]])
     basestationTimu[:, -1] = basestationPimu.reshape(-1)
     basestationPcg = basestationTimu.dot(imuPcg)  # if you want rear center you need to change it here
 
@@ -149,6 +167,7 @@ def callback(msg):
     rotation_quaternions = Rotation.from_euler('xyz', [0, 0, orientation]).as_quat().tolist()
     adma_message.pose_cg.orientation = Quaternion(*rotation_quaternions)
     adma_message.pose_cg.position = Point(*basestationPcg.reshape(-1).tolist()[:-1])
+    # adma_message.pose_cg.position = Point(x, y, 0)
     adma_message.velocity = math.sqrt(vx ** 2 + vy ** 2)
     adma_message.acceleration = ax  # np.sign(ax) * math.sqrt(ax ** 2 + ay ** 2)
     adma_message_publisher.publish(adma_message)
