@@ -77,7 +77,7 @@ class GradientDescent:
         prev_point = (new_m, loss)
         for _ in range(50):
             # new_m = self.get_next_m(new_m, self.lr)
-            new_m = self.get_next_m(new_m, self.lr)
+            new_m = self.get_next_m_with_momentum(new_m, self.lr)
             loss = self.get_loss(new_m)
             self.starting_point_scatter.remove()
             self.starting_point_scatter = self.ax.scatter(new_m, loss, marker='x', color='green')

@@ -5,7 +5,7 @@ bag = rosbag.Bag("/home/schenker2/bags/summer_camp/summer_camp_3.bag")
 
 for topic, msg, t in bag.read_messages(topics=["/tf", "/vehicle_marie/adma_data", "/vehicle_marie/vehicle_marker", "/vehicle_marie/velodyne_points"]):
     if topic == "/tf":
-        if 'issaak' in msg.transforms[0].child_frame_id:
+        if 'isaak' in msg.transforms[0].child_frame_id:
             continue
         print(msg.transforms[0].transform.translation)
     if topic == "/vehicle_marie/vehicle_marker":

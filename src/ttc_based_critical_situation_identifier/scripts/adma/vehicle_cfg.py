@@ -1,6 +1,6 @@
 import numpy as np
 
-issaak = dict(
+isaak = dict(
     port=1210,
     color="red",
     length=2.695,  #2.83,

@@ -16,7 +16,7 @@
     </include>
 
     <include file="$(find ttc_based_critical_situation_identifier)/launch/adma_data.launch">
-        <arg name="vehicle_name" value="issaak" />
+        <arg name="vehicle_name" value="isaak" />
         <arg name="with_velodyne" value="False" />
         <arg name="vehicle_number" value="2" />
     </include>

@@ -100,7 +100,8 @@ class CoordinateTransformation:
         :param point_in_vehicle_coordinates: point measured in vehicle coordinates [x, y]
         :return: measured point in global coordinates [x, y]
         """
-        # return [1, 1]
+        print(vehicle_coordinates, vehicle_orientation, point_in_vehicle_coordinates)
+        return [1, 1]
         tx, ty = vehicle_coordinates
         theta = vehicle_orientation
         x, y = point_in_vehicle_coordinates

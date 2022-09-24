@@ -6,7 +6,7 @@
 
     <group ns="vehicle_$(arg vehicle_name)">
         <param name="tf_prefix" value="vehicle_$(arg vehicle_name)"/>
-        <group if="$(eval arg('vehicle_name') == 'issaak')">
+        <group if="$(eval arg('vehicle_name') == 'isaak')">
             <param name="vehicle_name" value="$(arg vehicle_name)" />
             <param name="vehn" value="$(arg vehicle_number)"/>
             <param name="port_adma" value="1210" />

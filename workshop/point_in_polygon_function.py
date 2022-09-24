@@ -51,7 +51,7 @@ class PointInPolygon:
             check_1 = (y2 > yp) != (y1 > yp)
 
             # check if the line made by polygon[i] and polygon[i-1] crosses the line y = yp between [xp, inf]
-            check_2 = ((yp - y1) * (x2 - x1) / (y2 - y1) + x1) > xp
+            check_2 = ((yp - y1) * (x2 - x1) / (y2 - y1) + x1) >= xp
 
             if check_1 and check_2:
                 count += 1

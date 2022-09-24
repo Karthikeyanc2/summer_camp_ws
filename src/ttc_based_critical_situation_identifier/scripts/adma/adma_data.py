@@ -11,7 +11,7 @@ import tf2_ros
 from geometry_msgs.msg import Vector3, Point, Quaternion, TransformStamped
 from jsk_recognition_msgs.msg import BoundingBox
 from vehicle_msgs.msg import AdmaData, Buffer
-from vehicle_cfg import issaak, marie
+from vehicle_cfg import isaak, marie
 from scipy.spatial.transform import Rotation
 
 

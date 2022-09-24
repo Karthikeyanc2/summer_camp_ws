@@ -111,7 +111,7 @@ Visualization Manager:
       Enabled: true
       Name: BoundingBox
       Queue Size: 10
-      Topic: /vehicle_issaak/vehicle_marker
+      Topic: /vehicle_isaak/vehicle_marker
       Unreliable: false
       Value: true
       alpha: 0.800000011920929

@@ -13,69 +13,6 @@ num_points_per_class = 200
 max_distance_to_move_the_center = 15
 
 
-class KMeansNew:
-    def __init__(self):
-        self.labels = np.ones(original_num_classes * num_points_per_class).astype(int)
-        self.points = np.random.randn(num_points_per_class * original_num_classes, 2)
-
-        for i in range(original_num_classes):
-            self.points[i * num_points_per_class:(i+1) * num_points_per_class, :] = \
-                self.points[i * num_points_per_class:(i+1) * num_points_per_class, :] + \
-                np.random.random(2) * max_distance_to_move_the_center - max_distance_to_move_the_center/2
-            self.labels[i * num_points_per_class:(i+1) * num_points_per_class] = i
-
-        old_plot = None  # plt.scatter(self.points[:, 0], self.points[:, 1], color=cm.rainbow(self.labels/num_classes), marker='.')
-        old_centers = None
-        plt.show(block=False)
-        ax = plt.gca()
-        ax.axis('off')
-        ax.set_title('K-means clustering')
-        ax.set_aspect(1)
-        plt.gcf().tight_layout()
-
-        for num_classes in [2, 3, 4, 5]:
-            for trial_num in range(5):
-                print(f"trial num: {trial_num}; num_classes: {num_classes}")
-                current_labels = np.random.randint(0, num_classes, len(self.points))
-                prev_classes = current_labels
-
-                for _ in range(50):
-                    if old_plot is not None:
-                        old_plot.remove()
-                    if old_centers is not None:
-                        old_centers.remove()
-                    old_plot = plt.scatter(self.points[:, 0], self.points[:, 1], color=cm.rainbow(current_labels / num_classes), marker='.')
-
-                    current_labels, current_centers = self.get_new_classes_and_centers(self.points, current_labels, num_classes)
-                    old_centers = plt.scatter(current_centers[:, 0], current_centers[:, 1], marker='o', s=50)
-                    if (prev_classes == current_labels).all():
-                        break
-
-                    prev_classes = current_labels
-                    plt.pause(0.1)
-                plt.pause(1)
-
-        plt.show()
-
-    @staticmethod
-    def get_new_classes_and_centers(points, current_labels, n_classes):
-        current_centers = []
-        for i in range(n_classes):
-            this_class_points = points[current_labels == i]
-            if len(this_class_points) == 0:
-                current_centers.append([0.0, 0.0])
-            else:
-                current_centers.append(this_class_points.mean(axis=0))
-        # current_centers = np.asarray([points[current_labels == i].mean(axis=0) for i in range(n_classes)])
-        current_centers = np.asarray(current_centers)
-        distances = np.linalg.norm(points[:, None, :] - current_centers[None, :, :], axis=2)  # 60 x 3
-        current_labels = distances.argmin(axis=1)
-        return current_labels, current_centers
-
-
-# KMeansNew()
-
-
 class KMeans:
     def __init__(self):
         self.labels = np.ones(original_num_classes * num_points_per_class).astype(int)
@@ -188,6 +125,11 @@ class KMeans:
 
     @staticmethod
     def get_new_classes_and_centers(points, current_labels, n_classes):
+        """
+        @param: points: N x 2
+        current_labels = N (can take a number between 0 to n_classes-1)
+        n_classes is a number
+        """
         current_centers = []
         for i in range(n_classes):
             this_class_points = points[current_labels == i]
