@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8) (preloaded format=pdflatex 2022.8.18)  8 SEP 2022 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8) (preloaded format=pdflatex 2022.8.18)  25 SEP 2022 22:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1909,6 +1909,9 @@ LaTeX Warning: Label `sub@ROS' multiply defined.
 LaTeX Warning: Label `Globales Koordinatensystem' multiply defined.
 
 
+LaTeX Warning: Label `Over and Underfitting' multiply defined.
+
+
 LaTeX Warning: Label `Clustering' multiply defined.
 
 
@@ -1924,13 +1927,10 @@ LaTeX Warning: Label `Ground Subtraction' multiply defined.
 LaTeX Warning: Label `Ground Subtraction' multiply defined.
 
 
+LaTeX Warning: Label `Over and Underfitting' multiply defined.
+
+
 LaTeX Warning: Label `Machine Learning' multiply defined.
-
-
-LaTeX Warning: Label `Over and Underfitting' multiply defined.
-
-
-LaTeX Warning: Label `Over and Underfitting' multiply defined.
 
 )
 \openout1 = `slides.aux'.
@@ -2127,35 +2127,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/AININ_G1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./require
 d/plainback.pdf> <./required/kivi.png> <./required/ainin.png>]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 53--53
+Overfull \hbox (12.0pt too wide) in paragraph at lines 51--51
 [][] 
  []
 
 <required/ainin.png, id=54, 500.62032pt x 204.765pt>
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 53.
+Package pdftex.def Info: required/ainin.png  used on input line 51.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 53--53
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 51--51
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 53.
+(Font)              scaled to size 11.39996pt on input line 51.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 3.79999pt on input line 53.
+(Font)              scaled to size 3.79999pt on input line 51.
 [2
 
  <./required/ainin.png>]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.40245pt on input line 60.
+(Font)              scaled to size 10.40245pt on input line 58.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 60.
+Package pdftex.def Info: required/ainin.png  used on input line 58.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 60--60
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 58--58
 [][] 
  []
 
@@ -2163,13 +2163,13 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 60--60
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 66.
+(Font)              scaled to size 7.59998pt on input line 64.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 66.
+Package pdftex.def Info: required/ainin.png  used on input line 64.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 66--66
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 64--64
 [][] 
  []
 
@@ -2178,10 +2178,10 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 66--66
 ]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 76.
+Package pdftex.def Info: required/ainin.png  used on input line 74.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 76--76
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 74--74
 [][] 
  []
 
@@ -2192,20 +2192,20 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 76--76
 File: required/Sensorkoordinatensysteme.jpg Graphic file (type jpg)
 <use required/Sensorkoordinatensysteme.jpg>
 Package pdftex.def Info: required/Sensorkoordinatensysteme.jpg  used on input l
-ine 99.
+ine 97.
 (pdftex.def)             Requested size: 141.82736pt x 72.56984pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.54997pt on input line 99.
+(Font)              scaled to size 8.54997pt on input line 97.
 <required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg, id=79, 260.473
 13pt x 70.76437pt>
 File: required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg Graphic fi
 le (type jpg)
 <use required/Fahrzeugkoordinatensystem exterozeptiver Sensoren.jpg>
 Package pdftex.def Info: required/Fahrzeugkoordinatensystem exterozeptiver Sens
-oren.jpg  used on input line 99.
+oren.jpg  used on input line 97.
 (pdftex.def)             Requested size: 130.23624pt x 35.3821pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
 [][]\T1/phv/m/n/8 (b)[][][] |Fahr-zeug-ko-or-di-na-ten-sys-tem ex-tero-zep-ti-v
 er
  []
@@ -2214,19 +2214,19 @@ er
 File: required/Fahrzeugkoordinatensystem CoG.jpg Graphic file (type jpg)
 <use required/Fahrzeugkoordinatensystem CoG.jpg>
 Package pdftex.def Info: required/Fahrzeugkoordinatensystem CoG.jpg  used on in
-put line 99.
+put line 97.
 (pdftex.def)             Requested size: 125.11522pt x 57.36328pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 99.
+Package pdftex.def Info: required/ainin.png  used on input line 97.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 99--99
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 97--97
 [][] 
  []
 
 
-Overfull \vbox (4.14807pt too high) detected at line 99
+Overfull \vbox (4.14807pt too high) detected at line 97
  []
 
 [6
@@ -2236,49 +2236,49 @@ pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
 n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.99 	\end{frame}
+l.97 	\end{frame}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.99 	\end{frame}
+l.97 	\end{frame}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
 n already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.99 	\end{frame}
+l.97 	\end{frame}
                  
 pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.99 	\end{frame}
+l.97 	\end{frame}
                   <./required/Sensorkoordinatensysteme.jpg> <./required/Fahrzeu
 gkoordinatensystem exterozeptiver Sensoren.jpg> <./required/Fahrzeugkoordinaten
 system CoG.jpg>]
 <required/LiDAR-Sensor1.jpg, id=88, 169.38281pt x 367.3725pt>
 File: required/LiDAR-Sensor1.jpg Graphic file (type jpg)
 <use required/LiDAR-Sensor1.jpg>
-Package pdftex.def Info: required/LiDAR-Sensor1.jpg  used on input line 124.
+Package pdftex.def Info: required/LiDAR-Sensor1.jpg  used on input line 122.
 (pdftex.def)             Requested size: 35.57143pt x 77.1505pt.
 <required/LiDAR-Sensor2.jpg, id=89, 164.86594pt x 371.88937pt>
 File: required/LiDAR-Sensor2.jpg Graphic file (type jpg)
 <use required/LiDAR-Sensor2.jpg>
-Package pdftex.def Info: required/LiDAR-Sensor2.jpg  used on input line 124.
+Package pdftex.def Info: required/LiDAR-Sensor2.jpg  used on input line 122.
 (pdftex.def)             Requested size: 34.62286pt x 78.09906pt.
 <required/LiDAR-Sensor3.jpg, id=90, 164.86594pt x 367.3725pt>
 File: required/LiDAR-Sensor3.jpg Graphic file (type jpg)
 <use required/LiDAR-Sensor3.jpg>
-Package pdftex.def Info: required/LiDAR-Sensor3.jpg  used on input line 124.
+Package pdftex.def Info: required/LiDAR-Sensor3.jpg  used on input line 122.
 (pdftex.def)             Requested size: 34.62286pt x 77.1505pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 124.
+Package pdftex.def Info: required/ainin.png  used on input line 122.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 124--124
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 122--122
 [][] 
  []
 
@@ -2287,15 +2287,15 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 124--124
  <./required/LiDAR-Sensor1.jpg> <./required/LiDAR-Sensor2.jpg> <./required/LiDA
 R-Sensor3.jpg>]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 140.
+(Font)              scaled to size 6.64998pt on input line 138.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 140.
+(Font)              scaled to size 4.74998pt on input line 138.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 140.
+Package pdftex.def Info: required/ainin.png  used on input line 138.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 140--140
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 138--138
 [][] 
  []
 
@@ -2303,29 +2303,29 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 140--140
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-56.
+54.
  (C:\Users\AININ_G1\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 156.
+(Font)              scaled to size 9.49997pt on input line 154.
 <required/LiDAR auf Parkplatz.jpg, id=113, 403.5075pt x 225.09094pt>
 File: required/LiDAR auf Parkplatz.jpg Graphic file (type jpg)
 <use required/LiDAR auf Parkplatz.jpg>
 Package pdftex.def Info: required/LiDAR auf Parkplatz.jpg  used on input line 1
-56.
+54.
 (pdftex.def)             Requested size: 121.05318pt x 67.52779pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 156.
+Package pdftex.def Info: required/ainin.png  used on input line 154.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 156--156
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 154--154
 [][] 
  []
 
 
-Overfull \vbox (18.25627pt too high) detected at line 156
+Overfull \vbox (18.25627pt too high) detected at line 154
  []
 
 [9
@@ -2334,34 +2334,34 @@ Overfull \vbox (18.25627pt too high) detected at line 156
 <required/ADMA-Erklärung.jpg, id=119, 451.6875pt x 202.50656pt>
 File: required/ADMA-Erklärung.jpg Graphic file (type jpg)
 <use required/ADMA-Erklärung.jpg>
-Package pdftex.def Info: required/ADMA-Erklärung.jpg  used on input line 177.
+Package pdftex.def Info: required/ADMA-Erklärung.jpg  used on input line 175.
 (pdftex.def)             Requested size: 135.5073pt x 60.75243pt.
 
-Overfull \hbox (7.4686pt too wide) in paragraph at lines 177--177
+Overfull \hbox (7.4686pt too wide) in paragraph at lines 175--175
 [][] 
  []
 
 <required/ADMA.jpg, id=120, 296.526pt x 253.821pt>
 File: required/ADMA.jpg Graphic file (type jpg)
 <use required/ADMA.jpg>
-Package pdftex.def Info: required/ADMA.jpg  used on input line 177.
+Package pdftex.def Info: required/ADMA.jpg  used on input line 175.
 (pdftex.def)             Requested size: 88.95848pt x 76.14688pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
 [][]\T1/phv/m/n/8 (b)[][][] |AD-MA im Fahr-zeug [Ge-ne-
  []
 
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 177.
+Package pdftex.def Info: required/ainin.png  used on input line 175.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 177--177
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 175--175
 [][] 
  []
 
 
-Overfull \vbox (9.07655pt too high) detected at line 177
+Overfull \vbox (9.07655pt too high) detected at line 175
  []
 
 [10
@@ -2369,10 +2369,10 @@ Overfull \vbox (9.07655pt too high) detected at line 177
  <./required/ADMA-Erklärung.jpg> <./required/ADMA.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 187.
+Package pdftex.def Info: required/ainin.png  used on input line 185.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 187--187
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 185--185
 [][] 
  []
 
@@ -2381,10 +2381,10 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 187--187
 ]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 220.
+Package pdftex.def Info: required/ainin.png  used on input line 218.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 220--220
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 218--218
 [][] 
  []
 
@@ -2394,45 +2394,45 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 220--220
 <required/ROS.jpg, id=141, 107.65219pt x 150.5625pt>
 File: required/ROS.jpg Graphic file (type jpg)
 <use required/ROS.jpg>
-Package pdftex.def Info: required/ROS.jpg  used on input line 241.
+Package pdftex.def Info: required/ROS.jpg  used on input line 239.
 (pdftex.def)             Requested size: 32.2959pt x 45.16908pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
 n already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.241 	\end{frame}
+l.239 	\end{frame}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.241 	\end{frame}
+l.239 	\end{frame}
                   
 <required/ROS2.jpg, id=142, 115.18031pt x 150.5625pt>
 File: required/ROS2.jpg Graphic file (type jpg)
 <use required/ROS2.jpg>
-Package pdftex.def Info: required/ROS2.jpg  used on input line 241.
+Package pdftex.def Info: required/ROS2.jpg  used on input line 239.
 (pdftex.def)             Requested size: 34.55435pt x 45.16908pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{ROS}) has bee
 n already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.241 	\end{frame}
+l.239 	\end{frame}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{sub@ROS}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.241 	\end{frame}
+l.239 	\end{frame}
                   
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 241.
+Package pdftex.def Info: required/ainin.png  used on input line 239.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 241--241
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 239--239
 [][] 
  []
 
@@ -2443,14 +2443,14 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 241--241
 File: required/Szenariobeschreibung_auto.jpg Graphic file (type jpg)
 <use required/Szenariobeschreibung_auto.jpg>
 Package pdftex.def Info: required/Szenariobeschreibung_auto.jpg  used on input 
-line 250.
+line 248.
 (pdftex.def)             Requested size: 293.5424pt x 70.16635pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 250.
+Package pdftex.def Info: required/ainin.png  used on input line 248.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 250--250
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 248--248
 [][] 
  []
 
@@ -2458,28 +2458,46 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 250--250
 
  <./required/Szenariobeschreibung_auto.jpg>]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.54997pt on input line 265.
+(Font)              scaled to size 8.54997pt on input line 263.
 <required/ROS-Aufbau.jpg, id=155, 310.15875pt x 155.07938pt>
 File: required/ROS-Aufbau.jpg Graphic file (type jpg)
 <use required/ROS-Aufbau.jpg>
-Package pdftex.def Info: required/ROS-Aufbau.jpg  used on input line 265.
+Package pdftex.def Info: required/ROS-Aufbau.jpg  used on input line 263.
 (pdftex.def)             Requested size: 108.55717pt x 54.27858pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 265.
+Package pdftex.def Info: required/ainin.png  used on input line 263.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 265--265
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 263--263
 [][] 
  []
 
 
-Overfull \vbox (16.79617pt too high) detected at line 265
+Overfull \vbox (16.79617pt too high) detected at line 263
  []
 
 [15
 
  <./required/ROS-Aufbau.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 275.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 275--275
+[][] 
+ []
+
+[16
+
+]
+<required/Globales Koordinatensystem.jpg, id=167, 297.402pt x 201.261pt>
+File: required/Globales Koordinatensystem.jpg Graphic file (type jpg)
+<use required/Globales Koordinatensystem.jpg>
+Package pdftex.def Info: required/Globales Koordinatensystem.jpg  used on input
+ line 287.
+(pdftex.def)             Requested size: 89.22128pt x 60.37875pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
 Package pdftex.def Info: required/ainin.png  used on input line 287.
@@ -2489,97 +2507,81 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 287--287
 [][] 
  []
 
-[16
 
-]
-<required/HD-Map.jpg, id=167, 965.6075pt x 487.8225pt>
-File: required/HD-Map.jpg Graphic file (type jpg)
-<use required/HD-Map.jpg>
-Package pdftex.def Info: required/HD-Map.jpg  used on input line 294.
-(pdftex.def)             Requested size: 289.68448pt x 146.34787pt.
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 294.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 294--294
-[][] 
+Overfull \vbox (3.98848pt too high) detected at line 287
  []
 
 [17
 
- <./required/HD-Map.jpg>]
-<required/ROI-Teststrecke.jpg, id=173, 576.846pt x 349.962pt>
-File: required/ROI-Teststrecke.jpg Graphic file (type jpg)
-<use required/ROI-Teststrecke.jpg>
-Package pdftex.def Info: required/ROI-Teststrecke.jpg  used on input line 301.
-(pdftex.def)             Requested size: 201.89911pt x 122.48853pt.
+ <./required/Globales Koordinatensystem.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 301.
+Package pdftex.def Info: required/ainin.png  used on input line 296.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 301--301
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 296--296
 [][] 
- []
-
-
-Overfull \vbox (5.3781pt too high) detected at line 301
  []
 
 [18
 
- <./required/ROI-Teststrecke.jpg>]
+]
+<required/Szenarioanwendung Koordinatentransformation.jpg, id=180, 671.673pt x 
+168.849pt>
+File: required/Szenarioanwendung Koordinatentransformation.jpg Graphic file (ty
+pe jpg)
+<use required/Szenarioanwendung Koordinatentransformation.jpg>
+Package pdftex.def Info: required/Szenarioanwendung Koordinatentransformation.j
+pg  used on input line 311.
+(pdftex.def)             Requested size: 335.83568pt x 84.42429pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Globales\040K
+oordinatensystem}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.311 \end{frame}
+                 
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 316.
+Package pdftex.def Info: required/ainin.png  used on input line 311.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 316--316
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 311--311
 [][] 
- []
-
-
-Overfull \vbox (1.16994pt too high) detected at line 316
  []
 
 [19
 
-]
+ <./required/Szenarioanwendung Koordinatentransformation.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 338.
+Package pdftex.def Info: required/ainin.png  used on input line 330.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 338--338
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 330--330
 [][] 
  []
 
 [20
 
 ]
-<required/Globales Koordinatensystem.jpg, id=193, 297.402pt x 201.261pt>
-File: required/Globales Koordinatensystem.jpg Graphic file (type jpg)
-<use required/Globales Koordinatensystem.jpg>
-Package pdftex.def Info: required/Globales Koordinatensystem.jpg  used on input
- line 350.
-(pdftex.def)             Requested size: 89.22128pt x 60.37875pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 350.
+Package pdftex.def Info: required/ainin.png  used on input line 352.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 350--350
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 352--352
 [][] 
- []
-
-
-Overfull \vbox (3.98848pt too high) detected at line 350
  []
 
 [21
 
- <./required/Globales Koordinatensystem.jpg>]
+]
+<required/HD-Map.jpg, id=197, 965.6075pt x 487.8225pt>
+File: required/HD-Map.jpg Graphic file (type jpg)
+<use required/HD-Map.jpg>
+Package pdftex.def Info: required/HD-Map.jpg  used on input line 359.
+(pdftex.def)             Requested size: 289.68448pt x 146.34787pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
 Package pdftex.def Info: required/ainin.png  used on input line 359.
@@ -2591,41 +2593,39 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 359--359
 
 [22
 
-]
-<required/Szenarioanwendung Koordinatentransformation.jpg, id=205, 671.673pt x 
-168.849pt>
-File: required/Szenarioanwendung Koordinatentransformation.jpg Graphic file (ty
-pe jpg)
-<use required/Szenarioanwendung Koordinatentransformation.jpg>
-Package pdftex.def Info: required/Szenarioanwendung Koordinatentransformation.j
-pg  used on input line 372.
-(pdftex.def)             Requested size: 335.83568pt x 84.42429pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Globales\040K
-oordinatensystem}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.372 	\end{frame}
-                  
+ <./required/HD-Map.jpg>]
+<required/ROI-Teststrecke.jpg, id=203, 576.846pt x 349.962pt>
+File: required/ROI-Teststrecke.jpg Graphic file (type jpg)
+<use required/ROI-Teststrecke.jpg>
+Package pdftex.def Info: required/ROI-Teststrecke.jpg  used on input line 366.
+(pdftex.def)             Requested size: 201.89911pt x 122.48853pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 372.
+Package pdftex.def Info: required/ainin.png  used on input line 366.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 372--372
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 366--366
 [][] 
+ []
+
+
+Overfull \vbox (5.3781pt too high) detected at line 366
  []
 
 [23
 
- <./required/Szenarioanwendung Koordinatentransformation.jpg>]
+ <./required/ROI-Teststrecke.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 388.
+Package pdftex.def Info: required/ainin.png  used on input line 381.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 388--388
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 381--381
 [][] 
+ []
+
+
+Overfull \vbox (1.16994pt too high) detected at line 381
  []
 
 [24
@@ -2635,19 +2635,19 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 388--388
 File: required/Ground Subtraction.jpg Graphic file (type jpg)
 <use required/Ground Subtraction.jpg>
 Package pdftex.def Info: required/Ground Subtraction.jpg  used on input line 40
-4.
+8.
 (pdftex.def)             Requested size: 252.15532pt x 49.68576pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 404.
+Package pdftex.def Info: required/ainin.png  used on input line 408.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 404--404
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 408--408
 [][] 
  []
 
 
-Overfull \vbox (17.90326pt too high) detected at line 404
+Overfull \vbox (17.90326pt too high) detected at line 408
  []
 
 [25
@@ -2658,15 +2658,19 @@ Overfull \vbox (17.90326pt too high) detected at line 404
 File: required/Ground Subtraction Implementierung.jpg Graphic file (type jpg)
 <use required/Ground Subtraction Implementierung.jpg>
 Package pdftex.def Info: required/Ground Subtraction Implementierung.jpg  used 
-on input line 415.
+on input line 420.
 (pdftex.def)             Requested size: 126.36269pt x 41.5004pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 415.
+Package pdftex.def Info: required/ainin.png  used on input line 420.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 415--415
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 420--420
 [][] 
+ []
+
+
+Overfull \vbox (11.59518pt too high) detected at line 420
  []
 
 [26
@@ -2675,74 +2679,38 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 415--415
 <required/RANSAC.jpg, id=230, 265.4718pt x 211.0284pt>
 File: required/RANSAC.jpg Graphic file (type jpg)
 <use required/RANSAC.jpg>
-Package pdftex.def Info: required/RANSAC.jpg  used on input line 429.
+Package pdftex.def Info: required/RANSAC.jpg  used on input line 434.
 (pdftex.def)             Requested size: 106.18683pt x 84.40985pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 429.
+Package pdftex.def Info: required/ainin.png  used on input line 434.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 429--429
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 434--434
 [][] 
  []
 
 [27
 
  <./required/RANSAC.jpg>]
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.49997pt on input line 443.
-<required/Clustering.jpg, id=237, 475.7775pt x 257.46187pt>
-File: required/Clustering.jpg Graphic file (type jpg)
-<use required/Clustering.jpg>
-Package pdftex.def Info: required/Clustering.jpg  used on input line 443.
-(pdftex.def)             Requested size: 176.03491pt x 95.25938pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Clustering}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.443 	\end{frame}
-                  
+<required/Lineare_Regression.jpg, id=237, 564.60938pt x 373.395pt>
+File: required/Lineare_Regression.jpg Graphic file (type jpg)
+<use required/Lineare_Regression.jpg>
+Package pdftex.def Info: required/Lineare_Regression.jpg  used on input line 45
+2.
+(pdftex.def)             Requested size: 141.152pt x 93.34851pt.
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 443.
+Package pdftex.def Info: required/ainin.png  used on input line 452.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 443--443
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 452--452
 [][] 
- []
-
-
-Overfull \vbox (12.98816pt too high) detected at line 443
  []
 
 [28
 
- <./required/Clustering.jpg>]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 449.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 449--449
-[][] 
- []
-
-[29
-
-]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 459.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 459--459
-[][] 
- []
-
-[30
-
-]
+ <./required/Lineare_Regression.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
 Package pdftex.def Info: required/ainin.png  used on input line 470.
@@ -2752,106 +2720,68 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 470--470
 [][] 
  []
 
-
-Overfull \vbox (2.20267pt too high) detected at line 470
- []
-
-[31
+[29
 
 ]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 483.
+Package pdftex.def Info: required/ainin.png  used on input line 499.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 483--483
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 499--499
 [][] 
  []
 
 
-Overfull \vbox (22.12354pt too high) detected at line 483
+Overfull \vbox (6.24005pt too high) detected at line 499
+ []
+
+[30
+
+]
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 516.
+<required/Nicht_lineare_Regression.jpg, id=262, 238.491pt x 187.902pt>
+File: required/Nicht_lineare_Regression.jpg Graphic file (type jpg)
+<use required/Nicht_lineare_Regression.jpg>
+Package pdftex.def Info: required/Nicht_lineare_Regression.jpg  used on input l
+ine 516.
+(pdftex.def)             Requested size: 107.31995pt x 84.55511pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Over\040and\0
+40Underfitting}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.516 \end{frame}
+                 
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 516.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 516--516
+[][] 
+ []
+
+
+Overfull \vbox (16.02263pt too high) detected at line 516
+ []
+
+[31
+
+ <./required/Nicht_lineare_Regression.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 536.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 536--536
+[][] 
  []
 
 [32
 
 ]
-<required/Bounding_Box.jpg, id=270, 605.097pt x 150.672pt>
-File: required/Bounding_Box.jpg Graphic file (type jpg)
-<use required/Bounding_Box.jpg>
-Package pdftex.def Info: required/Bounding_Box.jpg  used on input line 528.
-(pdftex.def)             Requested size: 242.0345pt x 60.26772pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
-traction}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.528 	\end{frame}
-                  
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 528.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 528--528
-[][] 
- []
-
-[33
-
- <./required/Bounding_Box.jpg>]
-<required/ML_Einfuhrung.jpg, id=276, 553.31718pt x 206.27063pt>
-File: required/ML_Einfuhrung.jpg Graphic file (type jpg)
-<use required/ML_Einfuhrung.jpg>
-Package pdftex.def Info: required/ML_Einfuhrung.jpg  used on input line 547.
-(pdftex.def)             Requested size: 248.99043pt x 92.8209pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
-traction}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.547 	\end{frame}
-                  
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 547.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 547--547
-[][] 
- []
-
-
-Overfull \vbox (14.73843pt too high) detected at line 547
- []
-
-[34
-
- <./required/ML_Einfuhrung.jpg>]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 563.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 563--563
-[][] 
- []
-
-[35
-
-]
-<required/Bereiche_Machine_Learning.jpg, id=287, 809.205pt x 451.359pt>
-File: required/Bereiche_Machine_Learning.jpg Graphic file (type jpg)
-<use required/Bereiche_Machine_Learning.jpg>
-Package pdftex.def Info: required/Bereiche_Machine_Learning.jpg  used on input 
-line 571.
-(pdftex.def)             Requested size: 323.67625pt x 180.54039pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
-traction}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.571     \end{frame}
-                     
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
 Package pdftex.def Info: required/ainin.png  used on input line 571.
@@ -2861,227 +2791,198 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 571--571
 [][] 
  []
 
+[33
 
-Overfull \vbox (14.75537pt too high) detected at line 571
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 599.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 599--599
+[][] 
+ []
+
+[34
+
+]
+<required/Clustering.jpg, id=284, 475.7775pt x 257.46187pt>
+File: required/Clustering.jpg Graphic file (type jpg)
+<use required/Clustering.jpg>
+Package pdftex.def Info: required/Clustering.jpg  used on input line 617.
+(pdftex.def)             Requested size: 176.03491pt x 95.25938pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Clustering}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.617 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 617.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 617--617
+[][] 
+ []
+
+
+Overfull \vbox (12.98816pt too high) detected at line 617
+ []
+
+[35
+
+ <./required/Clustering.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 623.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 623--623
+[][] 
  []
 
 [36
 
- <./required/Bereiche_Machine_Learning.jpg>]
+]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 575.
+Package pdftex.def Info: required/ainin.png  used on input line 633.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 575--575
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 633--633
 [][] 
  []
 
 [37
 
 ]
-<required/supervised_learning.jpg, id=299, 527.133pt x 270.246pt>
-File: required/supervised_learning.jpg Graphic file (type jpg)
-<use required/supervised_learning.jpg>
-Package pdftex.def Info: required/supervised_learning.jpg  used on input line 5
-90.
-(pdftex.def)             Requested size: 158.14111pt x 81.07442pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
-traction}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.590 	\end{frame}
-                  
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 590.
+Package pdftex.def Info: required/ainin.png  used on input line 644.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 590--590
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 644--644
 [][] 
  []
 
 
-Overfull \vbox (7.25972pt too high) detected at line 590
+Overfull \vbox (2.20267pt too high) detected at line 644
  []
 
 [38
 
- <./required/supervised_learning.jpg>]
+]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 601.
+Package pdftex.def Info: required/ainin.png  used on input line 657.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 601--601
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 657--657
 [][] 
+ []
+
+
+Overfull \vbox (22.12354pt too high) detected at line 657
  []
 
 [39
 
 ]
-<required/Machine Learning.jpg, id=310, 526.21594pt x 98.61844pt>
-File: required/Machine Learning.jpg Graphic file (type jpg)
-<use required/Machine Learning.jpg>
-Package pdftex.def Info: required/Machine Learning.jpg  used on input line 613.
+<required/Bounding_Box.jpg, id=313, 605.097pt x 150.672pt>
+File: required/Bounding_Box.jpg Graphic file (type jpg)
+<use required/Bounding_Box.jpg>
+Package pdftex.def Info: required/Bounding_Box.jpg  used on input line 704.
+(pdftex.def)             Requested size: 242.0345pt x 60.26772pt.
 
-(pdftex.def)             Requested size: 368.34865pt x 69.03241pt.
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.704 	\end{frame}
+                  
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 613.
+Package pdftex.def Info: required/ainin.png  used on input line 704.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 613--613
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 704--704
 [][] 
  []
 
 [40
 
- <./required/Machine Learning.jpg>]
-<required/Loss_function.jpg, id=317, 744.381pt x 388.068pt>
-File: required/Loss_function.jpg Graphic file (type jpg)
-<use required/Loss_function.jpg>
-Package pdftex.def Info: required/Loss_function.jpg  used on input line 631.
-(pdftex.def)             Requested size: 148.87355pt x 77.61221pt.
+ <./required/Bounding_Box.jpg>]
+<required/ML_Einfuhrung.jpg, id=319, 553.31718pt x 206.27063pt>
+File: required/ML_Einfuhrung.jpg Graphic file (type jpg)
+<use required/ML_Einfuhrung.jpg>
+Package pdftex.def Info: required/ML_Einfuhrung.jpg  used on input line 723.
+(pdftex.def)             Requested size: 248.99043pt x 92.8209pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{Machine\040Le
-arning}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.631 	\end{frame}
+l.723 	\end{frame}
                   
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 631.
+Package pdftex.def Info: required/ainin.png  used on input line 723.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 631--631
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 723--723
 [][] 
  []
 
 
-Overfull \vbox (15.27736pt too high) detected at line 631
+Overfull \vbox (14.73843pt too high) detected at line 723
  []
 
 [41
 
- <./required/Loss_function.jpg>]
+ <./required/ML_Einfuhrung.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 640.
+Package pdftex.def Info: required/ainin.png  used on input line 739.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 640--640
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 739--739
 [][] 
  []
 
 [42
 
 ]
+<required/Bereiche_Machine_Learning.jpg, id=330, 809.205pt x 451.359pt>
+File: required/Bereiche_Machine_Learning.jpg Graphic file (type jpg)
+<use required/Bereiche_Machine_Learning.jpg>
+Package pdftex.def Info: required/Bereiche_Machine_Learning.jpg  used on input 
+line 747.
+(pdftex.def)             Requested size: 323.67625pt x 180.54039pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.747     \end{frame}
+                     
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 651.
+Package pdftex.def Info: required/ainin.png  used on input line 747.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 651--651
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 747--747
 [][] 
+ []
+
+
+Overfull \vbox (14.75537pt too high) detected at line 747
  []
 
 [43
 
-]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 661.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 661--661
-[][] 
- []
-
-[44
-
-]
-<required/Over and Underfitting.png, id=339, 847.092pt x 216.81pt>
-File: required/Over and Underfitting.png Graphic file (type png)
-<use required/Over and Underfitting.png>
-Package pdftex.def Info: required/Over and Underfitting.png  used on input line
- 675.
-(pdftex.def)             Requested size: 211.77248pt x 54.20236pt.
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 675.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 675--675
-[][] 
- []
-
-[45
-
- <./required/Over and Underfitting.png>]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 683.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 683--683
-[][] 
- []
-
-[46
-
-]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 698.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 698--698
-[][] 
- []
-
-[47
-
-]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 721.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 721--721
-[][] 
- []
-
-[48
-
-]
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 735.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 735--735
-[][] 
- []
-
-[49
-
-]
-<required/Lineare_Regression.jpg, id=368, 564.60938pt x 373.395pt>
-File: required/Lineare_Regression.jpg Graphic file (type jpg)
-<use required/Lineare_Regression.jpg>
-Package pdftex.def Info: required/Lineare_Regression.jpg  used on input line 75
-1.
-(pdftex.def)             Requested size: 141.152pt x 93.34851pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Over\040and\0
-40Underfitting}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.751 	\end{frame}
-                  
+ <./required/Bereiche_Machine_Learning.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
 Package pdftex.def Info: required/ainin.png  used on input line 751.
@@ -3091,19 +2992,143 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 751--751
 [][] 
  []
 
+[44
 
-Overfull \vbox (12.016pt too high) detected at line 751
+]
+<required/supervised_learning.jpg, id=342, 527.133pt x 270.246pt>
+File: required/supervised_learning.jpg Graphic file (type jpg)
+<use required/supervised_learning.jpg>
+Package pdftex.def Info: required/supervised_learning.jpg  used on input line 7
+66.
+(pdftex.def)             Requested size: 158.14111pt x 81.07442pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Ground\040Sub
+traction}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.766 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 766.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 766--766
+[][] 
+ []
+
+
+Overfull \vbox (7.25972pt too high) detected at line 766
+ []
+
+[45
+
+ <./required/supervised_learning.jpg>]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 777.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 777--777
+[][] 
+ []
+
+[46
+
+]
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 786.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 786--786
+[][] 
+ []
+
+[47
+
+]
+<required/Over and Underfitting.png, id=358, 847.092pt x 216.81pt>
+File: required/Over and Underfitting.png Graphic file (type png)
+<use required/Over and Underfitting.png>
+Package pdftex.def Info: required/Over and Underfitting.png  used on input line
+ 804.
+(pdftex.def)             Requested size: 211.77248pt x 54.20236pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Over\040and\0
+40Underfitting}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.804 \end{frame}
+                 
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 804.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 804--804
+[][] 
+ []
+
+
+Overfull \vbox (12.26994pt too high) detected at line 804
+ []
+
+[48
+
+ <./required/Over and Underfitting.png>]
+<required/Machine Learning.jpg, id=365, 526.21594pt x 98.61844pt>
+File: required/Machine Learning.jpg Graphic file (type jpg)
+<use required/Machine Learning.jpg>
+Package pdftex.def Info: required/Machine Learning.jpg  used on input line 820.
+
+(pdftex.def)             Requested size: 368.34865pt x 69.03241pt.
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 820.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 820--820
+[][] 
+ []
+
+[49
+
+ <./required/Machine Learning.jpg>]
+<required/Loss_function.jpg, id=373, 744.381pt x 388.068pt>
+File: required/Loss_function.jpg Graphic file (type jpg)
+<use required/Loss_function.jpg>
+Package pdftex.def Info: required/Loss_function.jpg  used on input line 838.
+(pdftex.def)             Requested size: 126.54309pt x 65.97067pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{Machine\040Le
+arning}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.838 	\end{frame}
+                  
+File: required/ainin.png Graphic file (type png)
+<use required/ainin.png>
+Package pdftex.def Info: required/ainin.png  used on input line 838.
+(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
+
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 838--838
+[][] 
+ []
+
+
+Overfull \vbox (3.63582pt too high) detected at line 838
  []
 
 [50
 
- <./required/Lineare_Regression.jpg>]
+ <./required/Loss_function.jpg>]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 769.
+Package pdftex.def Info: required/ainin.png  used on input line 851.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 769--769
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 851--851
 [][] 
  []
 
@@ -3112,51 +3137,34 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 769--769
 ]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 796.
+Package pdftex.def Info: required/ainin.png  used on input line 863.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 796--796
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 863--863
 [][] 
  []
 
 [52
 
 ]
-<required/Nicht_lineare_Regression.jpg, id=388, 238.491pt x 187.902pt>
-File: required/Nicht_lineare_Regression.jpg Graphic file (type jpg)
-<use required/Nicht_lineare_Regression.jpg>
-Package pdftex.def Info: required/Nicht_lineare_Regression.jpg  used on input l
-ine 813.
-(pdftex.def)             Requested size: 107.31995pt x 84.55511pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{Over\040and\0
-40Underfitting}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.813 	\end{frame}
-                  
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 813.
+Package pdftex.def Info: required/ainin.png  used on input line 873.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 813--813
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 873--873
 [][] 
- []
-
-
-Overfull \vbox (16.02263pt too high) detected at line 813
  []
 
 [53
 
- <./required/Nicht_lineare_Regression.jpg>]
+]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 833.
+Package pdftex.def Info: required/ainin.png  used on input line 894.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 833--833
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 894--894
 [][] 
  []
 
@@ -3165,10 +3173,10 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 833--833
 ]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 842.
+Package pdftex.def Info: required/ainin.png  used on input line 921.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 842--842
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 921--921
 [][] 
  []
 
@@ -3177,75 +3185,63 @@ Overfull \hbox (7.13753pt too wide) in paragraph at lines 842--842
 ]
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 868.
+Package pdftex.def Info: required/ainin.png  used on input line 935.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 868--868
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 935--935
 [][] 
  []
 
 [56
 
 ]
+Overfull \hbox (1065.85876pt too wide) in paragraph at lines 947--947
+[]  
+ []
+
+
+Overfull \hbox (382.75117pt too wide) in paragraph at lines 947--947
+[]  
+ []
+
+
+Overfull \hbox (276.27258pt too wide) in paragraph at lines 947--947
+[]  
+ []
+
 File: required/ainin.png Graphic file (type png)
 <use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 895.
+Package pdftex.def Info: required/ainin.png  used on input line 947.
 (pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
 
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 895--895
+Overfull \hbox (7.13753pt too wide) in paragraph at lines 947--947
 [][] 
  []
 
 [57
 
 ]
-Overfull \hbox (1065.85876pt too wide) in paragraph at lines 906--906
+Overfull \hbox (251.33842pt too wide) in paragraph at lines 956--956
 []  
  []
 
 
-Overfull \hbox (382.75117pt too wide) in paragraph at lines 906--906
+Overfull \hbox (168.86786pt too wide) in paragraph at lines 956--956
 []  
  []
 
 
-Overfull \hbox (276.27258pt too wide) in paragraph at lines 906--906
+Overfull \hbox (547.21309pt too wide) in paragraph at lines 956--956
 []  
- []
-
-File: required/ainin.png Graphic file (type png)
-<use required/ainin.png>
-Package pdftex.def Info: required/ainin.png  used on input line 906.
-(pdftex.def)             Requested size: 50.06496pt x 20.47769pt.
-
-Overfull \hbox (7.13753pt too wide) in paragraph at lines 906--906
-[][] 
  []
 
 [58
 
-]
-Overfull \hbox (251.33842pt too wide) in paragraph at lines 915--915
-[]  
- []
-
-
-Overfull \hbox (168.86786pt too wide) in paragraph at lines 915--915
-[]  
- []
-
-
-Overfull \hbox (547.21309pt too wide) in paragraph at lines 915--915
-[]  
- []
-
-[59
+] [59
 
 ] [60
 
 ] [61
-
-] [62
 
 ]
 \tf@nav=\write7
@@ -3267,44 +3263,45 @@ Package logreq Info: Writing requests to 'slides.run.xml'.
 \openout1 = `slides.run.xml'.
 
  )
-(\end occurred when \iftrue on line 916 was incomplete) 
+(\end occurred when \iftrue on line 957 was incomplete) 
 Here is how much of TeX's memory you used:
- 49568 strings out of 477992
- 1150494 string characters out of 2826050
- 1931449 words of memory out of 3000000
- 67273 multiletter control sequences out of 15000+600000
- 522563 words of font info for 104 fonts, out of 8000000 for 9000
+ 49562 strings out of 477992
+ 1150509 string characters out of 2826050
+ 1931444 words of memory out of 3000000
+ 67270 multiletter control sequences out of 15000+600000
+ 519833 words of font info for 102 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  142i,14n,136p,746b,2365s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/AININ_G1/AppDa
 ta/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/AININ_G1/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/AINI
-N_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
-:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmex
-tra/cmex9.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/AININ_G1/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/AININ_G1/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/AININ_G1/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users
-/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
-b><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr7.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/AININ_G1/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/AININ_G1/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/AINI
-N_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+N_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:
 /Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy9.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msam10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/AININ_G1/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/AININ_G1/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on slides.pdf (62 pages, 6845158 bytes).
+ex10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cmextra/cmex9.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/AININ_G1/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/AININ_G1/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users
+/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pf
+b><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/AININ_G1/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/AININ_G1/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/AINI
+N_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:
+/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb><C:/Users/AININ_G1/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/symbols/msam10.pfb><C:/Users/AININ_G1/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/AININ_G1/AppData
+/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/AININ_G1/A
+ppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on slides.pdf (61 pages, 6852983 bytes).
 PDF statistics:
  560 PDF objects out of 1000 (max. 8388607)
- 144 named destinations out of 1000 (max. 500000)
+ 142 named destinations out of 1000 (max. 500000)
  313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

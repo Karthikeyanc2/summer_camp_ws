@@ -20,17 +20,17 @@
 \beamer@slide {sub@ROS}{13}
 \beamer@slide {ROS}{13}
 \beamer@slide {sub@ROS}{13}
-\beamer@slide {Globales Koordinatensystem}{21}
-\beamer@slide {Globales Koordinatensystem}{23}
+\beamer@slide {Globales Koordinatensystem}{17}
+\beamer@slide {Globales Koordinatensystem}{19}
 \beamer@slide {Ground Subtraction}{25}
 \beamer@slide {Clustering}{27}
-\beamer@slide {Clustering}{28}
-\beamer@slide {Ground Subtraction}{33}
-\beamer@slide {Ground Subtraction}{34}
-\beamer@slide {Ground Subtraction}{36}
-\beamer@slide {Ground Subtraction}{38}
-\beamer@slide {Machine Learning}{40}
-\beamer@slide {Machine Learning}{41}
-\beamer@slide {Over and Underfitting}{45}
-\beamer@slide {Over and Underfitting}{50}
-\beamer@slide {Over and Underfitting}{53}
+\beamer@slide {Over and Underfitting}{28}
+\beamer@slide {Over and Underfitting}{31}
+\beamer@slide {Clustering}{35}
+\beamer@slide {Ground Subtraction}{40}
+\beamer@slide {Ground Subtraction}{41}
+\beamer@slide {Ground Subtraction}{43}
+\beamer@slide {Ground Subtraction}{45}
+\beamer@slide {Over and Underfitting}{48}
+\beamer@slide {Machine Learning}{49}
+\beamer@slide {Machine Learning}{50}

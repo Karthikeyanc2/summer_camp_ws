@@ -43,8 +43,6 @@
 				\begin{enumerate}
 					\item Grundlagen der künstlichen Intelligenz					
 					\item Ermittlung der Kritikalität	
-					\item Lineare Regression 
-					\item Nicht-lineare Basisfunktionen 
 				\end{enumerate}	
 				\item Online-Verwendung der KI-Methoden
 			\end{enumerate}
@@ -263,6 +261,73 @@ Eine KI-Methode zu programmieren, die es erlaubt, die TTC eines Fahrzeugs zu sch
 			\caption{Darstellung der Kommuikation zwischen Nodes in ROS}
 		\end{figure}
 	\end{frame}
+\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+	\begin{itemize}
+		\item Zahlreiche Koordinatensysteme im Fahrzeug, die eine Betrachtung der Information aus verschiedenen Perspektive ermöglichen.
+		\item Zwischen den lokalen Koordinatensystemen des Fahrzeugs kann ein statischer Zusammenhang, analog einer Starrkörperbewegung, angenommen werden $\rightarrow$ Transformationsmatrizen sind zeitunabhängig.
+		\item Fahrzeugkoordinatensysteme sind bei der Berechnung zwingend zu beachten, da Sie den Variablen Bedeutung verleihen.
+		%			\item Beispiel einer Fahrdynamikgleichung:
+		%			\begin{equation}
+			%				\hspace*{0.2em}^V\vspace*{-0.2em}v_{x} = \frac{\delta}{\delta t}x \text{ gilt für } x =\hspace*{0.2em}^V\vspace*{-0.2em}x
+			%			\end{equation}
+		%					
+	\end{itemize}
+\end{frame}
+\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+	\begin{figure}
+		\includegraphics[scale=0.3]{required/Globales Koordinatensystem.jpg}
+		\caption{Dargestellt ist ein Fahrzeug in einem globalen Koordinatensystem.}
+		\label{Globales Koordinatensystem}
+	\end{figure}
+	\begin{itemize}
+		\item Die Daten aller Sensoren werden in ein Stationäres Referenzkoordinatensystem umgewandelt.
+		\item Ermöglicht die Beschreibung von Objekten relativ zu einem konstanten Koordinatensystem.
+		\item Transformationsmatrix von lokalem Fahrzeugkoordinatensystem zu globalem Koordinatensystem ist für instationäre Objekte zeitabhängig.
+	\end{itemize}					
+\end{frame}
+\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+	\textbf{Nomenklatur:} 
+	\begin{itemize}
+		\item $\hspace*{0.2em}^E\vspace*{-0.2em}P$ : Punkt im globalen Koordinatensystem
+		\item $\hspace*{0.2em}^L\vspace*{-0.2em}P$ : Punkt im LiDAR Koordinatensystem
+		\item $\hspace*{0.2em}^V\vspace*{-0.2em}P$ : Punkt im Fahrzeugkoordinatensystem (CoG)
+		\item $\hspace*{0.2em}^{S}\vspace*{-0.2em}P$ : Punkt im Fahrzeugkoordinatensystems der exterozeptiven Sensoren
+	\end{itemize}
+\end{frame}
+\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+	\begin{figure}
+		\includegraphics[scale=0.5]{required/Szenarioanwendung Koordinatentransformation.jpg}
+		\caption{Die Abbildung zeigt eine grafische Darstellung der Koordinatentransformation vom LiDAR-Koordinatensystem in das Fahrzeugkoordinatensystem und vom Fahrzeugkoordinatensystem in das globale Koordinatensystem. Zusammengesetzt aus Abbildungen in [Breuer.2015] und [Velodyne.2020]}
+		\label{Globales Koordinatensystem}
+	\end{figure}
+	\footnotesize
+	%       	\begin{itemize}
+		%       		\item Innerhalb des Fahrzeug: statische Koordinatentransformation 
+		%       		\item Zwischen Fahrzeug- und Erdkoordinatensystem: zeitabhängige Koordinatentransformation (Position des Fahrzeugs im globalen Koordinatensystem durch den ADMA-Sensor gegeben)
+		%			\item Umsetzung mit tf-Modul aus ROS
+		%       	\end{itemize}
+	
+	
+\end{frame}
+\begin{frame}{Datenvorverarbeitung}{Region of Interest}
+	\footnotesize
+	\begin{itemize}
+		\item Das ROS-Pachage \enquote{tf} liefert als Output die Transformationsmatrix zwischen Referenzsystemen.
+		\item Das RVIZ ROS-Package wird zur Visualisierung der transformierten Messungen verwendet.
+		\item RVIZ zeigt die transformierten Messungen an, wie sie vom tf-Package erzeugt wurden (see tutorial 2).
+		%			\item Unterteilung in statische und dynamische (zeitabhängige) Transformatoren wird mit den jeweiligen Transformatoren umgesetzt
+	\end{itemize}
+	\textbf{Tutorial Links}
+	\begin{enumerate}
+		\item http://wiki.ros.org/tf/Tutorials
+		\item http://wiki.ros.org/tf/Tutorials/Introduction\%20to\%20tf
+		\item http://wiki.ros.org/tf2
+		\item Youtube-Tutorial: https://www.youtube.com/watch?v=QyvHhY4Y\_Y8
+	\end{enumerate}
+
+\textcolor{blue}{**s. coordinate transformation code**}
+
+\end{frame}
 %	\begin{frame}{ROS}{Ordnerstruktur}
 %		\begin{figure}
 %			\includegraphics[scale=0.5]{required/ROS_Folder_Structure.jpg}
@@ -312,7 +377,7 @@ wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
 				\hspace*{0.2em}^E\vspace*{-0.2em}P_{1}&\hspace*{0.2em}^E\vspace*{-0.2em}P_{2}&\hspace*{0.2em}^E\vspace*{-0.2em}P_{3}&\hspace*{0.2em}^E\vspace*{-0.2em}P_{4}
 			\end{matrix}
 		\end{align}
-	\textbf{Forschungsfrage:} Wenn die befahrbare Fläche bekannt ist, wie lassen sich dann nicht relevante LiDAR-Messungen herausfiltern? 
+	\textbf{Forschungsfrage:} Wenn die befahrbare Fläche bekannt ist, wie lassen sich dann nicht relevante LiDAR-Messungen herausfiltern? \textcolor{blue}{**s. inpolygon code**}
 	\end{frame}
 %\begin{frame}{Datenvorverarbeitung}{Region of Interest}
 %		\begin{itemize}
@@ -324,68 +389,7 @@ wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
 %			\item Filterung aller Punkte mit Koordinaten $(x,y)$ außerhalb des durch die 4 Punkte $\hspace*{0.2em}^E\vspace*{-0.2em}P_{i}$ aufgespannten Bereichs
 %		\end{enumerate}
 %	\end{frame}
-	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
-		\begin{itemize}
-			\item Zahlreiche Koordinatensysteme im Fahrzeug, die eine Betrachtung der Information aus verschiedenen Perspektive ermöglichen.
-			\item Zwischen den lokalen Koordinatensystemen des Fahrzeugs kann ein statischer Zusammenhang, analog einer Starrkörperbewegung, angenommen werden $\rightarrow$ Transformationsmatrizen sind zeitunabhängig.
-			\item Fahrzeugkoordinatensysteme sind bei der Berechnung zwingend zu beachten, da Sie den Variablen Bedeutung verleihen.
-%			\item Beispiel einer Fahrdynamikgleichung:
-%			\begin{equation}
-%				\hspace*{0.2em}^V\vspace*{-0.2em}v_{x} = \frac{\delta}{\delta t}x \text{ gilt für } x =\hspace*{0.2em}^V\vspace*{-0.2em}x
-%			\end{equation}
-%					
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
-		\begin{figure}
-			\includegraphics[scale=0.3]{required/Globales Koordinatensystem.jpg}
-			\caption{Dargestellt ist ein Fahrzeug in einem globalen Koordinatensystem.}
-        	\label{Globales Koordinatensystem}
-		\end{figure}
-		\begin{itemize}
-			\item Die Daten aller Sensoren werden in ein Stationäres Referenzkoordinatensystem umgewandelt.
-			\item Ermöglicht die Beschreibung von Objekten relativ zu einem konstanten Koordinatensystem.
-			\item Transformationsmatrix von lokalem Fahrzeugkoordinatensystem zu globalem Koordinatensystem ist für instationäre Objekte zeitabhängig.
-		\end{itemize}					
-	\end{frame}
-	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
-		\textbf{Nomenklatur:} 
-		\begin{itemize}
-			\item $\hspace*{0.2em}^E\vspace*{-0.2em}P$ : Punkt im globalen Koordinatensystem
-			\item $\hspace*{0.2em}^L\vspace*{-0.2em}P$ : Punkt im LiDAR Koordinatensystem
-			\item $\hspace*{0.2em}^V\vspace*{-0.2em}P$ : Punkt im Fahrzeugkoordinatensystem (CoG)
-			\item $\hspace*{0.2em}^{S}\vspace*{-0.2em}P$ : Punkt im Fahrzeugkoordinatensystems der exterozeptiven Sensoren
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
-		\begin{figure}
-			\includegraphics[scale=0.5]{required/Szenarioanwendung Koordinatentransformation.jpg}
-			\caption{Die Abbildung zeigt eine grafische Darstellung der Koordinatentransformation vom LiDAR-Koordinatensystem in das Fahrzeugkoordinatensystem und vom Fahrzeugkoordinatensystem in das globale Koordinatensystem. Zusammengesetzt aus Abbildungen in [Breuer.2015] und [Velodyne.2020]}
-        	\label{Globales Koordinatensystem}
-       	\end{figure}
-       	\footnotesize
-%       	\begin{itemize}
-%       		\item Innerhalb des Fahrzeug: statische Koordinatentransformation 
-%       		\item Zwischen Fahrzeug- und Erdkoordinatensystem: zeitabhängige Koordinatentransformation (Position des Fahrzeugs im globalen Koordinatensystem durch den ADMA-Sensor gegeben)
-%			\item Umsetzung mit tf-Modul aus ROS
-%       	\end{itemize}
-	\end{frame}
-	\begin{frame}{Datenvorverarbeitung}{Region of Interest}
-		\footnotesize
-		\begin{itemize}
-			\item Das ROS-Pachage \enquote{tf} liefert als Output die Transformationsmatrix zwischen Referenzsystemen.
-			\item Das RVIZ ROS-Package wird zur Visualisierung der transformierten Messungen verwendet.
-			\item RVIZ zeigt die transformierten Messungen an, wie sie vom tf-Package erzeugt wurden (see tutorial 2).
-%			\item Unterteilung in statische und dynamische (zeitabhängige) Transformatoren wird mit den jeweiligen Transformatoren umgesetzt
-		\end{itemize}
-		\textbf{Tutorial Links}
-		\begin{enumerate}
-			\item http://wiki.ros.org/tf/Tutorials
-			\item http://wiki.ros.org/tf/Tutorials/Introduction\%20to\%20tf
-			\item http://wiki.ros.org/tf2
-			\item Youtube-Tutorial: https://www.youtube.com/watch?v=QyvHhY4Y\_Y8
-		\end{enumerate}
-	\end{frame}
+	
 	\begin{frame}{Datenvorverarbeitung}{Ground Subtraction}
 		\footnotesize
 		\textbf{Motivation:} Reduzierung der zu verarbeitenden Sensordatenmenge.
@@ -408,6 +412,7 @@ wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
 			\item Die z-Filterung bedeutet, dass alle Messungen unterhalb einer bestimmten Höhe weggelassen werden.
 			\item Die Implementierung der z-Filterung ist schneller als die Implementierung des RANSAC-Algorithmus.
 		\end{itemize}
+	\textcolor{blue}{**s. z-th substraction code**}
 		\begin{figure}
 			\includegraphics[scale=0.5]{required/Ground Subtraction Implementierung.jpg} 
 			\caption{Die Abbildung zeigt eine grafische Darstellung der Bodensubtraktion. In Rot der Bereich, in dem die LiDAR-Messungen nicht berücksichtigt werden sollen. [Rummelhard.2017]}
@@ -427,6 +432,175 @@ wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
         	\label{Clustering}
 		\end{figure}
 	\end{frame}
+
+
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	\footnotesize		
+	%		\textbf{Motivation:} Einfaches ML-Modell zur Prognose der TTC. Zudem eine gute Veranschaulichung des MLs.
+	\begin{itemize}
+		\item Annahme der Funktion $f(\textbf{x})$: Der Zielvektor \textbf{y} kann entsprechend der Rechenvorschrift
+		\begin{equation}
+			y = w^{\text{T}} x + t + \eta \text{ mit } \eta \backsim \mathcal{N}(0, \sigma^2) \text{,}
+		\end{equation}
+		\item[] wobei $w$ und $t$ Parameter sind, und $x$ die Dimension $N$ hat, abgebildet werden.		   
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[scale=0.25]{required/Lineare_Regression.jpg}
+		\caption{\scriptsize Lineare Basisfunktion [LinWik.2017]}
+		\label{Over and Underfitting}
+	\end{figure}
+\end{frame}
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	\footnotesize
+	\begin{itemize}			
+		\item Für eine kompaktere Schreibweise lassen sich $w$ und $t$ in den Parametervektor $\Theta = [w^{\text{T}}, t]^{\text{T}}$ der Dimension $(N+1)$ zusammenfassen und der Eingang $x$ erweitern zu $ \tilde{x} = [x^{\text{T}}, 1]^{\text{T}}$.
+		\item Damit gilt: $
+		y = \Theta^{\text{T}} \tilde{x} + \eta \text{ mit } \eta \backsim \mathcal{N}(0, \sigma^2) \text{,} $
+		\item Die Lösung für den gesuchten Parameter $\theta$ ergibt sich aus dem Minimum der Verlustfunktion. Für die quadratische Verlustfunktion bedeutet dies:
+		\begin{equation}
+			\theta = \underset{\theta}{\mathrm{argmin}} \left\{\ \frac{1}{M} \sum_{m=1}^M\ (y_m - \theta^{\text{T}} \tilde{x}_m)^2 \right\}\
+		\end{equation}
+		\item Die Ableitung der quadratischen Funktion hat eine Nullstelle im Minimum					\begin{equation}
+			\frac{\delta}{\delta \theta^{\text{T}}} \Bigl( \frac{1}{M} \sum_{m=1}^M\ (y_m - \theta^{\text{T}} \tilde{x}_m)^2 \Bigr) 
+			= \sum_{m=1}^M\ -(y_m - \theta^{\text{T}} \tilde{x}_m) \tilde{x}_m^{\text{T}}
+			\stackrel{!}{=} 0 
+		\end{equation}
+		
+	\end{itemize}
+\end{frame}
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	Die Lösung ist:
+	\begin{equation}
+		\theta = \Bigl( \sum_{m=1}^M\ \tilde{x}_m \tilde{x}_m^{\text{T}} \Bigr)^{-1} \Bigl( \sum_{m=1}^M\ \tilde{x}_m y_m \Bigr)
+	\end{equation}
+	Schreibt man dieses Ergebnis in Matrix-Vektor-Notation, so werden alle Eingänge und Zielwerte aus dem Datensatz $\mathcal{D}$ in der Matrix $\tilde{X}$ und dem Vektor $y$ sortiert. 
+	\begin{equation}
+		\theta = ( \tilde{X}^{\text{T}} \tilde{X} )^{-1} \tilde{X}^{\text{T}} y
+		\hspace{0.5 cm}	
+		\text{, mit }			
+		\tilde{X} = 
+		\begin{bmatrix}
+			\tilde{x}_1^{\text{T}} \\
+			\tilde{x}_2^{\text{T}} \\	
+			\vdots \\
+			\tilde{x}_M^{\text{T}} \\		
+		\end{bmatrix}
+		\text{,  }
+		y =	
+		\begin{bmatrix}
+			\tilde{y}_1 \\
+			\tilde{y}_2 \\	
+			\vdots \\
+			\tilde{y}_M \\
+		\end{bmatrix}						
+	\end{equation}
+
+\textcolor{blue}{**s. linear regression code**} \textcolor{blue}{**s. ransac code**}
+\end{frame}
+
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	\small		
+	\textbf{Motivation}
+	\footnotesize
+	\begin{itemize}
+		\item Die Einschränkung durch Linearität ermöglicht es dem Algorithmus nicht die TTC fehlerfrei darzustellen.
+		\item Ein klassischer Fall von Underfitting.
+		\item Eine entscheidende Möglichkeit kompliziertere Zusammenhänge darzustellen, ist Nicht-Linearität in die Funktion zu bringen
+		\item Eine Möglichkeit sind nicht-lineare Basisfunktionen. 
+	\end{itemize}					
+	\begin{figure}
+		\includegraphics[scale=0.45]{required/Nicht_lineare_Regression.jpg}
+		\caption{\scriptsize Verwendung von nicht-linearen Basisfunktionen [NlinWik.2017]}
+		\label{Over and Underfitting}
+	\end{figure}
+\end{frame}
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	\begin{enumerate}
+		\item Verwenden Sie die Datensätze der vorhergehenden Aufgabe.
+		\item Analog zum beschriebenen Verfahren $x$ soll eine nichtlineare Basisfunktion $\varphi (x)$ verwendet werden. Folgende wird in diesem Fall gegeben:
+		\begin{equation*}
+			\varphi (x) = 
+			\begin{bmatrix}
+				\varphi_1(x) & \varphi_2(x) & \varphi_3(x) & \varphi_4(x) & \varphi_5(x) &
+				\varphi_6(x) & \varphi_7(x) & \varphi_8(x) & \varphi_9(x)
+			\end{bmatrix}
+		\end{equation*}
+		\item[] mit
+		\begin{flalign}
+			&\varphi_1 (x) = x_1, \hspace{0.2 cm} \varphi_2 (x) = x_2, \hspace{0.2 cm} 						\varphi_3 (x) = x_1^2, \hspace{0.2 cm} \varphi_4 (x) = x_2^2, \hspace{0.2 cm} 
+			\varphi_5 (x) = x_1 x_2, \nonumber \\
+			&\varphi_6 (x) = x_1^3,\hspace{0.2 cm} \varphi_7 (x) = x_2^3,\hspace{0.2 cm} \
+			\varphi_8 (x) = x_1^2 x_2, \hspace{0.2 cm}  \varphi_9 (x) = x_1 x_2^2 \nonumber
+		\end{flalign}
+	\end{enumerate}
+\end{frame}
+%	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
+	%		\begin{enumerate}
+		%			\setcounter{enumi}{2}	
+		%			\item Bestimmung von $\theta$ für das neue Regressionsmodell. Test der Ausgabe $\hat{y}$ für den Testdatensatz $\mathcal{D}_\text{test}$.
+		%			\item Visualisierung des Zusammenhangs von $d$ und $v_x,rel$ zu $\hat{y}$ für das berechnete Regressionsmodell. Visualisierung des Datensatzes $\mathcal{D}_\text{test}$ im selben Plot.
+		%			\item Integration in die ROS-Pipeline zur Bestimmung der Kritikalität TTC online
+		%			\item Zusatzaufgabe: Untersuchen sie die Folgen einer Änderung des Trainingsdatensatzes oder der Basisfunktion
+		%		\end{enumerate}
+	%	\end{frame}
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	\begin{itemize}
+		\item Basiert auf der linearen Regression, wobei $x$ durch $\phi (x)$ ersetzt wird.
+		\begin{equation}
+			y = w^{\text{T}} \varphi (x) + t + \eta
+			\hspace{0.2 cm}
+			\text{mit}
+			\hspace{0.2 cm}
+			\eta \backsim \mathcal{N}(0, \sigma^2)
+			\hspace{0.2 cm}
+			\text{und} \hspace{0.2 cm} 			
+			\varphi (x) = [ \varphi_1 (x), \varphi_2 (x), \dots, \varphi_H (x)]^{\text{T}} \text{,}
+		\end{equation}
+		\item[] wobei die Funktionen $\varphi (x)$ nichtlinear sein können
+		\item Analog zur vorherigen Herleitung ergibt sich:
+		\begin{equation}
+			\tilde{\varphi} (x_m)= 
+			\begin{bmatrix}
+				\varphi (x_m)^{\text{T}} & 1
+			\end{bmatrix}^{\text{T}}
+		\end{equation}
+		\begin{equation}
+			\theta = \Bigl( \sum_{m=1}^M\ \tilde{\varphi} (x_m) \tilde{\varphi} (x_m)^{\text{T}} \Bigr)^{-1} \Bigl( \sum_{m=1}^M\ \tilde{\varphi} (x_m) y_m \Bigr) 
+		\end{equation}
+	\end{itemize}
+\end{frame}
+\begin{frame}{KI-Methoden}{Ground Subtraction}
+	\begin{itemize}
+		\item In Matrixschreibweise ergibt sich:			
+		\begin{equation}
+			\theta = \Bigl( \tilde{\phi}^{\text{T}} \tilde{\phi} \Bigr) ^{-1} \tilde{\phi}^{\text{T}} y
+		\end{equation}
+		\item[] mit
+		\begin{equation}
+			\tilde{\phi} =
+			\begin{bmatrix}
+				\tilde{\varphi} (x_1)^{\text{T}} \\
+				\tilde{\varphi} (x_2)^{\text{T}} \\
+				\vdots \\
+				\tilde{\varphi} (x_M)^{\text{T}} \\			
+			\end{bmatrix}
+			\text{,}
+			\hspace{0.2 cm}
+			y = 
+			\begin{bmatrix}
+				y_1 \\
+				y_2 \\
+				\vdots \\
+				y_M
+			\end{bmatrix}
+		\end{equation}
+	\end{itemize}	
+
+\end{frame}	
+
+
+
+
 	\begin{frame}{Datenvorverarbeitung}{Clustering}
 		\small
 		\textbf{Motivation:} um eine Objektliste aus der Punktwolke zu erstellen. 
@@ -475,7 +649,7 @@ wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
  			\begin{equation}
  			 	d(v_m, c_k) = \lVert v_m - c_k \rVert_2 ^2
  			\end{equation}
- 			\item Wird die Optimierungsaufgabe zu einer Minimierung der quadratischen Abweichungen von den Cluster-Schwerpunkten der Cluster $S_i$. Es kann von Clustering durch Varianzminimierung gesprochen werden. 
+ 			\item Wird die Optimierungsaufgabe zu einer Minimierung der quadratischen Abweichungen von den Cluster-Schwerpunkten der Cluster $S_i$. Es kann von Clustering durch Varianzminimierung gesprochen werden. \textcolor{blue}{**s. k-means code**}
  			\begin{equation}
 				J = \sum_{i=1}^k\ \sum_{x_j \in S_i}^{}\ \lVert v_m - c_k \rVert_2^2
 			\end{equation}
@@ -518,6 +692,8 @@ wobei $(x_i,y_i)$ die $(x,y)$-Koordinaten des Eckpunktes im Global Frame sind.\\
 		\footnotesize
 	\textbf{Motivation:} Um die Kritikalität mit Hilfe von KI-Algorithmen abschätzen zu können, wird eine Objektliste benötigt. Die Objektliste enthält Informationen über die Objekte in der Umgebung: Position, Geschwindigkeit, Ausrichtung usw.\\
 	Ein Bounding Box kann helfen, die Objekte in der Umgebung zu visualisieren, da er ihre Ausrichtung, Breite, Länge und Höhe anzeigt. Es hilft auch bei der Visualisierung der Clustering-Leistung.
+	
+	\textcolor{blue}{**s. bounding box code**}
 %			\item \textbf{Vorgehen:} Bestimmung der Objektgrenzen auf Basis der segmentierten Objekt-LiDAR Punkte. Deren Koordinaten können für eine Bestimmung der Objektposition verwendet werden.
 %			\item \textbf{Implementierungshinweise:} Verwenden sie zur Vereinfachung den 2D Bird's eye view. Bestimmen Sie auf Basis der Punktkoordinaten das Objektzentrum und schätzen sie mit ihrem Wissen über die typische Größe eines Autos die bounding box. Mögliche Größe: $1.6 \text{ m} \times 3.9 \text{ m}$.
 		\begin{figure}
@@ -592,18 +768,49 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\begin{itemize}
 			\item \textbf{Ziel:} Algorithmus zur Bestimmung einer beschreibenden Größe eines Systems, basierend auf im Vorfeld beobachteten Merkmalen dieses Systems, zu finden. Der Algorithmus soll dann auf Fälle angewandt werden, bei denen die Werte der zu beschreibenden Größe unbekannt sind
-			\item Wenn pro Beobachtung $N$ Merkmale vorliegen, so werden diese im Vektor \textbf{x} zusammengefasst
+			\item Wenn pro Beobachtung $N$ Merkmale vorliegen, so werden diese im Vektor $\mathbf{x}$ zusammengefasst
 			\begin{equation}
-				\textbf{x} = [x_1,..., x_{N}]^{T} \in \mathbb{R}
+				\mathbf{x} = [x_1,..., x_{N}]^{T} \in \mathbb{R}
 			\end{equation}
-			\item Die zu beschreibende Größe wird mit \textbf{y} notiert, die durch den Algorithmus berechnete mit $\hat{\textbf{y}} = f(\textbf{x})$.
+			\item Die zu beschreibende Größe wird mit $\mathbf{y}$ notiert, die durch den Algorithmus berechnete mit $\hat{\mathbf{y}} = f(\mathbf{x})$.
 		\end{itemize}	
 	\end{frame}
+
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
+	\small		
+	\begin{itemize}
+		\item Je komplizierter die Funktion, desto mehr Parameter müssen im Training erlernt werden. Eine simple Beispielfunktion ist die lineare Gleichung. Diese wird im Folgenden noch genauer erklärt.
+		\item Gleichzeitig gilt aber auch: Je mehr Parameter erlernt werden können, desto kompliziertere Zusammenhänge können auch dargestellt werden. 
+		\item Die Komplexität der Funktion spielt eine entscheidende Rolle für Over- bzw. Underfitting
+	\end{itemize}
+\end{frame}
+
+
+
+	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
+	\footnotesize		
+	\textbf{Over- und Underfitting:}	
+	\begin{itemize}
+		\item Underfitting bedeutet, dass die Leistung des Algorithmus gering ist. Der Algorithmus ist nicht in der Lage, zu generalisieren.		
+		\item Overfitting bedeutet, dass die Leistung des Algorithmus sehr hoch ist, wenn er für die Trainingsdaten ausgewertet wird, aber nicht generalisieren kann.
+		\item Gründe für Under- und Overfitting sind unter anderem: die Komplexität des Algorithmus, die Anzahl der Trainingsepochen, mangelnde Diversität der Trainingsdaten.
+	\end{itemize}
+\textcolor{blue}{**s. curve fitting code**}
+	\begin{figure}
+		\includegraphics[scale=0.25]{required/Over and Underfitting.png}
+		\caption{\scriptsize Beispiel für Overfitting und Underfitting [Bhande.2018]}
+		\label{Over and Underfitting}
+	\end{figure}
+\end{frame}
+
+
+
+
 	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 		\textbf{Regression}	
 		\begin{itemize}
-			\item Falls $\textbf{y}$ kontinuierliche Werte annimmt, also $\textbf{y} \in \mathbb{R}$, werden die Eingangswerte \textbf{x} auf eine Ausgabe $\hat{\textbf{y}}$ regressiert 
-			\item Ziel ist, dass die tatsächliche Lösung $\textbf{y}$ möglichst gut durch $\hat{\textbf{y}} $ approximiert wird.
+			\item Falls $\mathbf{y}$ kontinuierliche Werte annimmt, also $\mathbf{y} \in \mathbb{R}$, werden die Eingangswerte $\mathbf{x}$ auf eine Ausgabe $\hat{\mathbf{y}}$ regressiert 
+			\item Ziel ist, dass die tatsächliche Lösung $\mathbf{y}$ möglichst gut durch $\hat{\mathbf{y}} $ approximiert wird.
 		\end{itemize}			
 		\begin{figure}
 			\includegraphics[scale=0.7]{required/Machine Learning.jpg}
@@ -616,28 +823,20 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 		\textbf{Training: } 		
 		\scriptsize	
 		\begin{itemize}
-			\item Das Lernen basiert auf einer Verlustfunktion und dessen Gradienten. Diese erfasst den Unterschied zwischen dem Ausgang $\hat{\textbf{y}}$ und dem Zielwert $y$ quantitativ.
+			\item Das Lernen basiert auf einer Verlustfunktion und dessen Gradienten. Diese erfasst den Unterschied zwischen dem Ausgang $\hat{\mathbf{y}}$ und dem Zielwert $y$ quantitativ.
 			\item Das Ziel des Trainings ist damit, die Funktion $f$ zu finden, bei der dieser Verlust möglichst gering ist. 
 			\item Eine häufig verwendete quadratische Verlustfunktion lautet beispielsweise:
 			\begin{equation}
-				\mathcal{L}(\textbf{y}, f(\textbf{x})) = (\textbf{y} - f(\textbf{x}))^{2}
+				\mathcal{L}(\mathbf{y}, f(\mathbf{x})) = (\mathbf{y} - f(\mathbf{x}))^{2}
 			\end{equation}
 		\end{itemize}	
 		\begin{figure}
-			\includegraphics[scale=0.2]{required/Loss_function.jpg}
+			\includegraphics[scale=0.17]{required/Loss_function.jpg}
 			\caption{\scriptsize Gradientenabstiegsverfahren [Aunkofer.2019]}
         	\label{Machine Learning}
 		\end{figure}			
 	\end{frame}
-	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
-		\small		
-		\textbf{Funktion f(x):}
-		\begin{itemize}
-			\item Je komplizierter die Funktion, desto mehr Parameter müssen im Training erlernt werden. Eine simple Beispielfunktion ist die lineare Gleichung. Diese wird im Folgenden noch genauer erklärt.
-			\item Gleichzeitig gilt aber auch: Je mehr Parameter erlernt werden können, desto kompliziertere Zusammenhänge können auch dargestellt werden. 
-			\item Die Komplexität der Funktion spielt eine entscheidende Rolle für Over- bzw. Underfitting
-		\end{itemize}
-	\end{frame}
+
 	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 	%		\textbf{Umgang mit großen Datenmengen:}
 	\begin{itemize}
@@ -648,7 +847,10 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 		\item[] Dabei ist $l$ der Index der Iteration und $\alpha$ die sogenannte Lernrate, die die Schrittweite pro Iteration festlegt.
 		\item Nutzt man für die Aktualisierung der Parameter den gesamten Datensatz $\mathcal{D}$, so nennt man dies eine Epoche.
 	\end{itemize}
+\textcolor{blue}{**s. gradient descent \& momentum code**}
 \end{frame}
+
+
 	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
 	\textbf{Normierung}
 	\begin{itemize}
@@ -659,20 +861,8 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 		\end{equation}
 	\end{itemize}
 \end{frame}
-	\begin{frame}{KI-Methoden}{Grundlagen der künstlichen Intelligenz}
-		\footnotesize		
-		\textbf{Over- und Underfitting:}	
-		\begin{itemize}
-			\item Underfitting bedeutet, dass die Leistung des Algorithmus gering ist. Der Algorithmus ist nicht in der Lage, zu generalisieren.		
-			\item Overfitting bedeutet, dass die Leistung des Algorithmus sehr hoch ist, wenn er für die Trainingsdaten ausgewertet wird, aber nicht generalisieren kann.
-			\item Gründe für Under- und Overfitting sind unter anderem: die Komplexität des Algorithmus, die Anzahl der Trainingsepochen, mangelnde Diversität der Trainingsdaten.
-		\end{itemize}
-		\begin{figure}
-			\includegraphics[scale=0.25]{required/Over and Underfitting.png}
-			\caption{\scriptsize Beispiel für Overfitting und Underfitting [Bhande.2018]}
-        	\label{Over and Underfitting}
-		\end{figure}
-	\end{frame}
+
+
 	\begin{frame}{KI-Methoden}{Ermittlung der Kritikalität}
 		\textbf{Motivation: }die Kritikalität kann dazu dienen, zu bestimmen, wie kritisch ein bestimmtes Verkehrsszenario ist. Sie kann bei der Entscheidung über die Auslösung von Fahrerassistenzsystemen (z. B. Notbremsung), reversiblem Insassenschutz (z. B. Gurtstraffer) und nicht reversiblem Insassenschutz (z. B. Airbags und Sicherheitsgurt-Pirotecnic) helfen.
 		\begin{itemize}
@@ -681,6 +871,12 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\item Ziel ist die kritische Zeit bis zum Auffahrunfall zu berechnen, um z. B. eine Notbremsung zu entwerfen
 		\end{itemize}
 	\end{frame}
+
+
+
+
+
+
 	\begin{frame}{KI-Methoden}{Ermittlung der Kritikalität}
 		Ein Maß für die Kritikalität eines Verkehrsszenarios ist die \textbf{\enquote{Time-To-Collision} (TTC)} \\ 
 		\begin{itemize}
@@ -696,7 +892,11 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\item[] wobei $\tau$ einen großen Wert besitzt, der indiziert, dass das Szenario unkritisch ist.
 		\end{itemize}			
 	\end{frame}
-	\begin{frame}{KI-Methoden}{Lineare Regression}
+
+
+
+
+	\begin{frame}{KI-Methoden}{Ermittlung der Kritikalität}
 		\begin{enumerate}
 			\item Generieren Sie einen Datensatz $\mathcal{D}_\text{train}$ mit den Eingangsvektoren $x_m$, der die Distanz und relativ Geschwindigkeit zwischen Ego- und vorausfahrendem Fahrzeug enthält. 
 			\item Erzeugen sie zudem das zugehörige Label: die TTC. Damit sind die Zufallsvariablen für Ein- und Ausgang:
@@ -719,7 +919,7 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 			\end{itemize}			 
 		\end{enumerate}
 	\end{frame}
-	\begin{frame}{KI-Methoden}{Lineare Regression}
+	\begin{frame}{KI-Methoden}{Ermittlung der Kritikalität}
 		\begin{enumerate}
 			\setcounter{enumi}{2}
 			\item Erzeugen Sie ein Testdatenset $\mathcal{D}_{\text{test}}$ mit folgenden Vorgaben:
@@ -727,172 +927,13 @@ für das Lernen vorhanden. Ziel ist es, Vorhersagen für neue, unbekannte Eingan
 				\item Distanz $d$: Schrittweite $0.5m$; Intervall $[1m, 40m]$ 
 				\item Relativgeschwindigkeit $v_{x,\text{rel}}$: Schrittweite $3 km/h$; Intervall $[-70 km/h, -7 km/h]$
 			\end{itemize}
-			\item Wenden sie als Methode eine lineare Regression an. Bestimmen Sie den Parameter $\theta$ mit Hilfe des Trainingsdatensatzes $\mathcal{D}_\text{train}$. Vergessen Sie dabei die Normierung des Eingangsvektors nicht.
+			\item Wenden Sie KI-Methoden an. Bestimmen Sie den Parameter $\theta$ mit Hilfe des Trainingsdatensatzes $\mathcal{D}_\text{train}$. Vergessen Sie dabei die Normierung des Eingangsvektors nicht.
 			\item Testen sie den trainierten Algorithmus mit dem Testdatensatz $\mathcal{D}_\text{test}$, indem Sie die Ausgaben $\hat{y}$ mit den korrekten Ergebnissen $y = \text{TTC}$ vergleichen
-			\item Visualisieren Sie das das Mapping der linearen Regressios zwischen $d$, $v_{x,\text{rel}}$ und $\hat{y}$. Visualisieren Sie im selben Plot auch den Datensatz $\mathcal{D}_\text{test}$
+			\item Visualisieren Sie das das Mapping der KI-Methoden zwischen $d$, $v_{x,\text{rel}}$ und $\hat{y}$. Visualisieren Sie im selben Plot auch den Datensatz $\mathcal{D}_\text{test}$
 			\item Integration in die ROS-Pipeline zur Bestimmung der Kritikalität TTC online
 		\end{enumerate}
 	\end{frame}
-	\begin{frame}{KI-Methoden}{Lineare Regression}
-		\footnotesize		
-		\textbf{Motivation:} Einfaches ML-Modell zur Prognose der TTC. Zudem eine gute Veranschaulichung des MLs.
-		\begin{itemize}
-			\item Annahme der Funktion $f(\textbf{x})$: Der Zielvektor \textbf{y} kann entsprechend der Rechenvorschrift
-			\begin{equation}
-				y = w^{\text{T}} x + t + \eta \text{ mit } \eta \backsim \mathcal{N}(0, \sigma^2) \text{,}
-			\end{equation}
-			\item[] wobei $w$ und $t$ Parameter sind, und $x$ die Dimension $N$ hat, abgebildet werden.		   
-		\end{itemize}
-		\begin{figure}
-			\includegraphics[scale=0.25]{required/Lineare_Regression.jpg}
-			\caption{\scriptsize Lineare Basisfunktion [LinWik.2017]}
-        	\label{Over and Underfitting}
-		\end{figure}
-	\end{frame}
-	\begin{frame}{KI-Methoden}{Lineare Regression}
-		\footnotesize
-		\begin{itemize}			
-			\item Für eine kompaktere Schreibweise lassen sich $w$ und $t$ in den Parametervektor $\Theta = [w^{\text{T}}, t]^{\text{T}}$ der Dimension $(N+1)$ zusammenfassen und der Eingang $x$ erweitern zu $ \tilde{x} = [x^{\text{T}}, 1]^{\text{T}}$.
-			\item Damit gilt: $
-				y = \Theta^{\text{T}} \tilde{x} + \eta \text{ mit } \eta \backsim \mathcal{N}(0, \sigma^2) \text{,} $
-			\item Die Lösung für den gesuchten Parameter $\theta$ ergibt sich aus dem Minimum der Verlustfunktion. Für die quadratische Verlustfunktion bedeutet dies:
-			\begin{equation}
-				\theta = \underset{\theta}{\mathrm{argmin}} \left\{\ \frac{1}{M} \sum_{m=1}^M\ (y_m - \theta^{\text{T}} \tilde{x}_m)^2 \right\}\
-			\end{equation}
-			\item Die Ableitung der quadratischen Funktion hat eine Nullstelle im Minimum					\begin{equation}
-				\frac{\delta}{\delta \theta^{\text{T}}} \Bigl( \frac{1}{M} \sum_{m=1}^M\ (y_m - \theta^{\text{T}} \tilde{x}_m)^2 \Bigr) 
-				= \sum_{m=1}^M\ -(y_m - \theta^{\text{T}} \tilde{x}_m) \tilde{x}_m^{\text{T}}
-				\stackrel{!}{=} 0 
-			\end{equation}
-
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{KI-Methoden}{Lineare Regression}
-		Die Lösung ist:
-		\begin{equation}
-				\theta = \Bigl( \sum_{m=1}^M\ \tilde{x}_m \tilde{x}_m^{\text{T}} \Bigr)^{-1} \Bigl( \sum_{m=1}^M\ \tilde{x}_m y_m \Bigr)
-		\end{equation}
-		Schreibt man dieses Ergebnis in Matrix-Vektor-Notation, so werden alle Eingänge und Zielwerte aus dem Datensatz $\mathcal{D}$ in der Matrix $\tilde{X}$ und dem Vektor $y$ sortiert. 
-		\begin{equation}
-			\theta = ( \tilde{X}^{\text{T}} \tilde{X} )^{-1} \tilde{X}^{\text{T}} y
-			\hspace{0.5 cm}	
-			\text{, mit }			
-			\tilde{X} = 
-			\begin{bmatrix}
-				\tilde{x}_1^{\text{T}} \\
-				\tilde{x}_2^{\text{T}} \\	
-				\vdots \\
-				\tilde{x}_M^{\text{T}} \\		
-			\end{bmatrix}
-			\text{,  }
-			y =	
-			\begin{bmatrix}
-				\tilde{y}_1 \\
-				\tilde{y}_2 \\	
-				\vdots \\
-				\tilde{y}_M \\
-			\end{bmatrix}						
-		\end{equation}
-	\end{frame}
-	
-	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
-		\small		
-		\textbf{Motivation}
-		\footnotesize
-		\begin{itemize}
-			\item Die Einschränkung durch Linearität ermöglicht es dem Algorithmus nicht die TTC fehlerfrei darzustellen.
-			\item Ein klassischer Fall von Underfitting.
-			\item Eine entscheidende Möglichkeit kompliziertere Zusammenhänge darzustellen, ist Nicht-Linearität in die Funktion zu bringen
-			\item Eine Möglichkeit sind nicht-lineare Basisfunktionen. 
-		\end{itemize}					
-		\begin{figure}
-			\includegraphics[scale=0.45]{required/Nicht_lineare_Regression.jpg}
-			\caption{\scriptsize Verwendung von nicht-linearen Basisfunktionen [NlinWik.2017]}
-        	\label{Over and Underfitting}
-		\end{figure}
-	\end{frame}
-	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
-		\begin{enumerate}
-			\item Verwenden Sie die Datensätze der vorhergehenden Aufgabe.
-			\item Analog zum beschriebenen Verfahren $x$ soll eine nichtlineare Basisfunktion $\varphi (x)$ verwendet werden. Folgende wird in diesem Fall gegeben:
-			\begin{equation*}
-				\varphi (x) = 
-				\begin{bmatrix}
-					\varphi_1(x) & \varphi_2(x) & \varphi_3(x) & \varphi_4(x) & \varphi_5(x) &
-					\varphi_6(x) & \varphi_7(x) & \varphi_8(x) & \varphi_9(x)
-				\end{bmatrix}
-			\end{equation*}
-			\item[] mit
-			\begin{flalign}
-				&\varphi_1 (x) = x_1, \hspace{0.2 cm} \varphi_2 (x) = x_2, \hspace{0.2 cm} 						\varphi_3 (x) = x_1^2, \hspace{0.2 cm} \varphi_4 (x) = x_2^2, \hspace{0.2 cm} 
-				\varphi_5 (x) = x_1 x_2, \nonumber \\
-				&\varphi_6 (x) = x_1^3,\hspace{0.2 cm} \varphi_7 (x) = x_2^3,\hspace{0.2 cm} \
-				\varphi_8 (x) = x_1^2 x_2, \hspace{0.2 cm}  \varphi_9 (x) = x_1 x_2^2 \nonumber
-			\end{flalign}
-		\end{enumerate}
-	\end{frame}
-	\begin{frame}{KI-Methoden}{Implementierung: Nicht-lineare Basisfunktionen}
-		\begin{enumerate}
-			\setcounter{enumi}{2}	
-			\item Bestimmung von $\theta$ für das neue Regressionsmodell. Test der Ausgabe $\hat{y}$ für den Testdatensatz $\mathcal{D}_\text{test}$.
-			\item Visualisierung des Zusammenhangs von $d$ und $v_x,rel$ zu $\hat{y}$ für das berechnete Regressionsmodell. Visualisierung des Datensatzes $\mathcal{D}_\text{test}$ im selben Plot.
-			\item Integration in die ROS-Pipeline zur Bestimmung der Kritikalität TTC online
-			\item Zusatzaufgabe: Untersuchen sie die Folgen einer Änderung des Trainingsdatensatzes oder der Basisfunktion
-		\end{enumerate}
-	\end{frame}
-	\begin{frame}{KI-Methoden}{Implementierungshinweise: Nicht-lineare Basisfunktionen}
-		\begin{itemize}
-			\item Basiert auf der linearen Regression, wobei $x$ durch $\phi (x)$ ersetzt wird.
-			\begin{equation}
-				y = w^{\text{T}} \varphi (x) + t + \eta
-				\hspace{0.2 cm}
-				\text{mit}
-				\hspace{0.2 cm}
-				\eta \backsim \mathcal{N}(0, \sigma^2)
-				\hspace{0.2 cm}
-				\text{und} \hspace{0.2 cm} 			
-				\varphi (x) = [ \varphi_1 (x), \varphi_2 (x), \dots, \varphi_H (x)]^{\text{T}} \text{,}
-			\end{equation}
-			\item[] wobei die Funktionen $\varphi (x)$ nichtlinear sein können
-			\item Analog zur vorherigen Herleitung ergibt sich:
-			\begin{equation}
-				\tilde{\varphi} (x_m)= 
-				\begin{bmatrix}
-					\varphi (x_m)^{\text{T}} & 1
-				\end{bmatrix}^{\text{T}}
-			\end{equation}
-			\begin{equation}
-				\theta = \Bigl( \sum_{m=1}^M\ \tilde{\varphi} (x_m) \tilde{\varphi} (x_m)^{\text{T}} \Bigr)^{-1} \Bigl( \sum_{m=1}^M\ \tilde{\varphi} (x_m) y_m \Bigr) 
-			\end{equation}
-		\end{itemize}
-	\end{frame}
-	\begin{frame}{KI-Methoden}{Implementierungshinweise: Nicht-lineare Basisfunktionen}
-		\begin{itemize}
-			\item In Matrixschreibweise ergibt sich:			
-		\begin{equation}
-			\theta = \Bigl( \tilde{\phi}^{\text{T}} \tilde{\phi} \Bigr) ^{-1} \tilde{\phi}^{\text{T}} y
-		\end{equation}
-		\item[] mit
-		\begin{equation}
-			\tilde{\phi} =
-			\begin{bmatrix}
-				\tilde{\varphi} (x_1)^{\text{T}} \\
-				\tilde{\varphi} (x_2)^{\text{T}} \\
-				\vdots \\
-				\tilde{\varphi} (x_M)^{\text{T}} \\			
-			\end{bmatrix}
-			\text{,}
-			\hspace{0.2 cm}
-			y = 
-			\begin{bmatrix}
-				y_1 \\
-				y_2 \\
-				\vdots \\
-				y_M
-			\end{bmatrix}
-		\end{equation}
-		\end{itemize}	
-	\end{frame}			
+			
 
 	\begin{frame}{Quellen}
 		Der Aufbau und Inhalt der Folien ist hauptsächlich angelehnt an [Botsch.2020]. Weitere genutzte Quellen sind:
