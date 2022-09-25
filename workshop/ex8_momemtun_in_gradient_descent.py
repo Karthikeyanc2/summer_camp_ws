@@ -16,20 +16,24 @@ class GradientDescent:
         self.current_line_plot = None
         self.all_previous_arrows = []
         self.starting_m = 0
-        self.previous_delta_m = 0
+        self.previous_delta_w = 0
         self.lr = 0
+        self.momentum = 0
 
         self.fig = plt.figure(figsize=(7, 7.2))
         self.grid_spec = gridspec.GridSpec(43, 40, figure=self.fig)
         self.ax = self.fig.add_subplot(self.grid_spec[:40, :])
 
-        ax_refresh_button = self.fig.add_subplot(self.grid_spec[41:, :10])
+        ax_refresh_button = self.fig.add_subplot(self.grid_spec[41:, :5])
         self.refresh_button = Button(ax_refresh_button, "Refresh")
 
-        ax_lr_textbox = self.fig.add_subplot(self.grid_spec[41:, 20:29])
-        self.lr_textbox = TextBox(ax_lr_textbox, 'Learning Rate: ', hovercolor='0.975', initial='0.001')
+        ax_lr_textbox = self.fig.add_subplot(self.grid_spec[41:, 8:13])
+        self.lr_textbox = TextBox(ax_lr_textbox, 'LR: ', hovercolor='0.975', initial='0.001')
 
-        ax_submit_button = self.fig.add_subplot(self.grid_spec[41:, 30:])
+        ax_momentum_textbox = self.fig.add_subplot(self.grid_spec[41:, 21:25])
+        self.momentum_textbox = TextBox(ax_momentum_textbox, 'Momentum: ', hovercolor='0.975', initial='0.0')
+
+        ax_submit_button = self.fig.add_subplot(self.grid_spec[41:, 26:])
         self.submit_button = Button(ax_submit_button, 'Submit')
 
         self.refresh_button.on_clicked(self.refresh_clicked)
@@ -72,12 +76,13 @@ class GradientDescent:
         [arrow.remove() for arrow in self.all_previous_arrows]
         self.all_previous_arrows = []
         self.lr = float(self.lr_textbox.text)
+        self.momentum = float(self.momentum_textbox.text)
         new_m = self.starting_m
         loss = self.get_loss(new_m)
         prev_point = (new_m, loss)
         for _ in range(50):
             # new_m = self.get_next_m(new_m, self.lr)
-            new_m = self.get_next_m_with_momentum(new_m, self.lr)
+            new_m = self.get_next_w_with_momentum(new_m, self.lr, self.momentum)
             loss = self.get_loss(new_m)
             self.starting_point_scatter.remove()
             self.starting_point_scatter = self.ax.scatter(new_m, loss, marker='x', color='green')
@@ -89,28 +94,17 @@ class GradientDescent:
             plt.pause(0.02)
         self.starting_m = new_m
 
-    def get_next_m(self, old_m, lr):
+    def get_next_w_with_momentum(self, old_w, lr, momentum):
         """
-        :param old_m: float : current m
-        :param lr: float: learning rate
-        :return: float: new m
+        @param old_w: float : current w
+        @param lr: float: learning rate
+        @param momentum: float: momentum
+        @return: float: new w
         """
-        dl_by_dm = self.get_gradient(old_m)
-        new_m = old_m - lr * dl_by_dm
-        return new_m
-
-    def get_next_m_with_momentum(self, old_m, lr, momentum=0.9):
         """
-        :param old_m: float : current m
-        :param lr: float: learning rate
-        :param momentum: float: momentum
-        :return: float: new m
+        self.get_gradient(old_w) can be used to compute dl_by_dw
         """
-        dl_by_dm = self.get_gradient(old_m)
-        current_delta_m = momentum * self.previous_delta_m - lr * dl_by_dm
-        new_m = old_m + current_delta_m
-        self.previous_delta_m = current_delta_m
-        return new_m
+        return old_w
 
 
 GradientDescent()

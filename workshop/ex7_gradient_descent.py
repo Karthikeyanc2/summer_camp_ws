@@ -89,7 +89,7 @@ class GradientDescent:
         for _ in range(50):
             # grad = sum(2 * self.points[0] * (-self.points[1] + new_m * self.points[0]))
             # new_m = new_m - self.lr * grad
-            new_m = self.get_next_m(np.asarray(self.points).T, new_m, self.lr)
+            new_m = self.get_next_w(np.asarray(self.points).T, new_m, self.lr)
             loss = np.power(self.points[1] - new_m * self.points[0], 2).sum()
             self.starting_point_scatter.remove()
             self.starting_point_scatter = self.ax_right.scatter(new_m, loss, marker='x', color='green')
@@ -102,16 +102,14 @@ class GradientDescent:
         self.starting_m = new_m
 
     @staticmethod
-    def get_next_m(points, old_m, lr):
+    def get_next_w(points, old_w, lr):
         """
-        :param points: N x 2 [(x1, y1), ... (xn, yn)]
-        :param old_m: float : current m
-        :param lr: float: learning rate
-        :return: float: new m
+        @param points: N x 2 [(x1, y1), ... (xn, yn)]
+        @param old_w: float : current w
+        @param lr: float: learning rate
+        @return: float: new w
         """
-        dl_by_dm = sum(2 * points[:, 0] * (old_m * points[:, 0] - points[:, 1]))
-        new_m = old_m - lr * dl_by_dm
-        return new_m
+        return old_w
 
 
 GradientDescent()

@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib
+import torch
+
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from matplotlib import cm
@@ -54,3 +56,14 @@ def plot_loss_data(train_losses, val_losses, title, save_path=None):
     if save_path:
         plt.savefig(save_path)
     plt.show()
+
+
+def seed_torch(seed=1029):
+    # random.seed(seed)
+    # os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    # torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True

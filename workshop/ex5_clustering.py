@@ -6,6 +6,7 @@ from matplotlib.widgets import Button
 matplotlib.use('TkAgg')
 from matplotlib import pyplot as plt
 from matplotlib import cm
+from scipy.spatial import distance
 np.random.seed(2)
 
 original_num_classes = 3
@@ -126,21 +127,19 @@ class KMeans:
     @staticmethod
     def get_new_classes_and_centers(points, current_labels, n_classes):
         """
-        @param: points: N x 2
-        current_labels = N (can take a number between 0 to n_classes-1)
-        n_classes is a number
+        @param points: N x 2 (numpy array)
+        @param current_labels: N (can take a number between 0 to n_classes-1)
+        @param n_classes is a number
+        @return new_labels (N), new_centers (n_classes x 2)
         """
-        current_centers = []
-        for i in range(n_classes):
-            this_class_points = points[current_labels == i]
-            if len(this_class_points) == 0:
-                current_centers.append([0.0, 0.0])
-            else:
-                current_centers.append(this_class_points.mean(axis=0))
-        current_centers = np.asarray(current_centers)
-        distances = np.linalg.norm(points[:, None, :] - current_centers[None, :, :], axis=2)  # 60 x 3
-        current_labels = distances.argmin(axis=1)
-        return current_labels, current_centers
+        """
+        How to find pair wise distances ?
+        pair_wise_distances = distance.cdist(points_set_1, points_set_2)
+        
+        How to find the index of the minimum number ? 
+        index_of_the_minimum_number = np.argmin([2,3,4,1,3])
+        """
+        return current_labels, np.zeros((n_classes, 2))
 
 
 KMeans()

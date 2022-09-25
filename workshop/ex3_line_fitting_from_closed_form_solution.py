@@ -21,10 +21,10 @@ class LineFittingFromClosedFormSolution:
 
     def on_click(self, event):
         if event.xdata and event.ydata:
-            self.points.append([event.xdata, event.ydata])
+            self.points.append([round(event.xdata, 2), round(event.ydata, 2)])
             self.ax.scatter(event.xdata, event.ydata, marker='x', color='green', linewidth=2)
             if len(self.points) > 1:
-                m, c = self.get_line_parameters_m_and_c(self.points)
+                m, c = self.get_line_parameters_w_and_b(self.points)
                 x = np.array([-50, 50])
                 y = m * x + c
                 if self.current_line is not None:
@@ -33,22 +33,27 @@ class LineFittingFromClosedFormSolution:
             self.fig.canvas.draw()
 
     @staticmethod
-    def get_line_parameters_m_and_c(points):
+    def get_line_parameters_w_and_b(points):
         """
-        :param points: list of points [[x1, y1], ... [xm, ym]]
-        :return: m, c
+        @param points: list of points [[x1, y1], ... [xm, ym]]
+        @return: w, b
         """
-        X_matrix = []
-        Y_matrix = []
-        for point in points:
-            X_matrix.append([point[0], 1])
-            Y_matrix.append([point[1]])
-
-        X_matrix = np.asarray(X_matrix)  # m x 2
-        Y_matrix = np.asarray(Y_matrix)  # m x 1
-        theta = np.linalg.inv(X_matrix.T.dot(X_matrix)).dot(X_matrix.T.dot(Y_matrix))
-
-        return theta.T[0]
+        """
+        How to construct a numpy matrix?
+        np_matrix = np.asarray([[1, 2], [2, 3], [6, 7]])
+        
+        How to take a transpose of a numpy matrix?
+        np.matrix_transpose = np_matrix.T
+        
+        How to take inverse of a numpy matrix?
+        np_matrix_inverse = np.linalg.inv(np_matrix)
+        
+        How to take dot product of two numpy matrix?
+        output = matrix_a.dot(matrix_b)
+        """
+        print("--------------------------------------------------")
+        print("points :", points)
+        return 0, 0
 
 
 LineFittingFromClosedFormSolution()

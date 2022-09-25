@@ -6,6 +6,7 @@ import ros_numpy
 from geometry_msgs.msg import Point, Quaternion, Vector3
 from jsk_recognition_msgs.msg import BoundingBoxArray, BoundingBox
 from sklearn.neighbors import LocalOutlierFactor
+from std_msgs.msg import Float32
 from vehicle_msgs.msg import AdmaData
 from sensor_msgs.msg import PointCloud2
 import pandas as pd
@@ -25,7 +26,7 @@ class Object:
     def __init__(self, x, y, z, orientation):
         self.locations = np.asarray([[x, y, z]]).reshape(-1, 3)  # (x, y)
         self.filtered_locations = np.asarray([[x, y, z]]).reshape(-1, 3)  # (x, y)
-        self.max_history_to_store = 15
+        self.max_history_to_store = 10
         self.order = 2
         self.X_matrix = np.power(np.arange(self.max_history_to_store)[:, None], range(self.order + 1))
         self.theta_x = 0
@@ -46,22 +47,22 @@ class Object:
             self.theta_x = np.linalg.inv(self.X_matrix.T.dot(self.X_matrix)).dot(self.X_matrix.T.dot(self.locations[:, 0].reshape(-1, 1))).T[0]
             self.theta_y = np.linalg.inv(self.X_matrix.T.dot(self.X_matrix)).dot(self.X_matrix.T.dot(self.locations[:, 1].reshape(-1, 1))).T[0]
             self.theta_z = np.linalg.inv(self.X_matrix.T.dot(self.X_matrix)).dot(self.X_matrix.T.dot(self.locations[:, 2].reshape(-1, 1))).T[0]
-            filtered_location = sum(self.X_matrix[-1] * self.theta_x), sum(self.X_matrix[-1] * self.theta_y), sum(self.X_matrix[-1] * self.theta_z)
+            filtered_location = [sum(self.X_matrix[-1] * self.theta_x), sum(self.X_matrix[-1] * self.theta_y), sum(self.X_matrix[-1] * self.theta_z)]
             self.filtered_locations = np.r_[self.filtered_locations, np.asarray(filtered_location).reshape(1, 3)]
             return filtered_location
         else:
-            filtered_location = x, y, z
+            filtered_location = [x, y, z]
             self.filtered_locations = np.r_[self.filtered_locations, np.asarray(filtered_location).reshape(1, 3)]
             return filtered_location
 
     def predict_position(self):
         x_vector = np.power(self.next_x, range(self.order + 1))
-        self.locations = np.append(self.locations[1:], np.asarray([sum(x_vector * self.theta_x), sum(x_vector * self.theta_y)]))
+        self.locations = np.r_[self.locations[1:],
+                               np.asarray([sum(x_vector * self.theta_x), sum(x_vector * self.theta_y), self.locations[-1][-1]]).reshape(1, 3)]
         self.next_x += 1
         return self.locations[-1]
 
-    def filter_orientation_and_speed(self, angle):
-
+    def filter_orientation_and_speed(self):
         if len(self.filtered_locations) >= self.max_history_to_store:
             self.filtered_locations = self.filtered_locations[-self.max_history_to_store:]
             delta_x = np.gradient(self.filtered_locations[:, 0])
@@ -79,11 +80,13 @@ class Object:
 
             return self.previous_orientation, calculated_speed
         else:
-            return angle, 0
+            return 0, 0
 
     def filter_dimensions(self, l, w, h):
-        self.length = min(max(self.length, max(l, w)), self.max_length)
-        self.width = min(max(self.width, min(l, w)), self.max_width)
+        self.length = min(max(self.length, l), self.max_length)
+        self.width = min(max(self.width, w), self.max_width)
+        # self.length = min(max(self.length, max(l, w)), self.max_length)
+        # self.width = min(max(self.width, min(l, w)), self.max_width)
         self.height = min(max(self.height, h), self.max_height)
         return self.length, self.width, self.height
 
@@ -92,7 +95,7 @@ class TTCEstimator:
     def __init__(self):
         self.adma_msg = None
         self.package_path = rospkg.RosPack().get_path("ttc_based_critical_situation_identifier")
-        track_data = np.array(pd.read_csv(Path(self.package_path) / "config/outdoor_contour_track_data_sp80.csv")[["x_relative", "y_relative"]])
+        track_data = np.array(pd.read_csv(Path(self.package_path) / "asset/contour_data_for_pcd_processing.csv")[["x_relative", "y_relative"]])
         pco = pyclipper.PyclipperOffset()
         pco.AddPath(track_data, pyclipper.JT_ROUND, pyclipper.ET_CLOSEDPOLYGON)
         solution = pco.Execute(-2)
@@ -106,15 +109,19 @@ class TTCEstimator:
 
         self.points_publisher = rospy.Publisher('processed_points', PointCloud2, queue_size=10)
         self.bbox_publisher = rospy.Publisher('objects', BoundingBoxArray, queue_size=10)
+        self.ttc_publisher = rospy.Publisher('/ttc_calculated', Float32, queue_size=10)
+        self.true_ttc_publisher = rospy.Publisher('/ttc_true', Float32, queue_size=10)
         rospy.Subscriber("velodyne/points", PointCloud2, self.pcd_callback)
         rospy.Subscriber("/vehicle_marie/adma_data", AdmaData, self.adma_callback_marie)
+        rospy.Subscriber("/vehicle_isaak/adma_data", AdmaData, self.adma_callback_isaak)
         isaak_adma_msg = rospy.wait_for_message("/vehicle_isaak/adma_data", AdmaData)
+        self.latest_isaak_position_and_velocity = [0, 0, 0], 0
         self.latest_marie_position_and_velocity = [0, 0, 0], 0
         x, y, z = isaak_adma_msg.pose_cg.position.x, isaak_adma_msg.pose_cg.position.y, isaak_adma_msg.pose_cg.position.z
         q = isaak_adma_msg.pose_cg.orientation
         orientation = Rotation.from_quat([q.x, q.y, q.z, q.w]).as_euler('xyz', degrees=False)[-1]
         self.isaak_detected_object = Object(x, y, z, orientation)
-        self.previous_objects = []
+        self.isaak_previous_speed_orientation_position_and_dimensions = [0, 0, [0, 0, 0], [0, 0, 0]]
 
     def pcd_callback(self, msg):
         # 1.- convert the point cloud from ros format to numpy array --> output shape --> (N_points x 4) (x, y, z, intensity)
@@ -146,16 +153,18 @@ class TTCEstimator:
         clusters = self.clustering(points)
 
         # 8.- track the clusters and create the bounding box for the CO vehicle
-        bboxes = self.object_detection_naive(clusters, header)
-        # bboxes = self.object_detection_standard(clusters, header)
+        # bboxes = self.object_detection_naive(clusters, header)
+        bboxes = self.object_detection_standard(clusters, header)
 
         # publish the bounding box
         self.bbox_publisher.publish(bboxes)
 
         # 9.- ttc estimation
-        # ttc = self.ttc_estimator()
+        ttc, ttc_true = self.ttc_estimator()
 
-        # publish ttc value
+        # 10.- publish ttc value
+        self.ttc_publisher.publish(Float32(ttc))
+        self.true_ttc_publisher.publish(Float32(ttc_true))
 
     @staticmethod
     def get_points_from_point_cloud(msg):
@@ -248,39 +257,48 @@ class TTCEstimator:
         return bboxes
 
     def object_detection_standard(self, clusters, header):
-        all_distances = []
-        for cluster in clusters:
-            mean_point = cluster.mean(axis=0)
-            distance_to_previous_detection = math.sqrt(
-                (mean_point[0] - self.isaak_detected_object.locations[-1][0])**2 +
-                (mean_point[1] - self.isaak_detected_object.locations[-1][1])**2
-            )
-            all_distances.append(distance_to_previous_detection)
+        if len(clusters):
+            all_distances = []
+            all_means = []
+            for cluster in clusters:
+                mean_point = cluster.mean(axis=0)
+                all_means.append(mean_point)
+                print(self.isaak_detected_object.locations[-1])
+                distance_to_previous_detection = math.sqrt(
+                    (mean_point[0] - self.isaak_detected_object.locations[-1][0])**2 +
+                    (mean_point[1] - self.isaak_detected_object.locations[-1][1])**2
+                )
+                all_distances.append(distance_to_previous_detection)
 
-        min_index = np.argmin(all_distances)
+            min_index = np.argmin(all_distances)
 
-        cluster = clusters[min_index]
-        z_min, z_max = cluster[:, 2].min(), cluster[:, 2].max()
-        transformation_matrix_2d, (_, _) = oriented_bounds_2D(cluster[:, :2])
-        transformation_matrix_2d = np.linalg.inv(transformation_matrix_2d)
-        position = transformation_matrix_2d[0, -1], transformation_matrix_2d[1, -1], (z_max + z_min) / 2
+            if all_distances[min_index] < 3:
+                cluster = clusters[min_index]
+                z_min, z_max = cluster[:, 2].min(), cluster[:, 2].max()
+                position = all_means[min_index][0], all_means[min_index][1], (z_max + z_min) / 2
+                filtered_position = self.isaak_detected_object.filter_position(*position)
+                filtered_orientation, filtered_speed = self.isaak_detected_object.filter_orientation_and_speed()
+                rotation_matrix = np.array([[math.cos(-filtered_orientation), math.sin(-filtered_orientation)],
+                                            [-math.sin(-filtered_orientation), math.cos(-filtered_orientation)]])
+                rotated_cluster = (cluster[:, :2] - np.asarray(filtered_position[:2])).dot(rotation_matrix)
+                rotated_cluster_abs = np.abs(rotated_cluster)
+                length, width = np.abs(rotated_cluster_abs[:, 0]).max() * 2, np.abs(rotated_cluster_abs[:, 1]).max() * 2
+                dimensions = length, width, z_max - z_min
 
-        orientation = math.atan2(transformation_matrix_2d[1, 0], transformation_matrix_2d[0, 0])
+                filtered_dimensions = self.isaak_detected_object.filter_dimensions(*dimensions)
+                self.isaak_previous_speed_orientation_position_and_dimensions = \
+                    [filtered_speed, filtered_orientation, filtered_position, filtered_dimensions]
+            else:
+                filtered_position = self.isaak_detected_object.predict_position()
+                filtered_speed, filtered_orientation, _, filtered_dimensions = \
+                    self.isaak_previous_speed_orientation_position_and_dimensions
+                self.isaak_previous_speed_orientation_position_and_dimensions[2] = filtered_position
 
-        filtered_position = self.isaak_detected_object.filter_position(*position)
-        filtered_orientation, filtered_speed = self.isaak_detected_object.filter_orientation_and_speed(orientation)
-
-        print(filtered_speed)
-
-        rotation_matrix = np.array([[math.cos(-filtered_orientation), math.sin(-filtered_orientation)],
-                                    [-math.sin(-filtered_orientation), math.cos(-filtered_orientation)]])
-        # print(cluster[0], filtered_position[:2])
-        rotated_cluster_abs = np.abs((cluster[:, :2] - np.asarray(filtered_position[:2]).reshape(1, 2)).dot(rotation_matrix))
-        length, width = np.abs(rotated_cluster_abs[:, 0]).max() * 2, np.abs(rotated_cluster_abs[:, 1]).max() * 2
-        length, width = max(length, width), min(length, width)
-        dimensions = length, width, z_max - z_min
-
-        filtered_dimensions = self.isaak_detected_object.filter_dimensions(*dimensions)
+        else:
+            filtered_position = self.isaak_detected_object.predict_position()
+            filtered_speed, filtered_orientation, _, filtered_dimensions = \
+                self.isaak_previous_speed_orientation_position_and_dimensions
+            self.isaak_previous_speed_orientation_position_and_dimensions[2] = filtered_position
 
         box = BoundingBox()
         box.header = header
@@ -295,12 +313,35 @@ class TTCEstimator:
         return bboxes
 
     def ttc_estimator(self):
-        return 0
+        isaak_speed_estimated, _, isaak_position_estimated, _ = self.isaak_previous_speed_orientation_position_and_dimensions
+        marie_position, marie_speed = self.latest_marie_position_and_velocity
+        relative_distance = math.sqrt((marie_position[0] - isaak_position_estimated[0])**2 + (marie_position[1] - isaak_position_estimated[1])**2)
+        relative_speed = isaak_speed_estimated - marie_speed
+        if relative_speed < 0:
+            ttc = - relative_distance / relative_speed
+        else:
+            ttc = 60
+
+        isaak_position_true, isaak_speed_true = self.latest_isaak_position_and_velocity
+        relative_distance_true = math.sqrt((marie_position[0] - isaak_position_true[0])**2 + (marie_position[1] - isaak_position_true[1])**2)
+        relative_speed_true = isaak_speed_true - marie_speed
+        if relative_speed_true < 0:
+            ttc_true = - relative_distance_true / relative_speed_true
+        else:
+            ttc_true = 60
+
+        print("Calculated TTC:", round(ttc, 2), "  True TTC: ", round(ttc_true, 2))
+        return ttc, ttc_true
 
     def adma_callback_marie(self, msg):
         latest_marie_position = msg.pose_cg.position.x, msg.pose_cg.position.y, msg.pose_cg.position.z
         latest_marie_velocity = msg.velocity
         self.latest_marie_position_and_velocity = latest_marie_position, latest_marie_velocity
+
+    def adma_callback_isaak(self, msg):
+        latest_isaak_position = msg.pose_cg.position.x, msg.pose_cg.position.y, msg.pose_cg.position.z
+        latest_isaak_velocity = msg.velocity
+        self.latest_isaak_position_and_velocity = latest_isaak_position, latest_isaak_velocity
 
 
 rospy.init_node('blas')

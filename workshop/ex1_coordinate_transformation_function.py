@@ -58,17 +58,18 @@ class CoordinateTransformation:
         self.on_slider_change_stuff.append(self.ax.arrow(tx, ty, -math.sin(theta), math.cos(theta), color="red", head_width=self.arrow_head_width, length_includes_head=True))
         self.on_slider_change_stuff.append(self.ax.text(tx - math.sin(theta), ty + math.cos(theta), r"${}^Vy$"))
         self.on_slider_change_stuff.append(self.ax.text(tx-0.1, ty-0.1, r"$\{V\}$"))
-        self.on_click(None)
+        self.fig.canvas.draw()
 
     def on_click(self, event):
         for item in self.on_click_change_stuff:
             item.remove()
         self.on_click_change_stuff = []
-        if event is not None:
-            if event.inaxes is self.ax:
-                self.last_clicked_point = [event.xdata, event.ydata]
+        if event.inaxes is not self.ax:
+            return
+        self.last_clicked_point = [event.xdata, event.ydata]
+
         vx, vy, theta = self.slider_x.val, self.slider_y.val, self.slider_theta.val
-        px, py = self.last_clicked_point  # in global coordinates
+        px, py = self.last_clicked_point  # in earth coordinates
         self.on_click_change_stuff.append(self.ax.arrow(vx, vy, px - vx, py - vy, color="black", linestyle='-.', head_width=self.arrow_head_width, length_includes_head=True))
         self.on_click_change_stuff.append(self.ax.text(px+0.04, py+0.04, r"$\mathbf{\textit{p}}$"))
         self.on_click_change_stuff.append(self.ax.text((px + vx)/2 + 0.04, (py + vy)/2 - 0.04, r"${}^V\mathbf{\textit{p}}$"))
@@ -83,31 +84,35 @@ class CoordinateTransformation:
         self.on_click_change_stuff.append(self.ax.arrow(px, py, point_in_y_axis[0] - px, point_in_y_axis[1] - py, color="black", linestyle=':', head_width=self.arrow_head_width, length_includes_head=True))
         # self.on_click_change_stuff.append(self.ax.text((vx + point_in_y_axis[0]) / 2, (vy + point_in_y_axis[1]) / 2, r"${}^V\mathbf{\textit{p}}_y$"))
 
-        point_in_global_coordinates = self.convert_point_from_vehicle_coordinates_to_global_coordinates([vx, vy], theta, [point_in_vehicle_coordinates_x, point_in_vehicle_coordinates_y])
-        self.on_click_change_stuff.append(self.ax.arrow(0, 0, point_in_global_coordinates[0], point_in_global_coordinates[1], color="black", linestyle='-.', head_width=self.arrow_head_width, length_includes_head=True))
-        correct = (round(px, 2) == round(point_in_global_coordinates[0], 2)) and (round(py, 2) == round(point_in_global_coordinates[1], 2))
+        point_in_earth_coordinates = self.convert_point_from_vehicle_coordinates_to_earth_coordinates([vx, vy], theta, [point_in_vehicle_coordinates_x, point_in_vehicle_coordinates_y])
+        print("------------------------------------------------------------------")
+        print("Your calculated point in earth coordinates: ", point_in_earth_coordinates)
+        print("------------------------------------------------------------------")
+        self.on_click_change_stuff.append(self.ax.arrow(0, 0, point_in_earth_coordinates[0], point_in_earth_coordinates[1], color="black", linestyle='-.', head_width=self.arrow_head_width, length_includes_head=True))
+        correct = (round(px, 2) == round(point_in_earth_coordinates[0], 2)) and (round(py, 2) == round(point_in_earth_coordinates[1], 2))
         self.on_click_change_stuff.append(self.ax.scatter(px, py, color="green" if correct else "red", linewidth=2, marker='o', s=50))
-        self.on_click_change_stuff.append(self.ax.scatter(point_in_global_coordinates[0], point_in_global_coordinates[1], color="brown", linewidth=2, marker='x'))
-        self.on_click_change_stuff.append(self.ax.text(point_in_global_coordinates[0] / 2 + 0.04, point_in_global_coordinates[1] / 2 - 0.04, r"${}^E\mathbf{\textit{p}}$"))
+        self.on_click_change_stuff.append(self.ax.scatter(point_in_earth_coordinates[0], point_in_earth_coordinates[1], color="brown", linewidth=2, marker='x'))
+        self.on_click_change_stuff.append(self.ax.text(point_in_earth_coordinates[0] / 2 + 0.04, point_in_earth_coordinates[1] / 2 - 0.04, r"${}^E\mathbf{\textit{p}}$"))
         self.fig.canvas.draw()
 
     @staticmethod
-    def convert_point_from_vehicle_coordinates_to_global_coordinates(
+    def convert_point_from_vehicle_coordinates_to_earth_coordinates(
             vehicle_coordinates, vehicle_orientation, point_in_vehicle_coordinates):
         """
-        :param vehicle_coordinates: vehicle's current coordinates [x, y]
-        :param vehicle_orientation: vehicle's current orientation theta
-        :param point_in_vehicle_coordinates: point measured in vehicle coordinates [x, y]
-        :return: measured point in global coordinates [x, y]
+        @param vehicle_coordinates: vehicle's current coordinates [x, y]
+        @param vehicle_orientation: vehicle's current orientation theta
+        @param point_in_vehicle_coordinates: point measured in vehicle coordinates [x, y]
+        @return measured point in earth coordinates [x, y]
         """
-        print(vehicle_coordinates, vehicle_orientation, point_in_vehicle_coordinates)
+        """
+        math.cos(a) : to take cosine of an angle 'a'
+        math.sin(a) : to take sine of an angle 'a'
+        """
+        print("------------------------------------------------------------------")
+        print("vehicle_coordinates (t_x, t_y) : ", vehicle_coordinates)
+        print("vehicle_orientation (theta) :", vehicle_orientation)
+        print("point_in_vehicle_coordinates (v_p) :", point_in_vehicle_coordinates)
         return [1, 1]
-        tx, ty = vehicle_coordinates
-        theta = vehicle_orientation
-        x, y = point_in_vehicle_coordinates
-
-        return math.cos(theta) * x - math.sin(theta) * y + tx, \
-               math.sin(theta) * x + math.cos(theta) * y + ty
 
 
 CoordinateTransformation()

@@ -2,40 +2,21 @@ import matplotlib.pyplot as plt
 import torch
 import numpy as np
 from tqdm import tqdm
-from utils import normalize, plot_3Ddata, plot_loss_data
-
-
-def seed_torch(seed=1029):
-    # random.seed(seed)
-    # os.environ['PYTHONHASHSEED'] = str(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)
-    # torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
-    torch.backends.cudnn.benchmark = False
-    torch.backends.cudnn.deterministic = True
-
-
+from utils import normalize, plot_3Ddata, plot_loss_data, seed_torch
 seed_torch(seed=1000)
 
 
 class MLPModel(torch.nn.Module):
     def __init__(self, N_in, N_out):
         super(MLPModel, self).__init__()
-        self.linear_in = torch.nn.Linear(N_in, 50, bias=True)
-        self.linear_middle1 = torch.nn.Linear(50, 100, bias=True)
-        self.linear_middle2 = torch.nn.Linear(100, 50, bias=True)
-        self.linear_out = torch.nn.Linear(50, N_out, bias=True)
-        self.ReLU_activation = torch.nn.ReLU()
+        """
+        create model here
+        """
 
     def forward(self, x):
-        x = self.linear_in(x)
-        x = self.ReLU_activation(x)
-        x = self.linear_middle1(x)
-        x = self.ReLU_activation(x)
-        x = self.linear_middle2(x)
-        x = self.ReLU_activation(x)
-        x = self.linear_out(x)
+        """
+        implement forward method here
+        """
         return x
 
 
@@ -55,10 +36,9 @@ Y_train = torch.from_numpy(Y_norm_train).type(torch.float32).reshape(-1, 1)
 X_val = torch.from_numpy(X_norm_val).type(torch.float32)
 Y_val = torch.from_numpy(Y_norm_val).type(torch.float32).reshape(-1, 1)
 
-model = MLPModel(2, 1)
-model.train()
-optimizer = torch.optim.SGD(model.parameters(), lr=3e-4, momentum=0.9)  # 1e-3 works for single neuron
-loss_fn = torch.nn.MSELoss(reduction='sum')
+"""
+initialize model optimizer and loss function here
+"""
 
 num_epochs = 2000
 batch_size = 90  # 1 works for single neuron
@@ -79,13 +59,9 @@ for idxEpoch in range(num_epochs):
     total = 0
     pbar = tqdm(total=len(X) // batch_size)
     for batch_index in range(len(X) // batch_size):
-        current_batch_X = X[batch_index*batch_size:batch_index*batch_size+batch_size]
-        current_batch_Y = Y[batch_index*batch_size:batch_index*batch_size+batch_size]
-        output = model(current_batch_X)
-        loss = loss_fn(output, current_batch_Y)
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+        """
+        implement one batch iter here
+        """
 
         train_loss += loss.detach().item() * len(current_batch_X)
         total += len(current_batch_X)
@@ -115,11 +91,11 @@ with torch.no_grad():
     train_output = model(X_train)
     train_output_denormalized = train_output * max_y
 
-    plot_3Ddata(train_data[:, :2], train_data[:, -1], predicted=train_output_denormalized.numpy(), title="train_data", save_path="../../results/ttc_estimation_mlp_train_set.png")
+    plot_3Ddata(train_data[:, :2], train_data[:, -1], predicted=train_output_denormalized.numpy(), title="train_data")  # , save_path="../../../../results/ttc_estimation_mlp_train_set.png")
 
     val_output = model(X_val)
     val_output_denormalized = val_output * max_y
 
-    plot_3Ddata(val_data[:, :2], val_data[:, -1], predicted=val_output_denormalized.numpy(), title="val_data", save_path="../../results/ttc_estimation_mlp_val_set.png")
+    plot_3Ddata(val_data[:, :2], val_data[:, -1], predicted=val_output_denormalized.numpy(), title="val_data")  # , save_path="../../../../results/ttc_estimation_mlp_val_set.png")
 
-    plot_loss_data(train_losses, val_losses, title="train vs val losses", save_path="../../results/ttc_estimation_mlp_losses.png")
+    plot_loss_data(train_losses, val_losses, title="train vs val losses")  # , save_path="../../../../results/ttc_estimation_mlp_losses.png")

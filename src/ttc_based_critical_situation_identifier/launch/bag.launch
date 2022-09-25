@@ -8,7 +8,7 @@
         <node pkg="ttc_based_critical_situation_identifier" type="ttc_estimator.py" name="ttc_estimator" output="screen" />
     </group>
 
-    <!--<node pkg="rosbag" type="play" name="rosbag_play" args="$(find ttc_based_critical_situation_identifier)/bags/test.bag" />-->
+    <!--<node pkg="rosbag" type="play" name="rosbag_play" args="$(find ttc_based_critical_situation_identifier)/asset/test.bag" />-->
     <node pkg="rosbag" type="play" name="rosbag_play" args="/home/schenker2/bags/summer_camp/thursday/s1_v1_raw.bag" />
     <!--<node pkg="rviz" type="rviz" name="my_rviz" args="-d $(find ttc_based_critical_situation_identifier)/rviz/rviz.rviz" output="screen" /> -->
 </launch>

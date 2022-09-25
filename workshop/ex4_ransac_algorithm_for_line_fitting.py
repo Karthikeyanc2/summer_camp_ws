@@ -13,10 +13,10 @@ rng = default_rng()
 class LineFittingRANSAC:
     def __init__(self, n=2, k=1000, t=1, d=2):
         # n=10, k=100, t=0.05, d=10
-        self.n = n  # `n`: Minimum number of data points to estimate parameters
         self.k = k  # `k`: Maximum iterations allowed
-        self.t = t  # `t`: Threshold value to determine if points are fit well
-        self.d = d  # `d`: Number of close data points required to assert model fits well
+        self.n = n  # `n`: Number of points to sample randomly to determine the line-fit
+        self.t = t  # `t`: Threshold to determine inlier points after a line-fit
+        self.d = d  # `d`: Minimum number of inlier points required to say that the estimated line is probably a correct line
 
         self.points = []
         self.current_line = None
@@ -32,7 +32,7 @@ class LineFittingRANSAC:
 
     def on_click(self, event):
         if event.xdata and event.ydata:
-            self.points.append([event.xdata, event.ydata])
+            self.points.append([round(event.xdata, 2), round(event.ydata, 2)])
             colors = [True for _ in range(len(self.points))]
             if len(self.points) > self.d:
                 (m, c), colors = self.fit_ransac(np.asarray(self.points))
@@ -49,48 +49,54 @@ class LineFittingRANSAC:
 
     def fit_ransac(self, points):
         """
-        :param points: Nx2
-        :return:
+        @param points: Nx2
+        @return:
         """
         best_error = np.inf
         best_mc = 0, 0
 
         for _ in range(self.k):
             ids = rng.permutation(len(points))
-            mc = self.get_line_parameters_m_and_c(points[ids[:self.n]])
+            mc = self.get_line_parameters_w_and_b(points[ids[:self.n]])
             distances = self.get_distance_to_points_from_a_line(points[ids[self.n:]], mc)
+            distances = np.asarray(distances)
             inlier_points = points[ids[self.n:]][distances < self.t]
 
             if len(inlier_points) > self.d:
                 all_inlier_points = np.vstack([points[ids[:self.n]], inlier_points])
-                mc = self.get_line_parameters_m_and_c(all_inlier_points)
-                error = self.get_distance_to_points_from_a_line(all_inlier_points, mc).mean()
+                mc = self.get_line_parameters_w_and_b(all_inlier_points)
+                distances = self.get_distance_to_points_from_a_line(all_inlier_points, mc)
+                error = np.asarray(distances).mean()
                 if error < best_error:
                     best_error = error
                     best_mc = mc
 
         distances = self.get_distance_to_points_from_a_line(points, best_mc)
+        distances = np.asarray(distances)
         return best_mc, distances < self.t
 
     @staticmethod
-    def get_distance_to_points_from_a_line(points, mc):
+    def get_distance_to_points_from_a_line(points, wb):
         """
-        :param points: list of points [[x1, y1], ... [xm, ym]]
-        :param mc: m, c
-        :return:
+        @param points: list of points [[x1, y1], ... [xm, ym]]
+        @param wb: w, b
+        @return: distances [d1, d2, .... dm]
         """
-        m, c = mc
-        distances = []
-        for x, y in points:
-            distances.append(abs(m * x - y + c) / math.sqrt(m * m + 1))
-
-        return np.asarray(distances)
+        """
+        How to take square root of a number?
+        num = 5
+        sqrt_of_5 = math.sqrt(5)
+        """
+        print("-------------------------------------------------")
+        print("points", points)
+        print("line parameters (w, b): ", wb)
+        return [0.2] * len(points)
 
     @staticmethod
-    def get_line_parameters_m_and_c(points):
+    def get_line_parameters_w_and_b(points):
         """
-        :param points: list of points [[x1, y1], ... [xm, ym]]
-        :return: m, c
+        @param points: list of points [[x1, y1], ... [xm, ym]]
+        @return: w, b
         """
         X_matrix = []
         Y_matrix = []

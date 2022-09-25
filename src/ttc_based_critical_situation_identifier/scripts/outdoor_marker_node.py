@@ -9,7 +9,7 @@ import rospy
 from geometry_msgs.msg import PolygonStamped, Point32, Polygon
 
 rospy.init_node("~")
-track_data_pd = pd.read_csv(Path(rospy.get_param("/package_root")) / "config" / "outdoor_contour_track_data_sp80.csv")
+track_data_pd = pd.read_csv(Path(rospy.get_param("/package_root")) / "asset" / "outdoor_contour_track_data_sp80.csv")
 track_data = np.array(track_data_pd[["x_relative", "y_relative", "z_relative"]])
 pub = rospy.Publisher("/outdoor_track_data", PolygonStamped, queue_size=10)
 msg = PolygonStamped()

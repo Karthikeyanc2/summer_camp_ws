@@ -3,7 +3,7 @@ import rosbag
 input_bag_file = "/home/schenker2/bags/summer_camp/tuesday/s3.bag"
 input_bag_file = "/home/schenker2/isaak_rotating_marie.bag"
 input_bag_file = "/home/schenker2/bags/summer_camp/wednesday/s1_v2.bag"
-input_bag_file = "/home/schenker2/karthik/summer_camp_ws/src/ttc_based_critical_situation_identifier/bags/test.bag"
+input_bag_file = "/src/ttc_based_critical_situation_identifier/asset/test.bag"
 
 input_bag_file = "/home/schenker2/bags/summer_camp/thursday/s1_v1.bag"
 
