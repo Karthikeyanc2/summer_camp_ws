@@ -20,6 +20,27 @@ from dbscan import DBSCAN
 from sklearn import linear_model
 from trimesh.bounds import oriented_bounds_2D
 from scipy.spatial.transform import Rotation
+import torch
+
+
+class MLPModel(torch.nn.Module):
+    def __init__(self, N_in, N_out):
+        super(MLPModel, self).__init__()
+        self.linear_in = torch.nn.Linear(N_in, 50, bias=True)
+        self.linear_middle1 = torch.nn.Linear(50, 100, bias=True)
+        self.linear_middle2 = torch.nn.Linear(100, 50, bias=True)
+        self.linear_out = torch.nn.Linear(50, N_out, bias=True)
+        self.ReLU_activation = torch.nn.ReLU()
+
+    def forward(self, x):
+        x = self.linear_in(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_middle1(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_middle2(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_out(x)
+        return x
 
 
 class Object:
@@ -122,6 +143,14 @@ class TTCEstimator:
         orientation = Rotation.from_quat([q.x, q.y, q.z, q.w]).as_euler('xyz', degrees=False)[-1]
         self.isaak_detected_object = Object(x, y, z, orientation)
         self.isaak_previous_speed_orientation_position_and_dimensions = [0, 0, [0, 0, 0], [0, 0, 0]]
+
+        self.model = MLPModel(2, 1)
+        state_dict = torch.load(self.package_path + '/config/mlp_ttc_estimator.pt')
+        self.model.load_state_dict(state_dict)
+        self.normalize_params = np.loadtxt(self.package_path + '/config/normalize_params.csv')
+        self.min_x_values = np.asarray([self.normalize_params[:2]])
+        self.max_x_values = np.asarray([self.normalize_params[2:4]])
+        self.max_y = self.normalize_params[4]
 
     def pcd_callback(self, msg):
         # 1.- convert the point cloud from ros format to numpy array --> output shape --> (N_points x 4) (x, y, z, intensity)
@@ -318,7 +347,13 @@ class TTCEstimator:
         relative_distance = math.sqrt((marie_position[0] - isaak_position_estimated[0])**2 + (marie_position[1] - isaak_position_estimated[1])**2)
         relative_speed = isaak_speed_estimated - marie_speed
         if relative_speed < 0:
-            ttc = - relative_distance / relative_speed
+            # ttc = - relative_distance / relative_speed
+            input_data = np.array([relative_distance, relative_speed * 3.6])
+            input_data_normalized = (input_data - self.min_x_values) / (self.max_x_values - self.min_x_values)
+            with torch.no_grad():
+                ttc_normalized = self.model(torch.from_numpy(input_data_normalized).type(torch.float32)).numpy()[0]
+            ttc = (ttc_normalized * self.max_y).item()
+            
         else:
             ttc = 60
 

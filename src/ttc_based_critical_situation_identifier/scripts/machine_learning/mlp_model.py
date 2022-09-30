@@ -9,14 +9,20 @@ seed_torch(seed=1000)
 class MLPModel(torch.nn.Module):
     def __init__(self, N_in, N_out):
         super(MLPModel, self).__init__()
-        """
-        create model here
-        """
+        self.linear_in = torch.nn.Linear(N_in, 50, bias=True)
+        self.linear_middle1 = torch.nn.Linear(50, 100, bias=True)
+        self.linear_middle2 = torch.nn.Linear(100, 50, bias=True)
+        self.linear_out = torch.nn.Linear(50, N_out, bias=True)
+        self.ReLU_activation = torch.nn.ReLU()
 
     def forward(self, x):
-        """
-        implement forward method here
-        """
+        x = self.linear_in(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_middle1(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_middle2(x)
+        x = self.ReLU_activation(x)
+        x = self.linear_out(x)
         return x
 
 
@@ -26,7 +32,7 @@ min_x_values = np.asarray([normalize_params[:2]])
 max_x_values = np.asarray([normalize_params[2:4]])
 max_y = normalize_params[4]
 
-val_data = np.loadtxt('../../datasets/test.csv', delimiter=',')
+val_data = np.loadtxt('../../datasets/val.csv', delimiter=',')
 X_norm_val = (val_data[:, :2] - min_x_values) / (max_x_values - min_x_values)
 Y_norm_val = val_data[:, -1] / max_y
 
@@ -36,9 +42,9 @@ Y_train = torch.from_numpy(Y_norm_train).type(torch.float32).reshape(-1, 1)
 X_val = torch.from_numpy(X_norm_val).type(torch.float32)
 Y_val = torch.from_numpy(Y_norm_val).type(torch.float32).reshape(-1, 1)
 
-"""
-initialize model optimizer and loss function here
-"""
+model = MLPModel(2, 1)
+optimizer = torch.optim.SGD(model.parameters(), lr=3e-4, momentum=0.9)  # 1e-3 works for single neuron
+loss_fn = torch.nn.MSELoss(reduction='sum')
 
 num_epochs = 2000
 batch_size = 90  # 1 works for single neuron
@@ -59,9 +65,13 @@ for idxEpoch in range(num_epochs):
     total = 0
     pbar = tqdm(total=len(X) // batch_size)
     for batch_index in range(len(X) // batch_size):
-        """
-        implement one batch iter here
-        """
+        current_batch_X = X[batch_index * batch_size:batch_index * batch_size + batch_size]
+        current_batch_Y = Y[batch_index * batch_size:batch_index * batch_size + batch_size]
+        output = model(current_batch_X)
+        loss = loss_fn(output, current_batch_Y)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
 
         train_loss += loss.detach().item() * len(current_batch_X)
         total += len(current_batch_X)
@@ -82,6 +92,8 @@ for idxEpoch in range(num_epochs):
 
 
 torch.save(best_model, '../../config/mlp_ttc_estimator.pt')
+np.savetxt("../../config/normalize_params.csv", np.asarray(normalize_params))
+
 best_model = torch.load('../../config/mlp_ttc_estimator.pt')
 
 model.load_state_dict(best_model)

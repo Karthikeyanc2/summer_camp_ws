@@ -22,16 +22,16 @@ ttc_train_estimated_denormalized = ttc_train_estimated * max_y
 
 plot_3Ddata(train_data[:, :2], train_data[:, -1], ttc_train_estimated_denormalized, title='Single neuron estimated model')
 
-test_data = np.loadtxt('../../datasets/test.csv', delimiter=',')
-X_norm_test = (test_data[:, :2] - min_x_values) / (max_x_values - min_x_values)
-Y_norm_test = test_data[:, -1] / max_y
+val_data = np.loadtxt('../../datasets/val.csv', delimiter=',')
+X_norm_val = (val_data[:, :2] - min_x_values) / (max_x_values - min_x_values)
+Y_norm_val = val_data[:, -1] / max_y
 
-X_matrix_test = np.ones((len(X_norm_test), len(X_norm_test[0]) + 1))
-X_matrix_test[:, :-1] = X_norm_test
+X_matrix_val = np.ones((len(X_norm_val), len(X_norm_val[0]) + 1))
+X_matrix_val[:, :-1] = X_norm_val
 
-Y_matrix_test = Y_norm_test.reshape(len(Y_norm_test), 1)
+Y_matrix_val = Y_norm_val.reshape(len(Y_norm_val), 1)
 
-ttc_test_estimated = np.sum(X_matrix_test * theta, axis=1)
-ttc_test_estimated_denormalized = ttc_test_estimated * max_y
+ttc_val_estimated = np.sum(X_matrix_val * theta, axis=1)
+ttc_val_estimated_denormalized = ttc_val_estimated * max_y
 
-plot_3Ddata(test_data[:, :2], test_data[:, -1], ttc_test_estimated_denormalized, title='Single neuron estimated model')
+plot_3Ddata(val_data[:, :2], val_data[:, -1], ttc_val_estimated_denormalized, title='Single neuron estimated model')

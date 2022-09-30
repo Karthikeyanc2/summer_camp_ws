@@ -104,7 +104,11 @@ class GradientDescent:
         """
         self.get_gradient(old_w) can be used to compute dl_by_dw
         """
-        return old_w
+        dl_by_dw = self.get_gradient(old_w)
+        current_delta_w = momentum * self.previous_delta_w - lr * dl_by_dw
+        new_w = old_w + current_delta_w
+        self.previous_delta_w = current_delta_w
+        return new_w
 
 
 GradientDescent()

@@ -90,7 +90,12 @@ class LineFittingRANSAC:
         print("-------------------------------------------------")
         print("points", points)
         print("line parameters (w, b): ", wb)
-        return [0.2] * len(points)
+        w, b = wb
+        distances = []
+        for x, y in points:
+            distances.append(abs(w * x - y + b) / math.sqrt(w * w + 1))
+
+        return distances
 
     @staticmethod
     def get_line_parameters_w_and_b(points):

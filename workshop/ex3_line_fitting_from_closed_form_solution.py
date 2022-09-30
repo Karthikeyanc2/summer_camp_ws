@@ -53,7 +53,17 @@ class LineFittingFromClosedFormSolution:
         """
         print("--------------------------------------------------")
         print("points :", points)
-        return 0, 0
+        X_matrix = []
+        Y_matrix = []
+        for point in points:
+            X_matrix.append([point[0], 1])
+            Y_matrix.append([point[1]])
+
+        X_matrix = np.asarray(X_matrix)  # m x 2
+        Y_matrix = np.asarray(Y_matrix)  # m x 1
+        theta = np.linalg.inv(X_matrix.T.dot(X_matrix)).dot(X_matrix.T.dot(Y_matrix))
+
+        return theta.T[0]
 
 
 LineFittingFromClosedFormSolution()

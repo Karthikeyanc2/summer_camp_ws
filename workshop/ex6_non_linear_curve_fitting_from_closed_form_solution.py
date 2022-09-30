@@ -61,7 +61,22 @@ class NonLinearCurveFittingFromClosedFormSolution:
         print('-----------------------------------------------')
         print("points: ", points)
         print("polynomial order: ", order)
-        return [0.1] * (order + 1)
+        X_matrix = []
+        Y_matrix = []
+
+        for point in points:
+            this_point_polynomial = []
+            for i in range(order + 1):
+                this_point_polynomial.append(np.power(point[0], i))
+
+            X_matrix.append(this_point_polynomial)
+            Y_matrix.append([point[1]])
+
+        X_matrix = np.asarray(X_matrix)  # m x order+1
+        Y_matrix = np.asarray(Y_matrix)  # m x 1
+        theta = np.linalg.inv(X_matrix.T.dot(X_matrix)).dot(X_matrix.T.dot(Y_matrix))
+
+        return theta.T[0]
 
 
 NonLinearCurveFittingFromClosedFormSolution()

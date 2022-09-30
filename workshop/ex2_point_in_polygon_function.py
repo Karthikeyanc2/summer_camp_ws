@@ -7,11 +7,13 @@ import random
 
 
 class PointInPolygon:
-    def __init__(self):
+    def __init__(self, outdoor_polygon_flag=False):
         outdoor_polygon = pd.read_csv("../src/ttc_based_critical_situation_identifier/asset/outdoor_contour_track_data_sp80.csv")[["x_relative", "y_relative"]]
 
-        # self.polygon = np.round(outdoor_polygon.to_numpy(), 2).tolist()[:-1]
-        self.polygon = [[1, 2], [1.3, 10.6], [15, 10], [5, 6]]
+        if outdoor_polygon_flag:
+            self.polygon = np.round(outdoor_polygon.to_numpy(), 2).tolist()[:-1]
+        else:
+            self.polygon = [[1, 2], [1.3, 10.6], [15, 10], [5, 6]]
 
         self.points = []
         self.fig, self.ax = plt.subplots()
@@ -27,7 +29,8 @@ class PointInPolygon:
         self.ax.set_title('Point in polygon visualization')
         self.ax.set_aspect(1)
         self.fig.tight_layout()
-        # self.load_one_frame_pcd()
+        if outdoor_polygon_flag:
+            self.load_one_frame_pcd()
         plt.show()
 
     def load_one_frame_pcd(self):
@@ -58,7 +61,29 @@ class PointInPolygon:
         print("polygon [[x0, y0], [x1, y1], ...] : ", polygon)
         print("point [xp, yp] :", point)
 
-        return random.choice([True, False])
+        count = 0
+
+        xp = point[0]
+        yp = point[1]
+
+        for i in range(len(polygon)):
+            x1 = polygon[i - 1][0]
+            x2 = polygon[i][0]
+            y1 = polygon[i - 1][1]
+            y2 = polygon[i][1]
+
+            # check if exactly one point is above and one point is below the line y = yp
+            check_1 = (y2 > yp) != (y1 > yp)
+
+            # check if the line made by polygon[i] and polygon[i-1] crosses the line y = yp between [xp, inf]
+            check_2 = ((yp - y1) * (x2 - x1) / (y2 - y1) + x1) >= xp
+
+            if check_1 and check_2:
+                count += 1
+
+        # If the number of crossings was odd, the point is in the polygon
+        return count % 2 != 0
 
 
 PointInPolygon()
+PointInPolygon(outdoor_polygon_flag=True)

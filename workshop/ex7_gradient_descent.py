@@ -109,7 +109,9 @@ class GradientDescent:
         @param lr: float: learning rate
         @return: float: new w
         """
-        return old_w
+        dl_by_dw = sum(2 * points[:, 0] * (old_w * points[:, 0] - points[:, 1]))
+        new_w = old_w - lr * dl_by_dw
+        return new_w
 
 
 GradientDescent()

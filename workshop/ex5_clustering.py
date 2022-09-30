@@ -139,7 +139,17 @@ class KMeans:
         How to find the index of the minimum number ? 
         index_of_the_minimum_number = np.argmin([2,3,4,1,3])
         """
-        return current_labels, np.zeros((n_classes, 2))
+        new_centers = []
+        for i in range(n_classes):
+            this_class_points = points[current_labels == i]
+            if len(this_class_points) == 0:
+                new_centers.append([0.0, 0.0])
+            else:
+                new_centers.append(this_class_points.mean(axis=0))
+        new_centers = np.asarray(new_centers)
+        distances = distance.cdist(points, new_centers)  # 60 x 3
+        new_labels = distances.argmin(axis=1)
+        return new_labels, new_centers
 
 
 KMeans()

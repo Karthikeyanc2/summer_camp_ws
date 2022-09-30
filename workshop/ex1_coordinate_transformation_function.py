@@ -112,7 +112,12 @@ class CoordinateTransformation:
         print("vehicle_coordinates (t_x, t_y) : ", vehicle_coordinates)
         print("vehicle_orientation (theta) :", vehicle_orientation)
         print("point_in_vehicle_coordinates (v_p) :", point_in_vehicle_coordinates)
-        return [1, 1]
+        tx, ty = vehicle_coordinates
+        theta = vehicle_orientation
+        x, y = point_in_vehicle_coordinates
+
+        return math.cos(theta) * x - math.sin(theta) * y + tx, \
+               math.sin(theta) * x + math.cos(theta) * y + ty
 
 
 CoordinateTransformation()
